@@ -1,8 +1,6 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var SPEED = 10
 
 func _ready():
 	var hud = self.get_node("CanvasLayer/HUD")
@@ -14,11 +12,22 @@ func _ready():
 	
 	$Map/Village.increase_max_paysans(20)
 	$Map/Village.add_paysan(1)
+	
+#func _process(delta):
+#	var position = $Camera2D.get_position()
+#	if Input.is_action_pressed("ui_right"):
+#		position = Vector2(position.x + SPEED, position.y)
+#	elif Input.is_action_pressed("ui_left"):
+#		position = Vector2(position.x - SPEED, position.y)
+#	elif Input.is_action_pressed("ui_up"):
+#		position = Vector2(position.x, position.y - SPEED)
+#	elif Input.is_action_pressed("ui_down"):
+#		position = Vector2(position.x, position.y + SPEED)
+#	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
 	var nb_enemis = 10 #rand_range(10, 20)
 	$Map.spawn_enemis(nb_enemis, global.ENEMI_BASE)
-
 
 func _on_Map_wave_enemis_finished_signal():
 	$EnemisWavesTimer.start()

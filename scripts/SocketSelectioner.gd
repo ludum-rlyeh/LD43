@@ -17,9 +17,9 @@ func disable():
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
-		move(global.position_to_index(event.position + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
+		move(global.position_to_index(event.global_position - Vector2(32,32) + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
 	elif event is InputEventMouseButton && event.is_pressed():
-		click_on(global.position_to_index(event.position + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
+		click_on(global.position_to_index(event.global_position - Vector2(32,32) + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
 		
 func move(var position_index):
 	self.position = global.index_to_position(position_index, global.CELL_SIZE)

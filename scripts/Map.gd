@@ -72,7 +72,6 @@ func spawn_enemis(var nb_enemis, var type):
 
 func on_enemi_died(var enemi):
 	var enemies = get_tree().get_nodes_in_group("enemies")
-	print(enemies)
 	if enemies.empty():
 		emit_signal("wave_enemis_finished_signal")
 		
