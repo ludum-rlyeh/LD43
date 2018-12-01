@@ -36,6 +36,9 @@ func _ready():
 				matrix[j][k] = global.SOCKET_TILE
 			else :
 				print($TileMap.get_cell(j, k))
+#	TEST selectionner
+#	var tower = load("res://scenes/Turret.tscn").instance()
+#	$SocketSelectioner.enable(tower)
 
 func get_path(var index) :
 	if (index <= paths.size()) :
@@ -46,3 +49,11 @@ func get_random_path() :
 	if (paths.empty()) :
 		return null
 	return paths[rand_range(0, paths.size())]
+	
+func on_add_object(var index, var object):
+	add_child(object)
+	object.set_position(global.index_to_position(index))
+	update_matrix(index, 2)
+	
+func update_matrix(index, type):
+	matrix[index.x][index.y] = type
