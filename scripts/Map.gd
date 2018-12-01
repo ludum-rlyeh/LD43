@@ -1,7 +1,11 @@
 extends Control
 
-# class member variables go here, for example:
-var paths = [[Vector2(100,0), Vector2(100,100), Vector2(200,200)], [Vector2(200,0), Vector2(200,100), Vector2(200,200)], [Vector2(300,0), Vector2(300,100), Vector2(200,200)]] 
+const CELL_SIZE = 64
+
+var paths = [
+	[CELL_SIZE*Vector2(4,0), CELL_SIZE*Vector2(4,5), CELL_SIZE*Vector2(8,5), CELL_SIZE*Vector2(8,8), CELL_SIZE*Vector2(6,8), CELL_SIZE*Vector2(6,10)]
+]
+ 
 export (PackedScene) var enemi_scene
 
 func _ready():
