@@ -25,4 +25,15 @@ margin_top = 5.0
 margin_right = 53.0
 margin_bottom = 45.0
 
+[node name="EnemisWavesTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="wave_enemis_finished_signal" from="Map" to="." method="_on_Map_wave_enemis_finished_signal"]
+
+[connection signal="timeout" from="EnemisWavesTimer" to="." method="_on_EnemisWavesTimer_timeout"]
+
 

@@ -1,6 +1,7 @@
 extends Node2D
 
 # Attaque range in px ?
+onready var bullet_tscn = preload('res://scenes/Bull.tscn')
 
 var attaque_range = 35
 var max_targets = 1
@@ -31,7 +32,14 @@ func _process(delta):
 func apply_damages():
 	for target in targets:
 		target.take_damages(self.power)
+		throw_bullet(target.position)
 
+func throw_bullet(target_pos):
+	var bullet = bullet_tscn.instance()
+	self.add_child(bullet)
+	bullet.throw(target_pos - self.position)
+	
+	
 func ennemi_die(cadaver):
 	if targets.has(cadaver):
 		targets.remove(targets.find(cadaver))

@@ -1,6 +1,7 @@
 extends Node2D
 
 signal finish_path_signal
+signal enemi_died_signal
 
 export (float) var speed
 export (float) var SEUIL
@@ -46,7 +47,11 @@ func take_damages(power):
 		var turrets = area.get_overlapping_areas()
 		for turret in turrets:
 			turret.get_parent().ennemi_die(self)
-
 		self.dead = true
 		self.get_parent().call_deferred("remove_child", self)
 		self.call_deferred("queue_free")
+	else:
+		die()
+		
+func die():
+	emit_signal("enemi_died_signal", self)

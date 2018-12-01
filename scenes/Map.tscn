@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/SocketSelectioner.tscn" type="PackedScene" id=5]
 
-[node name="Map" type="Control" index="0"]
+[node name="Map" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -25,6 +25,7 @@ enemi_scene = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+visible = false
 position = Vector2( -32, -32 )
 mode = 0
 tile_set = ExtResource( 3 )
@@ -55,6 +56,6 @@ position = Vector2( 570.928, 250.242 )
 
 [node name="SocketSelectioner" parent="." index="3" instance=ExtResource( 5 )]
 
-[connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_add_object"]
+[connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_cell_clicked"]
 
 
