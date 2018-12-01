@@ -1,5 +1,7 @@
 extends Control
 
+signal wave_enemis_finished_signal
+
 
 var paths = [
 	[Vector2(3,0), Vector2(3,4), Vector2(6,4), Vector2(6,7), Vector2(4,7), Vector2(4,9)],
@@ -12,12 +14,6 @@ var matrix = []
 
 func _ready():
 	randomize()
-	var nb = 10 #rand_range(10, 20)
-	for i in range(nb):
-		var enemi = enemi_scene.instance()
-		enemi.set_path(get_random_path())
-		enemi.set_speed(rand_range(60, 120))
-		add_child(enemi)
 		
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
@@ -50,11 +46,30 @@ func get_random_path() :
 		return null
 	return paths[rand_range(0, paths.size())]
 	
-func on_add_object(var index, var object):
-	add_child(object)
-	object.set_position(global.index_to_position(index, global.CELL_SIZE))
-	update_matrix(index, 2)
-	get_node("SocketSelectioner").disable()
+func on_cell_clicked(var index):
+	if matrix[index.x][index.y] == global.SOCKET_TILE:
+		print(index)
+	#afficher menu construction à l'emplacement
+	
+#	add_child(object)
+#	object.set_position(global.index_to_position(index, global.CELL_SIZE))
+#	update_matrix(index, 2)
+#	get_node("SocketSelectioner").disable()
 	
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type
+
+#ajouter le type pour le type d'ennemi
+func spawn_enemis(var nb_enemis, var type):
+	for i in range(nb_enemis):
+		var enemi = enemi_scene.instance()
+		enemi.set_path(get_random_path())
+		enemi.set_speed(rand_range(60, 120))
+		enemi.connect("enemi_died_signal", self, "on_enemi_died")
+		add_child(enemi)
+		
+func on_enemi_died(var enemi):
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	print(enemies)
+	if enemies.empty():
+		emit_signal("wave_enemis_finished_signal")

@@ -55,6 +55,6 @@ position = Vector2( 570.928, 250.242 )
 
 [node name="SocketSelectioner" parent="." index="3" instance=ExtResource( 5 )]
 
-[connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_add_object"]
+[connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_cell_clicked"]
 
 

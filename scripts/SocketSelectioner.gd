@@ -2,16 +2,15 @@ extends Node2D
 
 signal clicked_on_cell_signal
 
-var object
-
 func _ready():
-	disable()
+	enable()
 
-func enable(var object):
-	self.object = object
+func enable():
 	set_visible(true)
-	$SpriteGhost.set_texture(object.get_node("Sprite").get_texture())
-	$SpriteGhost.set_modulate(Color(1,1,1,0.5))
+#	self.object = object
+#	set_visible(true)
+#	$SpriteGhost.set_texture(object.get_node("Sprite").get_texture())
+#	$SpriteGhost.set_modulate(Color(1,1,1,0.5))
 	
 func disable():
 	set_visible(false)
@@ -26,4 +25,4 @@ func move(var position_index):
 	self.position = global.index_to_position(position_index, global.CELL_SIZE)
 	
 func click_on(var index):
-	emit_signal("clicked_on_cell_signal", index, self.object)
+	emit_signal("clicked_on_cell_signal", index)
