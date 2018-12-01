@@ -11,10 +11,19 @@ var paths = [
 
 export (PackedScene) var enemi_scene
 
+var tower_menu_scene = preload("res://scenes/TowerMenu.tscn")
+var tower_menu
+
 var matrix = []
 
 func _ready():
 	randomize()
+	
+	tower_menu = tower_menu_scene.instance()
+	add_child(tower_menu)
+	tower_menu.connect("asking_batiment_creation", self, "add_tower_to_map")
+	tower_menu.hide()
+	
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
 		i += 1
@@ -48,7 +57,8 @@ func get_random_path() :
 
 func on_cell_clicked(var index):
 	if matrix[index.x][index.y] == global.SOCKET_TILE:
-		print(index)
+		tower_menu.set_position(global.index_to_position(index, global.CELL_SIZE))
+		tower_menu.show()
 	#afficher menu construction à l'emplacement
 
 func add_object_to_map(var object, var index):
@@ -56,6 +66,9 @@ func add_object_to_map(var object, var index):
 	object.set_position(global.index_to_position(index, global.CELL_SIZE))
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
+
+func add_tower_to_map(var type) :
+	print(type)
 
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type
