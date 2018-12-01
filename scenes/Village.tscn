@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/village.gd" type="Script" id=1]
 
-[node name="Village" type="Node2D"]
+[node name="Village" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 max_paysans = 10

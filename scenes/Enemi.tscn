@@ -18,6 +18,7 @@ SEUIL = 3.0
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
+centered = false
 _sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="Area2D" parent="." index="1"]
@@ -27,7 +28,6 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 
