@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" index="0"]
 
 position = Vector2( 213.15, 145.493 )
 script = ExtResource( 1 )
@@ -42,5 +42,7 @@ __meta__ = {
 }
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
 
 
