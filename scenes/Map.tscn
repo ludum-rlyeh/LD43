@@ -60,4 +60,6 @@ position = Vector2( 570.928, 250.242 )
 
 [connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_cell_clicked"]
 
+[connection signal="game_over_signal" from="Village" to="." method="_on_game_over_signal"]
+
 
