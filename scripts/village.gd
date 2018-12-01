@@ -3,6 +3,7 @@ extends Node
 signal change_nb_paysans_signal
 signal change_nb_max_paysans_signal
 signal change_nb_caillasse_signal
+signal game_over_signal
 
 var caillasse = 0
 var nb_paysans = 0
@@ -28,6 +29,8 @@ func remove_paysans(var nb):
 	self.nb_paysans = max(self.nb_paysans - nb, 0)
 	if self.nb_paysans > 0:
 		$Timer.wait_time = time_init / float(self.nb_paysans)
+	else:
+		emit_signal("game_over_signal")
 	emit_signal("change_nb_paysans_signal", self.nb_paysans)
 
 func production_caillasse():

@@ -1,6 +1,7 @@
 extends Control
 
 signal wave_enemis_finished_signal
+signal game_over_signal
 
 
 var paths = [
@@ -50,7 +51,7 @@ func on_cell_clicked(var index):
 		print(index)
 	#afficher menu construction à l'emplacement
 
-func add_object_to_map(var object):
+func add_object_to_map(var object, var index):
 	add_child(object)
 	object.set_position(global.index_to_position(index, global.CELL_SIZE))
 	update_matrix(index, 2)
@@ -78,3 +79,6 @@ func on_enemi_arrived(var enemi):
 	enemi.die()
 	#A changer
 	$Village.remove_paysans(enemi.nb_paysans_to_kill)
+
+func _on_game_over_signal():
+	emit_signal("game_over_signal")

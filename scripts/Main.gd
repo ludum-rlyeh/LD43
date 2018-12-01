@@ -31,3 +31,7 @@ func _on_EnemisWavesTimer_timeout():
 
 func _on_Map_wave_enemis_finished_signal():
 	$EnemisWavesTimer.start()
+
+
+func _on_game_over_signal():
+	print("game over")
