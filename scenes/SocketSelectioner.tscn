@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/SocketSelectioner.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="SocketSelectioner" type="Node2D" index="0"]
+[node name="SocketSelectioner" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -12,5 +12,10 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 _sections_unfolded = [ "Offset" ]
+
+[node name="Sprite_ghost" type="Sprite" parent="." index="1"]
+
+position = Vector2( 0, 32 )
+_sections_unfolded = [ "Transform" ]
 
 
