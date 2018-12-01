@@ -14,6 +14,14 @@ config/name="LD43"
 run/main_scene="res://scenes/Map.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/resizable=false
+
+[editor_plugins]
+
+enabled=PoolStringArray( "TileSetCutter" )
+
 [autoload]
 
 global="*res://scripts/global.gd"
