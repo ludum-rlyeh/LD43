@@ -4,10 +4,15 @@ signal finish_path_signal
 
 export (float) var speed
 export (float) var SEUIL
+
+var dead = false
 var velocity_norm = Vector2(0,0)
 var path = []
 
 var life = 100
+
+func _ready():
+	self.scale = Vector2(0.8, 0.8)
 
 func _process(delta):
 	self.position += self.velocity_norm * self.speed * delta
@@ -36,8 +41,12 @@ func update_velocity():
 func take_damages(power):
 	# print("Aouch :" + str(self) + " life:" + str(self.life))
 	self.life -= power
-
 	if(0 >= self.life):
-		var parent = self.get_parent()
-		parent.call_deferred("remove_child", self)
+		var area = self.get_node("Collision")
+		var turrets = area.get_overlapping_areas()
+		for turret in turrets:
+			turret.get_parent().ennemi_die(self)
+
+		self.dead = true
+		self.get_parent().call_deferred("remove_child", self)
 		self.call_deferred("queue_free")
