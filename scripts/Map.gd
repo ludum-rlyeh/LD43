@@ -24,6 +24,7 @@ func _ready():
 	tower_menu.connect("asking_batiment_creation", self, "add_tower_to_map")
 	tower_menu.hide()
 	
+
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
 		i += 1
@@ -87,7 +88,7 @@ func on_enemi_died(var enemi):
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	if enemies.empty():
 		emit_signal("wave_enemis_finished_signal")
-		
+
 func on_enemi_arrived(var enemi):
 	enemi.die()
 	#A changer
