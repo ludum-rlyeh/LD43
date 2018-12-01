@@ -12,6 +12,8 @@ func _ready():
 
 	$Map/Village.increase_max_paysans(20)
 	$Map/Village.add_paysan(1)
+	
+	global.current_camera = $Camera2D
 
 #func _process(delta):
 #	var position = $Camera2D.get_position()

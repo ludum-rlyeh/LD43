@@ -11,6 +11,8 @@ var paths = [
 
 export (PackedScene) var enemi_scene
 
+var buildings_scenes = [preload("res://scenes/Turret.tscn")]
+
 var tower_menu_scene = preload("res://scenes/TowerMenu.tscn")
 var tower_menu
 
@@ -21,7 +23,7 @@ func _ready():
 	
 	tower_menu = tower_menu_scene.instance()
 	add_child(tower_menu)
-	tower_menu.connect("asking_batiment_creation", self, "add_tower_to_map")
+	tower_menu.connect("asking_batiment_creation", self, "add_building_to_map")
 	tower_menu.hide()
 	
 
@@ -68,8 +70,11 @@ func add_object_to_map(var object, var index):
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
-func add_tower_to_map(var type) :
+func add_building_to_map(var type):
 	print(type)
+	var building = self.buildings_scenes[type].instance()
+	var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
+	add_object_to_map(building, index)
 
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type
