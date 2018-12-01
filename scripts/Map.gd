@@ -1,11 +1,11 @@
 extends Control
 
-# class member variables go here, for example:
+
 var paths = [
-		[Vector2(100,0), Vector2(100,100), Vector2(200,200)], 
-		[Vector2(200,0), Vector2(200,100), Vector2(200,200)], 
-		[Vector2(300,0), Vector2(300,100), Vector2(800,800)]
-	] 
+	[Vector2(3,0), Vector2(3,4), Vector2(6,4), Vector2(6,7), Vector2(4,7), Vector2(4,9)],
+	[Vector2(12,0), Vector2(12,1), Vector2(10,1), Vector2(10,5), Vector2(6,5), Vector2(6,7), Vector2(4,7), Vector2(4,9)]
+]
+
 export (PackedScene) var enemi_scene
 
 func _ready():
@@ -26,8 +26,4 @@ func get_random_path() :
 	if (paths.empty()) :
 		return null
 	return paths[rand_range(0, paths.size())]
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-#	pass

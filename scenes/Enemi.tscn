@@ -18,6 +18,8 @@ SEUIL = 3.0
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="Area2D" parent="." index="1"]
 
