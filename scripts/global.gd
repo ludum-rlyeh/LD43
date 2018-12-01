@@ -4,6 +4,7 @@ const CELL_SIZE = 64
 
 enum TILE_TYPE{PATH_TILE, SOCKET_TILE, SOCKET_BUSY}
 enum ENEMI_TYPE{ENEMI_BASE}
+enum TOWER_TYPE{TURRET, WIZARD, CANON, FARM}
 
 func position_to_index(var position, var offset):
 	return Vector2(int(position.x / offset), int(position.y / offset))
