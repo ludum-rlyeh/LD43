@@ -17,4 +17,9 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="HUD" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
 
+margin_left = 13.0
+margin_top = 5.0
+margin_right = 53.0
+margin_bottom = 45.0
+
 
