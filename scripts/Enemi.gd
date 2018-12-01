@@ -1,15 +1,30 @@
 extends Node2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+export (float) var speed
+export (float) var SEUIL
+var velocity_norm = Vector2(0,0)
+var path = []
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	self.position += self.velocity_norm * self.speed * delta
+#	print(position)
+	update_velocity(delta)
+#	print("enemi ", get_name(), " ", self.velocity_norm, " ", self.speed)
+	
+func set_path(var path):
+	self.path = path.duplicate()
+	
+func set_speed(var value):
+	self.speed = value
+	
+func update_velocity(var delta):
+	if !self.path.empty():
+		var point = self.path.front()
+		var distance = (get_position() - point).length()
+		if distance < SEUIL:
+			self.path.pop_front()
+			update_velocity(delta)
+			return true
+		self.velocity_norm = (point - get_position()).normalized()
+	else:
+		self.velocity_norm = Vector2(0,0)
