@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/tilesets/tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/Turret.tscn" type="PackedScene" id=4]
 
-[node name="Map" type="Control" index="0"]
+[node name="Map" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -24,6 +24,7 @@ enemi_scene = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+visible = false
 position = Vector2( -32, -32 )
 mode = 0
 tile_set = ExtResource( 3 )

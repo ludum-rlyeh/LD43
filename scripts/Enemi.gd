@@ -46,7 +46,6 @@ func take_damages(power):
 		var turrets = area.get_overlapping_areas()
 		for turret in turrets:
 			turret.get_parent().ennemi_die(self)
-
 		self.dead = true
 		self.get_parent().call_deferred("remove_child", self)
 		self.call_deferred("queue_free")

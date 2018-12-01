@@ -12,7 +12,7 @@ var matrix = []
 
 func _ready():
 	randomize()
-	var nb = 10 #rand_range(10, 20)
+	var nb = 1 #rand_range(10, 20)
 	for i in range(nb):
 		var enemi = enemi_scene.instance()
 		enemi.set_path(get_random_path())
