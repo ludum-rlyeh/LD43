@@ -15,7 +15,6 @@ var matrix = []
 func _ready():
 	randomize()
 
-
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
 		i += 1
