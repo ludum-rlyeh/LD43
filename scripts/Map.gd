@@ -1,10 +1,17 @@
 extends Control
 
 # class member variables go here, for example:
-var paths = [] 
+var paths = [[Vector2(100,0), Vector2(100,100), Vector2(200,200)], [Vector2(200,0), Vector2(200,100), Vector2(200,200)], [Vector2(300,0), Vector2(300,100), Vector2(200,200)]] 
+export (PackedScene) var enemi_scene
 
 func _ready():
 	randomize()
+	var nb = rand_range(10, 20)
+	for i in range(nb):
+		var enemi = enemi_scene.instance()
+		enemi.set_path(get_random_path())
+		enemi.set_speed(rand_range(30, 60))
+		add_child(enemi)
 
 func get_path(var index) :
 	if (index <= paths.size()) :

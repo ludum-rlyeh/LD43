@@ -1,27 +1,28 @@
 extends Node2D
 
-export (float) var SPEED
+export (float) var speed
 export (float) var SEUIL
 var velocity_norm = Vector2(0,0)
-var line = []
-
-func _ready():
-	set_line([Vector2(100,0), Vector2(100,100), Vector2(200,200)])
+var path = []
 
 func _process(delta):
-	move_and_slide(self.velocity_norm * SPEED)
-	
+	self.position += self.velocity_norm * self.speed * delta
+#	print(position)
 	update_velocity(delta)
+#	print("enemi ", get_name(), " ", self.velocity_norm, " ", self.speed)
 	
-func set_line(var line):
-	self.line = line
+func set_path(var path):
+	self.path = path.duplicate()
+	
+func set_speed(var value):
+	self.speed = value
 	
 func update_velocity(var delta):
-	if !self.line.empty():
-		var point = self.line.front()
+	if !self.path.empty():
+		var point = self.path.front()
 		var distance = (get_position() - point).length()
 		if distance < SEUIL:
-			self.line.pop_front()
+			self.path.pop_front()
 			update_velocity(delta)
 			return true
 		self.velocity_norm = (point - get_position()).normalized()
