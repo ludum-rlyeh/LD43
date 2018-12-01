@@ -13,13 +13,14 @@ func _process(delta):
 	
 func set_path(var path):
 	self.path = path.duplicate()
+	self.position = self.path.front()  * global.CELL_SIZE
 	
 func set_speed(var value):
 	self.speed = value
 	
 func update_velocity(var delta):
 	if !self.path.empty():
-		var point = self.path.front()
+		var point = self.path.front() * global.CELL_SIZE
 		var distance = (get_position() - point).length()
 		if distance < SEUIL:
 			self.path.pop_front()

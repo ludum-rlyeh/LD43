@@ -11,3 +11,9 @@ func _ready():
 	collision_range.scale = Vector2(attaque_range, attaque_range)
 	pass
 	
+func _process(delta):
+	pass
+
+func _on_Area2D_area_entered(area):
+	print("detected")
+	pass # replace with function body

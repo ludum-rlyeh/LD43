@@ -22,6 +22,10 @@ window/size/resizable=false
 
 enabled=PoolStringArray( "TileSetCutter" )
 
+[autoload]
+
+global="*res://scripts/global.gd"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

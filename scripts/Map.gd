@@ -1,9 +1,7 @@
 extends Control
 
-const CELL_SIZE = 64
-
 var paths = [
-	[CELL_SIZE*Vector2(4,0), CELL_SIZE*Vector2(4,5), CELL_SIZE*Vector2(8,5), CELL_SIZE*Vector2(8,8), CELL_SIZE*Vector2(6,8), CELL_SIZE*Vector2(6,10)]
+	[Vector2(3,0), Vector2(3,4), Vector2(6,4), Vector2(6,7), Vector2(4,7), Vector2(4,9)]
 ]
  
 export (PackedScene) var enemi_scene
@@ -26,8 +24,3 @@ func get_random_path() :
 	if (paths.empty()) :
 		return null
 	return paths[rand_range(0, paths.size())]
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
