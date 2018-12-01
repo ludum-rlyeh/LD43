@@ -4,7 +4,7 @@ signal clicked_on_cell_signal
 
 var object
 
-func ready():
+func _ready():
 	disable()
 
 func enable(var object):
