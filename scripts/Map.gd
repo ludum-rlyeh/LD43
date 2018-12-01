@@ -52,8 +52,9 @@ func get_random_path() :
 	
 func on_add_object(var index, var object):
 	add_child(object)
-	object.set_position(global.index_to_position(index))
+	object.set_position(global.index_to_position(index, global.CELL_SIZE))
 	update_matrix(index, 2)
+	get_node("SocketSelectioner").disable()
 	
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type

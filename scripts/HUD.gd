@@ -15,6 +15,6 @@ func update_rock_nb(var nb) :
 	self.get_node("VBoxContainer/rocks/rock_nb").text = rock_nb
 
 func _on_base_turret_gui_input(ev):
-	if (ev is InputEventMouseButton and ev.isPressed()) :
+	if (ev is InputEventMouseButton and ev.is_pressed()) :
 		var turret = load("res://scenes/Turret.tscn").instance()
 		emit_signal("turret_selected_signal", turret)
