@@ -14,8 +14,6 @@ var matrix = []
 
 func _ready():
 	randomize()
-
-
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
 		i += 1
@@ -52,9 +50,10 @@ func on_cell_clicked(var index):
 		print(index)
 	#afficher menu construction à l'emplacement
 
-#	add_child(object)
-#	object.set_position(global.index_to_position(index, global.CELL_SIZE))
-#	update_matrix(index, 2)
+func add_object_to_map(var object):
+	add_child(object)
+	object.set_position(global.index_to_position(index, global.CELL_SIZE))
+	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
 func update_matrix(index, type):
