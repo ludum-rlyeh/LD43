@@ -10,7 +10,7 @@ export (PackedScene) var enemi_scene
 
 func _ready():
 	randomize()
-	var nb = rand_range(10, 20)
+	var nb = 10 #rand_range(10, 20)
 	for i in range(nb):
 		var enemi = enemi_scene.instance()
 		enemi.set_path(get_random_path())
@@ -26,4 +26,3 @@ func get_random_path() :
 	if (paths.empty()) :
 		return null
 	return paths[rand_range(0, paths.size())]
-#	# Update game logic here.
