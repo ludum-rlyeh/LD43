@@ -3,9 +3,9 @@ extends Node2D
 # Attaque range in px ?
 
 var attaque_range = 35
-var max_targets = 5
+var max_targets = 1
 var power = 10
-var attaque_speed = 0.5
+var attaque_speed = 0.2
 var cd = 0
 
 var ennemy_on_range = []
@@ -32,6 +32,14 @@ func apply_damages():
 	for target in targets:
 		target.take_damages(self.power)
 
+func ennemi_die(cadaver):
+	if targets.has(cadaver):
+		targets.remove(targets.find(cadaver))
+		pass
+	if ennemy_on_range.has(cadaver):
+		ennemy_on_range.remove(ennemy_on_range.find(cadaver))
+		pass
+		
 func select_target():
 	var nb_ranged_ennemy = len(ennemy_on_range)
 	var nb_targets = len(targets)
@@ -50,6 +58,11 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	var unit = area.get_parent()
-	ennemy_on_range.remove(ennemy_on_range.find(unit))
-	targets.remove(targets.find(unit))
+	safe_remove(ennemy_on_range, unit)
+	safe_remove(targets, unit)
 	pass # replace with function body
+
+func safe_remove(collection, item):
+	var idx = collection.find(item)
+	if idx != -1:
+		collection.remove(idx)
