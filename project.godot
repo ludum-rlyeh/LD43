@@ -13,6 +13,10 @@ config_version=3
 config/name="LD43"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "TileSetCutter" )
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
