@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/Map.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Enemi.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://scenes/Turret.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/SocketSelectioner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Village.tscn" type="PackedScene" id=6]
 
 [node name="Map" type="Control"]
 
@@ -25,7 +26,6 @@ enemi_scene = ExtResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
-visible = false
 position = Vector2( -32, -32 )
 mode = 0
 tile_set = ExtResource( 3 )
@@ -55,6 +55,8 @@ position = Vector2( 263.484, 186.304 )
 position = Vector2( 570.928, 250.242 )
 
 [node name="SocketSelectioner" parent="." index="3" instance=ExtResource( 5 )]
+
+[node name="Village" parent="." index="4" instance=ExtResource( 6 )]
 
 [connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_cell_clicked"]
 

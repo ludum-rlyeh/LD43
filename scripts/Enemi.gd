@@ -6,10 +6,9 @@ signal enemi_died_signal
 export (float) var speed
 export (float) var SEUIL
 
-var dead = false
 var velocity_norm = Vector2(0,0)
 var path = []
-
+var nb_paysans_to_kill = 10
 var life = 100
 
 func _ready():
@@ -42,16 +41,14 @@ func update_velocity():
 func take_damages(power):
 	# print("Aouch :" + str(self) + " life:" + str(self.life))
 	self.life -= power
-	if(0 >= self.life):
-		var area = self.get_node("Collision")
-		var turrets = area.get_overlapping_areas()
-		for turret in turrets:
-			turret.get_parent().ennemi_die(self)
-		self.dead = true
-		self.get_parent().call_deferred("remove_child", self)
-		self.call_deferred("queue_free")
-	else:
+	if(self.life <= 0):
 		die()
 		
 func die():
 	emit_signal("enemi_died_signal", self)
+	var area = self.get_node("Collision")
+	var turrets = area.get_overlapping_areas()
+	for turret in turrets:
+		turret.get_parent().ennemi_die(self)
+	self.get_parent().call_deferred("remove_child", self)
+	self.call_deferred("queue_free")

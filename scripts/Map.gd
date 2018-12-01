@@ -67,6 +67,7 @@ func spawn_enemis(var nb_enemis, var type):
 		enemi.set_path(get_random_path())
 		enemi.set_speed(rand_range(60, 120))
 		enemi.connect("enemi_died_signal", self, "on_enemi_died")
+		enemi.connect("finish_path_signal", self, "on_enemi_arrived")
 		add_child(enemi)
 
 func on_enemi_died(var enemi):
@@ -74,3 +75,8 @@ func on_enemi_died(var enemi):
 	print(enemies)
 	if enemies.empty():
 		emit_signal("wave_enemis_finished_signal")
+		
+func on_enemi_arrived(var enemi):
+	enemi.die()
+	#A changer
+	$Village.remove_paysans(enemi.nb_paysans_to_kill)

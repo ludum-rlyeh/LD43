@@ -3,9 +3,8 @@
 [ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/villageois.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/celticmd.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/sprites/tour.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/caillasse.png" type="Texture" id=4]
-
+[ext_resource path="res://assets/sprites/tour.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -31,7 +30,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="HUD" type="Control" index="0"]
+[node name="HUD" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -50,7 +49,6 @@ _sections_unfolded = [ "Focus", "Hint", "Rect", "Size Flags" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -71,7 +69,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 124.0
+margin_right = 164.0
 margin_bottom = 64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -122,6 +120,54 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
+[node name="peon_nb_on" type="Label" parent="VBoxContainer/peons" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 128.0
+margin_top = 18.0
+margin_right = 146.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "/"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="peon_nb_max" type="Label" parent="VBoxContainer/peons" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 150.0
+margin_top = 18.0
+margin_right = 164.0
+margin_bottom = 45.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
 [node name="rocks" type="HBoxContainer" parent="VBoxContainer" index="1"]
 
 anchor_left = 0.0
@@ -129,7 +175,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 68.0
-margin_right = 124.0
+margin_right = 164.0
 margin_bottom = 132.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -201,7 +247,7 @@ scroll_vertical_enabled = true
 scroll_vertical = 0
 scroll_deadzone = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" index="2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
