@@ -62,4 +62,8 @@ autostart = true
 
 [connection signal="timeout" from="EnemisWavesTimer" to="." method="_on_EnemisWavesTimer_timeout"]
 
+[connection signal="game_over_signal" from="Map" to="." method="_on_game_over_signal"]
+
+[connection signal="wave_enemis_finished_signal" from="Map" to="." method="_on_Map_wave_enemis_finished_signal"]
+
 

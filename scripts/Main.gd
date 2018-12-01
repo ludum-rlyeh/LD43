@@ -9,10 +9,10 @@ func _ready():
 	$Map/Village.connect("change_nb_paysans_signal", $CanvasLayer/HUD, "update_peon_nb")
 	$Map/Village.connect("change_nb_max_paysans_signal", $CanvasLayer/HUD, "update_peon_nb_max")
 	$Map/Village.connect("change_nb_caillasse_signal", $CanvasLayer/HUD, "update_rock_nb")
-	
+
 	$Map/Village.increase_max_paysans(20)
 	$Map/Village.add_paysan(1)
-	
+
 #func _process(delta):
 #	var position = $Camera2D.get_position()
 #	if Input.is_action_pressed("ui_right"):
@@ -31,3 +31,7 @@ func _on_EnemisWavesTimer_timeout():
 
 func _on_Map_wave_enemis_finished_signal():
 	$EnemisWavesTimer.start()
+
+
+func _on_game_over_signal():
+	print("game over")
