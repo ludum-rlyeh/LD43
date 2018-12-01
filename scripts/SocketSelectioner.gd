@@ -8,9 +8,9 @@ func _ready():
 	disable()
 
 func enable(var object):
+	self.object = object
 	set_visible(true)
 	$SpriteGhost.set_texture(object.get_node("Sprite").get_texture())
-	print($SpriteGhost.get_texture())
 	$SpriteGhost.set_modulate(Color(1,1,1,0.5))
 	
 func disable():
