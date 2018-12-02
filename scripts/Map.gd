@@ -11,13 +11,17 @@ var paths = [
 
 export (PackedScene) var enemi_scene
 
-var buildings_scenes = { global.TURRET : preload("res://scenes/Turret.tscn") }
+var buildings_scenes = { 
+	global.TURRET : preload("res://scenes/Turret.tscn"), 
+	global.FARM: preload("res://scenes/Farm.tscn")
+}
 
 var tower_menu_scene = preload("res://scenes/TowerMenu.tscn")
 var tower_menu
 
 var phantom
 var matrix = []
+
 
 func _ready():
 	randomize()
@@ -84,7 +88,9 @@ func on_asking_batiment_creation(var type):
 		var building = self.buildings_scenes[type].instance()
 		var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
 		add_object_to_map(building, index)
-
+		if type == global.TOWER_TYPE.FARM:
+			$Village.add_farm(building.capacity)
+		
 	if self.phantom != null:
 		hide_phantom()
 
@@ -122,9 +128,7 @@ func _input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			tower_menu.hide()
-			
 
-	
 #ajouter le type pour le type d'ennemi
 func spawn_enemis(var nb_enemis, var type):
 	for i in range(nb_enemis):

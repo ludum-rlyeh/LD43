@@ -1,5 +1,9 @@
 extends Node2D
 
+var attaque_range = 0
+var max_targets = 0
+var type = global.TOWER_TYPE.FARM
+
 # Attaque range in px ?
 onready var bullet_tscn = preload('res://scenes/Bull.tscn')
 
