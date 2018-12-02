@@ -59,6 +59,18 @@ func on_lightning() :
 	# TODO : an animation
 	self.die()
 
+func on_blizzard() :
+	self.slow_down(0.25)
+
+func on_end_blizzard() :
+	self.unslow(0.25)
+
+func slow_down(var delta) :
+	self.speed *= delta
+
+func unslow(var delta) :
+	self.speed /= delta
+
 func stuned() :
 	self.speed = 0
 
