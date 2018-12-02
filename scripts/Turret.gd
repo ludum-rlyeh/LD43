@@ -22,10 +22,10 @@ func _ready():
 		var shape = CircleShape2D.new()
 		shape.set_radius(attaque_range)
 		collision_range.set_shape(shape)
-	$Area2D.connect("area_entered", self, "_on_Area2D_area_entered")
-	$Area2D.connect("area_exited", self, "_on_Area2D_area_exited")
-	$MouseDetector.connect("mouse_entered", self, "_on_MouseDetector_mouse_entered")
-	$MouseDetector.connect("mouse_exited", self, "_on_MouseDetector_mouse_exited")
+		
+		$Area2D.connect("area_entered", self, "_on_Area2D_area_entered")
+		$Area2D.connect("area_exited", self, "_on_Area2D_area_exited")
+
 
 
 func draw_range():
@@ -111,11 +111,13 @@ func safe_remove(collection, item):
 		collection.remove(idx)
 
 func _on_MouseDetector_mouse_entered():
+	print("caca in")
 	self.show_range = true
 	self.call_deferred("update")
 	pass # replace with function body
 
 func _on_MouseDetector_mouse_exited():
+	print("caca out")
 	self.show_range = false
 	self.call_deferred("update")
 	pass # replace with function body
