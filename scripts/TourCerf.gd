@@ -24,3 +24,11 @@ func apply_damages():
 func remove_bullet(var bullet):
 	call_deferred("remove_child", bullet)
 	bullet.call_deferred("queue_free")
+
+func _on_MouseDetector_mouse_entered():
+	._on_MouseDetector_mouse_entered()
+	pass # replace with function body
+
+func _on_MouseDetector_mouse_exited():
+	._on_MouseDetector_mouse_exited()
+	pass # replace with function body

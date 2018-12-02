@@ -4,6 +4,7 @@ func _ready():
 	var hud = self.get_node("CanvasLayer/HUD")
 	var socket = self.get_node("Map/SocketSelectioner")
 	hud.connect("turret_selected_signal", socket, "enable")
+	
 	$Map/Village.connect("change_nb_paysans_signal", $CanvasLayer/HUD, "update_peon_nb")
 	$Map/Village.connect("change_nb_max_paysans_signal", $CanvasLayer/HUD, "update_peon_nb_max")
 	$Map/Village.connect("change_nb_caillasse_signal", $CanvasLayer/HUD, "update_rock_nb")
