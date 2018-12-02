@@ -35,7 +35,7 @@ func _process(delta):
 	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
-	var nb_enemis = 1
+	var nb_enemis = 20
 #	var nb_enemis = rand_range(10, 20)
 	$Map.spawn_enemis(nb_enemis, global.ENEMI_BASE)
 

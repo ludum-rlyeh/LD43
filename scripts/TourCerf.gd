@@ -7,7 +7,7 @@ func _process(delta):
 
 func _ready() :
 	._ready()
-	self.power = 0.5
+	self.power = 10
 	self.attaque_speed = 2.0
 
 func shoot(var enemi_position):
@@ -21,7 +21,7 @@ func shoot(var enemi_position):
 	
 func apply_damages():
 	for target in targets:
-		target.slow_down(self.power, self.attaque_speed)
+		target.take_damages(self.power)
 		shoot(target.position - self.global_position)
 	
 func remove_bullet(var bullet):
