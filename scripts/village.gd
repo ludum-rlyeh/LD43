@@ -6,7 +6,7 @@ signal change_nb_caillasse_signal
 signal game_over_signal
 signal sacrifice_signal
 
-var caillasse = 0
+var caillasse = 100
 var nb_paysans = 100
 var base_production = 1
 var farms = []
