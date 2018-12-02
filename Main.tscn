@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=3]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -41,7 +41,7 @@ margin_right = 32.0
 anchor_mode = 0
 rotating = false
 current = true
-zoom = Vector2( 2.2, 2.2 )
+zoom = Vector2( 2, 2 )
 limit_left = -10000000
 limit_top = -10000000
 limit_right = 10000000

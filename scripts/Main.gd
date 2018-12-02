@@ -1,6 +1,8 @@
 extends Node2D
 
 var SPEED = 10
+var zoom_scroll = Vector2(0.05, 0.05)
+var clamp_zoom = [Vector2(1,1), Vector2(2.2,2.2)]
 
 func _ready():
 	var hud = self.get_node("CanvasLayer/HUD")
@@ -26,8 +28,10 @@ func _process(delta):
 		position = Vector2(position.x, position.y - SPEED)
 	elif Input.is_action_pressed("ui_down"):
 		position = Vector2(position.x, position.y + SPEED)
-	elif Input.is_mouse_button_pressed(BUTTON_RIGHT):
-		print("mouse")
+	elif Input.is_action_pressed("zoom_camera_avant"):
+		$Camera2D.set_zoom(Vector2(clamp($Camera2D.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp($Camera2D.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
+	elif Input.is_action_pressed("zoom_camera_arriere"):
+		$Camera2D.set_zoom(Vector2(clamp($Camera2D.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp($Camera2D.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
 	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
