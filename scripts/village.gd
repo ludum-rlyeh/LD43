@@ -79,3 +79,11 @@ func _on_Thorn_pressed():
 		emit_signal("sacrifice_signal", global.SACRIFICE_TYPE.THORNS)
 		remove_paysans(nb_sacrifice)
 		self.get_node("SacrificeMenu").hide()
+
+
+func _on_Lightning_pressed():
+	var nb_sacrifice = int(self.get_node("SacrificeMenu/Lightning/nb_sacrifice").text)
+	if nb_sacrifice < nb_paysans :
+		emit_signal("sacrifice_signal", global.SACRIFICE_TYPE.LIGHTNING)
+		remove_paysans(nb_sacrifice)
+		self.get_node("SacrificeMenu").hide()
