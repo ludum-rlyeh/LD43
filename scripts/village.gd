@@ -4,10 +4,13 @@ signal change_nb_paysans_signal
 signal change_nb_max_paysans_signal
 signal change_nb_caillasse_signal
 signal game_over_signal
+signal sacrifice_signal
 
 var caillasse = 0
-var nb_paysans = 0
+var nb_paysans = 100
+var base_production = 1
 var farms = []
+
 export (int) var max_paysans
 export (int) var time_init
 
@@ -17,7 +20,8 @@ func _ready():
 	var timer = $Timer
 	timer.wait_time = self.time_init
 	timer.connect("timeout", self, "production_caillasse")
-
+	
+	self.get_node("SacrificeMenu").hide()
 
 func add_paysan(var nb):
 	self.nb_paysans = min(self.nb_paysans + nb, self.max_paysans)
@@ -34,12 +38,11 @@ func remove_paysans(var nb):
 	emit_signal("change_nb_paysans_signal", self.nb_paysans)
 
 func production_caillasse():
-	increase_caillasse(1)
-
-func increase_caillasse(var nb):
-	self.caillasse += nb
+	$Timer.wait_time = time_init
+	if self.nb_paysans > 0:
+		self.caillasse += int(log(self.nb_paysans)*self.base_production)
 	emit_signal("change_nb_caillasse_signal", self.caillasse)
-
+	
 func decrease_caillasse(var nb):
 	self.caillasse = max(self.caillasse - nb, 0)
 	emit_signal("change_nb_caillasse_signal", self.caillasse)
@@ -61,3 +64,26 @@ func remove_farm(var index):
 		var farm = self.farms[index]
 		decrease_max_paysans(farm)
 		self.farms.remove(index)
+
+func _on_Village_gui_input(ev):
+	if ev is InputEventMouseButton and ev.is_pressed() :
+		var menu = self.get_node("SacrificeMenu")
+		if not menu.is_visible_in_tree() :
+			menu.show()
+		else :
+			menu.hide()
+
+func _on_Thorn_pressed():
+	var nb_sacrifice = int(self.get_node("SacrificeMenu/Thorn/nb_sacrifice").text)
+	if nb_sacrifice < nb_paysans :
+		emit_signal("sacrifice_signal", global.SACRIFICE_TYPE.THORNS)
+		remove_paysans(nb_sacrifice)
+		self.get_node("SacrificeMenu").hide()
+
+
+func _on_Lightning_pressed():
+	var nb_sacrifice = int(self.get_node("SacrificeMenu/Lightning/nb_sacrifice").text)
+	if nb_sacrifice < nb_paysans :
+		emit_signal("sacrifice_signal", global.SACRIFICE_TYPE.LIGHTNING)
+		remove_paysans(nb_sacrifice)
+		self.get_node("SacrificeMenu").hide()

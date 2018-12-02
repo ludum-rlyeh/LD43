@@ -1,11 +1,45 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/village.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=2]
+[ext_resource path="res://assets/fonts/celticmd.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=4]
 
-[node name="Village" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
 
+size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Village" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -122.0
+margin_top = -71.0
+margin_right = 131.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 script = ExtResource( 1 )
-max_paysans = 10
+_sections_unfolded = [ "Rect" ]
+max_paysans = 500
 time_init = 1
 
 [node name="Timer" type="Timer" parent="." index="0"]
@@ -14,5 +48,172 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+
+[node name="SacrificeMenu" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Thorn" type="TextureButton" parent="SacrificeMenu" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -50.0
+margin_top = -114.0
+margin_right = 47.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 2 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Thorn" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 35.0
+margin_top = 107.0
+margin_right = 75.0
+margin_bottom = 147.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="name" type="Label" parent="SacrificeMenu/Thorn" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -15.0
+margin_top = -25.0
+margin_right = 111.0
+margin_bottom = 2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Thurs"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Lightning" type="TextureButton" parent="SacrificeMenu" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 214.0
+margin_top = -114.0
+margin_right = 311.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+expand = true
+_sections_unfolded = [ "Textures" ]
+
+[node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Lightning" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 35.0
+margin_top = 107.0
+margin_right = 75.0
+margin_bottom = 147.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "100"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="name" type="Label" parent="SacrificeMenu/Lightning" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -11.0
+margin_top = -25.0
+margin_right = 115.0
+margin_bottom = 2.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Sol"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[connection signal="gui_input" from="." to="." method="_on_Village_gui_input"]
+
+[connection signal="pressed" from="SacrificeMenu/Thorn" to="." method="_on_Thorn_pressed"]
+
+[connection signal="pressed" from="SacrificeMenu/Lightning" to="." method="_on_Lightning_pressed"]
 
 

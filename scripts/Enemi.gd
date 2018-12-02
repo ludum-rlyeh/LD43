@@ -10,6 +10,7 @@ var velocity_norm = Vector2(0,0)
 var path = []
 var nb_paysans_to_kill = 10
 var life = 100
+var max_speed
 
 func _ready():
 	self.scale = Vector2(0.8, 0.8)
@@ -24,6 +25,7 @@ func set_path(var path):
 
 func set_speed(var value):
 	self.speed = value
+	self.max_speed = self.speed
 
 func update_velocity():
 	if !self.path.empty():
@@ -52,3 +54,13 @@ func die():
 		turret.get_parent().ennemi_die(self)
 	self.get_parent().call_deferred("remove_child", self)
 	self.call_deferred("queue_free")
+
+func on_lightning() :
+	# TODO : an animation
+	self.die()
+
+func stuned() :
+	self.speed = 0
+
+func unstuned() :
+	self.speed = self.max_speed

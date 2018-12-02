@@ -1,40 +1,33 @@
 extends Node2D
 
-# Attaque range in px ?
+var attaque_range = 0
+var max_targets = 0
+var type = global.TOWER_TYPE.FARM
 
-var attaque_range = 190
+# Attaque range in px ?
+onready var bullet_tscn = preload('res://scenes/Bull.tscn')
+
+var attaque_range = 30
 var max_targets = 1
-var power = 5
+var power = 10
 var attaque_speed = 0.2
 var cd = 0
-var type = global.TOWER_TYPE.TURRET
+
 var ennemy_on_range = []
 var targets = []
-
-var show_range = false
 
 onready var collision_range = self.get_node("Area2D/CollisionShape2D")
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	if collision_range != null:
-		var shape = CircleShape2D.new()
-		shape.set_radius(attaque_range)
-		collision_range.set_shape(shape)
-	$Area2D.connect("area_entered", self, "_on_Area2D_area_entered")
-	$Area2D.connect("area_exited", self, "_on_Area2D_area_exited")
-	$MouseDetector.connect("mouse_entered", self, "_on_MouseDetector_mouse_entered")
-	$MouseDetector.connect("mouse_exited", self, "_on_MouseDetector_mouse_exited")
+	collision_range.scale = Vector2(attaque_range, attaque_range)
+	pass
 
-
-func draw_range():
-	draw_empty_circle(Vector2(0,0), Vector2(0, attaque_range), Color(255, 255, 255), 0.5)
-	draw_circle(Vector2(0,0), attaque_range, Color(1, 1, 1, 0.2))
-	
 func _draw():
-	if self.show_range:
-		draw_range()
+	# Don't ask me why I multiply by Vector(7, 7), it simply works
+	draw_empty_circle(Vector2(0,0), Vector2(7, 7) * Vector2(attaque_range, attaque_range), Color(255, 255, 255), 1)
+	draw_circle(Vector2(0,0), Vector2(7, 7) * Vector2(attaque_range, attaque_range), Color(255, 255, 255))
 
 func draw_empty_circle(circle_center,  circle_radius,  color, resolution):
 	var draw_counter = 1
@@ -58,22 +51,21 @@ func _process(delta):
 		cd = self.attaque_speed
 	else:
 		cd -= delta
+	pass
 
-func set_phantom(can_buy):
-	if !can_buy:
-		$Sprite.modulate.r = 100
-	else:
-		$Sprite.modulate.r = 0
+func set_phantom():
 	$Sprite.modulate.a = 0.7
-	show_range = true
-	max_targets = 0
-	
-	self.update()
 
 func apply_damages():
 	for target in targets:
 		target.take_damages(self.power)
 		throw_bullet(target.position)
+
+func throw_bullet(target_pos):
+	var bullet = bullet_tscn.instance()
+	self.add_child(bullet)
+	bullet.throw(target_pos - self.position)
+
 
 func ennemi_die(cadaver):
 	if targets.has(cadaver):
@@ -109,13 +101,3 @@ func safe_remove(collection, item):
 	var idx = collection.find(item)
 	if idx != -1:
 		collection.remove(idx)
-
-func _on_MouseDetector_mouse_entered():
-	self.show_range = true
-	self.call_deferred("update")
-	pass # replace with function body
-
-func _on_MouseDetector_mouse_exited():
-	self.show_range = false
-	self.call_deferred("update")
-	pass # replace with function body

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Turret.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -8,7 +8,12 @@
 custom_solver_bias = 0.0
 radius = 10.0
 
-[node name="Node" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Node" type="Node2D"]
 
 position = Vector2( 213.15, 145.493 )
 script = ExtResource( 1 )
@@ -31,6 +36,7 @@ angular_damp = 1.0
 collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 __meta__ = {
 "_edit_lock_": true
 }
@@ -38,12 +44,35 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="MouseDetector" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 524288
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Material", "Transform", "Visibility", "Z Index" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector" index="0"]
+
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 
 [connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
+
+[connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]
+
+[connection signal="mouse_exited" from="MouseDetector" to="." method="_on_MouseDetector_mouse_exited"]
 
 

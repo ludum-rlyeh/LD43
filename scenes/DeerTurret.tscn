@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/TourCerf.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/tour_cerf.png" type="Texture" id=2]
@@ -9,23 +9,29 @@
 custom_solver_bias = 0.0
 radius = 1000.0
 
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10.0943, 18.1278 )
+
 [node name="DeerTurret" type="Node2D" index="0"]
 
-position = Vector2( 279.442, 297.948 )
-scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Arbalete" type="Sprite" parent="." index="1"]
 
-position = Vector2( -0.0650129, -192.413 )
+position = Vector2( -0.0650129, -16.2607 )
 rotation = -0.00443538
-scale = Vector2( 0.876993, 0.876993 )
+scale = Vector2( 0.13, 0.13 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
@@ -34,25 +40,37 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+monitoring = false
+monitorable = false
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Position2D" type="Position2D" parent="." index="3"]
+[node name="MouseDetector" type="Area2D" parent="." index="3"]
 
-position = Vector2( 0, -206.844 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="Timer" type="Timer" parent="." index="4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector" index="0"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = true
+shape = SubResource( 2 )
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="Position2D" type="Position2D" parent="." index="4"]
+
+position = Vector2( 0, -17.5158 )
 
 

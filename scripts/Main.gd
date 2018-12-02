@@ -1,7 +1,5 @@
 extends Node2D
 
-var SPEED = 10
-
 func _ready():
 	var hud = self.get_node("CanvasLayer/HUD")
 	var socket = self.get_node("Map/SocketSelectioner")
@@ -28,12 +26,12 @@ func _ready():
 #	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
-	var nb_enemis = 10 #rand_range(10, 20)
+	var nb_enemis = 1
+#	var nb_enemis = rand_range(10, 20)
 	$Map.spawn_enemis(nb_enemis, global.ENEMI_BASE)
 
 func _on_Map_wave_enemis_finished_signal():
 	$EnemisWavesTimer.start()
-
 
 func _on_game_over_signal():
 	print("game over")

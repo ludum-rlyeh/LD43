@@ -2,22 +2,24 @@ extends "res://scripts/Turret.gd"
 
 var arrow_scene = preload("res://scenes/arrow.tscn")
 
-func shoot(var vec):
-	var angle = Vector2(0, -1).normalized().angle_to(vec)
+func _process(delta):
+	._process(delta)
+
+func shoot(var enemi_position):
+	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
 	$Arbalete.set_rotation(angle)
 	
 	var arrow = arrow_scene.instance()
 	arrow.set_position($Position2D.position)
-	var scale = Vector2(0.4, 0.4)
-	arrow.set_scale(scale)
 	arrow.set_rotation(angle)
-	arrow.target_pos = vec
+	arrow.set_scale(Vector2(0.2,0.2))
+	arrow.target_pos = enemi_position
 	add_child(arrow)
 	
 func apply_damages():
 	for target in targets:
 		target.take_damages(self.power)
-		shoot(target.position)
+		shoot(target.position - self.global_position)
 	
 func remove_bullet(var bullet):
 	call_deferred("remove_child", bullet)
