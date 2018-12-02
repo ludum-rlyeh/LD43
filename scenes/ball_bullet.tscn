@@ -7,7 +7,7 @@
 
 script/source = "extends Node2D
 
-var speed = 100
+var speed = 203
 var target_pos
 
 func gaussian_function(var x):
@@ -54,7 +54,7 @@ flatness = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 100.0
 initial_velocity_random = 0.47
-angular_velocity = 6.68511e-031
+angular_velocity = 6.68511e-31
 angular_velocity_random = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0

@@ -2,12 +2,14 @@ extends "res://scripts/Turret.gd"
 
 var cannonball_bullet_scene = preload("res://scenes/ball_bullet.tscn")
 
+var radius = 100
+
 func _process(delta):
 	._process(delta)
 
 func _ready() :
 	._ready()
-	self.power = 0.5
+	self.power = 125
 	self.attaque_speed = 2.0
 
 func shoot(var enemi_position):
@@ -17,13 +19,13 @@ func shoot(var enemi_position):
 	cannonball_bullet.target_pos = enemi_position
 	$Canon.set_rotation(angle)
 	add_child(cannonball_bullet)
-	
+
 func apply_damages():
 	for target in targets:
-		target.slow_down(self.power, self.attaque_speed)
 		shoot(target.position - self.global_position)
 	
 func remove_bullet(var bullet):
+	get_parent().damage_in_zone(bullet.global_position, self.radius, self.power)
 	call_deferred("remove_child", bullet)
 	bullet.call_deferred("queue_free")
 
