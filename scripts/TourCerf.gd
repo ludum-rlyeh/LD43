@@ -1,6 +1,6 @@
 extends "res://scripts/Turret.gd"
 
-var magic_bullet_scene = preload("res://scenes/magic_bullet.tscn")
+var cannonball_bullet_scene = preload("res://scenes/ball_bullet.tscn")
 
 func _process(delta):
 	._process(delta)
@@ -8,10 +8,10 @@ func _process(delta):
 func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
 	
-	var magic_bullet = magic_bullet_scene.instance()
-	magic_bullet.set_position($Position2D.position)
-	magic_bullet.target_pos = enemi_position
-	add_child(magic_bullet)
+	var cannonball_bullet = cannonball_bullet_scene.instance()
+	cannonball_bullet.set_position($Position2D.position)
+	cannonball_bullet.target_pos = enemi_position
+	add_child(cannonball_bullet)
 	
 func apply_damages():
 	for target in targets:
