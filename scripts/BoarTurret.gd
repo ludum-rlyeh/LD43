@@ -1,6 +1,6 @@
 extends "res://scripts/Turret.gd"
 
-var arrow_scene = preload("res://scenes/arrow.tscn")
+var cannonball_bullet_scene = preload("res://scenes/ball_bullet.tscn")
 
 func _process(delta):
 	._process(delta)
@@ -12,12 +12,11 @@ func _ready() :
 
 func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
-	$Arbalete.set_rotation(angle)
-	var arrow = arrow_scene.instance()
-	arrow.set_rotation(angle)
-	arrow.set_position($Position2D.position)
-	arrow.target_pos = enemi_position
-	add_child(arrow)
+	var cannonball_bullet = cannonball_bullet_scene.instance()
+	cannonball_bullet.set_position($Position2D.position)
+	cannonball_bullet.target_pos = enemi_position
+	$Canon.set_rotation(angle)
+	add_child(cannonball_bullet)
 	
 func apply_damages():
 	for target in targets:

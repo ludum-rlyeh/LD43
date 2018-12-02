@@ -10,9 +10,6 @@ script/source = "extends Node2D
 var speed = 100
 var target_pos
 
-func _ready():
-	target_pos = Vector2(100, 100)
-
 func gaussian_function(var x):
 	return exp(-pow(x, 2.0))
 

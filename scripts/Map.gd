@@ -14,6 +14,7 @@ export (PackedScene) var enemi_scene
 var buildings_scenes = { 
 	global.TURRET : preload("res://scenes/DeerTurret.tscn"),
 	global.WIZARD : preload("res://scenes/OwlTurret.tscn"),
+	global.CANON : preload("res://scenes/BoarTurret.tscn"),
 	global.FARM: preload("res://scenes/Farm.tscn")
 }
 

@@ -26,7 +26,7 @@ func _process(delta):
 		position = Vector2(position.x, position.y - SPEED)
 	elif Input.is_action_pressed("ui_down"):
 		position = Vector2(position.x, position.y + SPEED)
-	elif Input is InputEventMouseButton:
+	elif Input.is_mouse_button_pressed(BUTTON_RIGHT):
 		print("mouse")
 	$Camera2D.set_position(position)
 

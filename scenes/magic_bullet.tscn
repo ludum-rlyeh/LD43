@@ -56,6 +56,7 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 
 [node name="MagicBullet" type="Node2D"]
 
+scale = Vector2( 2, 2 )
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
