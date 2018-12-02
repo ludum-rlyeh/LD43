@@ -4,9 +4,10 @@ signal change_nb_paysans_signal
 signal change_nb_max_paysans_signal
 signal change_nb_caillasse_signal
 signal game_over_signal
+signal sacrifice_signal
 
 var caillasse = 0
-var nb_paysans = 0
+var nb_paysans = 100
 var farms = []
 export (int) var max_paysans
 export (int) var time_init
@@ -72,3 +73,11 @@ func _on_Village_gui_input(ev):
 			menu.show()
 		else :
 			menu.hide()
+
+
+func _on_Thorn_pressed():
+	var nb_sacrifice = int(self.get_node("SacrificeMenu/Thorn/nb_sacrifice").text)
+	if nb_sacrifice < nb_paysans :
+		emit_signal("sacrifice_signal", global.SACRIFICE_TYPE.THORNS)
+		remove_paysans(nb_sacrifice)
+		self.get_node("SacrificeMenu").hide()

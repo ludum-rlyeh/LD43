@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/village.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/ferme.png" type="Texture" id=2]
@@ -8,6 +8,14 @@
 [sub_resource type="DynamicFont" id=1]
 
 size = 20
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 4 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 25
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 4 )
@@ -31,7 +39,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Rect" ]
-max_paysans = 10
+max_paysans = 500
 time_init = 1
 
 [node name="Timer" type="Timer" parent="." index="0"]
@@ -264,25 +272,30 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Thorn" type="TextureRect" parent="SacrificeMenu" index="0"]
+[node name="Thorn" type="TextureButton" parent="SacrificeMenu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 71.0
-margin_top = -147.0
-margin_right = 168.0
-margin_bottom = -48.0
+margin_left = -50.0
+margin_top = -114.0
+margin_right = 47.0
+margin_bottom = -15.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
-mouse_filter = 1
+focus_mode = 2
+mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 3 )
 expand = true
-stretch_mode = 0
+_sections_unfolded = [ "Textures" ]
 
 [node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Thorn" index="0"]
 
@@ -305,8 +318,33 @@ text = "100"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="name" type="Label" parent="SacrificeMenu/Thorn" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -18.0
+margin_top = -21.0
+margin_right = 108.0
+margin_bottom = 6.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Thorns"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
 [connection signal="gui_input" from="." to="." method="_on_Village_gui_input"]
+
+[connection signal="pressed" from="SacrificeMenu/Thorn" to="." method="_on_Thorn_pressed"]
 
 
