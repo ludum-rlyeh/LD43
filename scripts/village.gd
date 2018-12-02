@@ -23,20 +23,6 @@ func _ready():
 	
 	self.get_node("SacrificeMenu").hide()
 
-func add_paysan(var nb):
-	self.nb_paysans = min(self.nb_paysans + nb, self.max_paysans)
-	if self.nb_paysans > 0:
-		$Timer.wait_time = time_init / float(self.nb_paysans)
-	emit_signal("change_nb_paysans_signal", self.nb_paysans)
-
-func remove_paysans(var nb):
-	self.nb_paysans = max(self.nb_paysans - nb, 0)
-	if self.nb_paysans > 0:
-		$Timer.wait_time = time_init / float(self.nb_paysans)
-	else:
-		emit_signal("game_over_signal")
-	emit_signal("change_nb_paysans_signal", self.nb_paysans)
-
 func production_caillasse():
 	$Timer.wait_time = time_init
 	if self.nb_paysans > 0:
@@ -64,6 +50,20 @@ func remove_farm(var index):
 		var farm = self.farms[index]
 		decrease_max_paysans(farm)
 		self.farms.remove(index)
+		
+func add_paysan(var nb):
+	self.nb_paysans = min(self.nb_paysans + nb, self.max_paysans)
+	if self.nb_paysans > 0:
+		$Timer.wait_time = time_init / float(self.nb_paysans)
+	emit_signal("change_nb_paysans_signal", self.nb_paysans)
+
+func remove_paysans(var nb):
+	self.nb_paysans = max(self.nb_paysans - nb, 0)
+	if self.nb_paysans > 0:
+		$Timer.wait_time = time_init / float(self.nb_paysans)
+	else:
+		emit_signal("game_over_signal")
+	emit_signal("change_nb_paysans_signal", self.nb_paysans)
 
 func _on_Village_gui_input(ev):
 	if ev is InputEventMouseButton and ev.is_pressed() :

@@ -25,4 +25,17 @@ func _ready():
 	Vector2(16,8) 
 		]
 	]
-	pass
+	var enemis_waves_script = load("res://scripts/EnemisWaves.gd")
+	
+	self.enemis_waves = [
+		#param 1 : nb base enemis, param2 : nb boss enemis, param3 : cadence de spawn entre enemis
+		enemis_waves_script.new(10, 0, 1.5),
+		enemis_waves_script.new(15, 1, 1.5),
+		enemis_waves_script.new(20, 2, 1.5),
+		enemis_waves_script.new(25, 2, 1),
+		enemis_waves_script.new(30, 3, 1),
+		enemis_waves_script.new(40, 5, 1),
+		enemis_waves_script.new(50, 6, 1),
+		enemis_waves_script.new(70, 6, 1),
+		enemis_waves_script.new(100, 10, 0.8)
+	]

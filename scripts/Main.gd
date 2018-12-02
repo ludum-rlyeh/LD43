@@ -40,7 +40,9 @@ func _on_EnemisWavesTimer_timeout():
 	$Map.spawn_enemis(nb_enemis, global.ENEMI_BASE)
 
 func _on_Map_wave_enemis_finished_signal():
+	$Map/Village.add_paysan($Map.enemis_waves.front().get_nb_paysans())
 	$EnemisWavesTimer.start()
+	$Map.wave_enemis.pop_front()
 
 func _on_game_over_signal():
 	print("game over")

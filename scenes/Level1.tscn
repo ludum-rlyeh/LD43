@@ -96,6 +96,15 @@ margin_top = 556.0
 margin_right = 1156.0
 margin_bottom = 702.0
 
+[node name="TimerSpawnEnemi" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [connection signal="clicked_on_cell_signal" from="SocketSelectioner" to="." method="on_cell_clicked"]
+
+[connection signal="timeout" from="TimerSpawnEnemi" to="." method="pop_enemis_on_map_from_spawner"]
 
 

@@ -12,9 +12,6 @@ var nb_paysans_to_kill = 10
 var life = 100
 var max_speed
 
-func _ready():
-	self.scale = Vector2(0.8, 0.8)
-
 func _process(delta):
 	self.position += self.velocity_norm * self.speed * delta
 	update_velocity()

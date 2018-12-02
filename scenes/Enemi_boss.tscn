@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scripts/Enemi.gd" type="Script" id=1]
+[ext_resource path="res://scripts/EnemiBoss.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/animations/vilain1/01.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/animations/vilain1/02.png" type="Texture" id=3]
 [ext_resource path="res://assets/sprites/animations/vilain1/03.png" type="Texture" id=4]
@@ -20,26 +20,28 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[node name="Enemi" type="Node2D" groups=[
+[node name="EnemiBoss" type="Node2D" groups=[
 "Enemis",
 ]]
 
-scale = Vector2( 0.8, 0.8 )
+scale = Vector2( 1.2, 1.2 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
-speed = 60.0
-SEUIL = 3.0
+speed = 100.0
+SEUIL = null
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
+self_modulate = Color( 0.78125, 0, 1, 1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 3
+frame = 1
 playing = true
-_sections_unfolded = [ "Offset" ]
+_sections_unfolded = [ "Offset", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="." index="1"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

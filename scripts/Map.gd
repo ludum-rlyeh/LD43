@@ -2,12 +2,14 @@ extends Control
 
 signal wave_enemis_finished_signal
 signal game_over_signal
+signal win_signal
 
 
 var paths = [
 	[Vector2(3,0), Vector2(3,4), Vector2(6,4), Vector2(6,7), Vector2(4,7), Vector2(4,9)],
 	[Vector2(12,0), Vector2(12,1), Vector2(10,1), Vector2(10,5), Vector2(6,5), Vector2(6,7), Vector2(4,7), Vector2(4,9)]
 ]
+var enemis_waves = []
 
 export (PackedScene) var enemi_scene
 
@@ -23,6 +25,8 @@ var tower_menu
 
 var phantom
 var matrix = []
+
+var spawner = []
 
 
 func _ready():
@@ -133,13 +137,32 @@ func _input(event):
 
 #ajouter le type pour le type d'ennemi
 func spawn_enemis(var nb_enemis, var type):
-	for i in range(nb_enemis):
-		var enemi = enemi_scene.instance()
-		enemi.set_path(get_random_path())
-		enemi.set_speed(rand_range(60, 120))
-		enemi.connect("enemi_died_signal", self, "on_enemi_died")
-		enemi.connect("finish_path_signal", self, "on_enemi_arrived")
-		add_child(enemi)
+	if self.enemis_waves.empty():
+		emit_signal("win_signal")
+	else:
+		var next_wave = self.enemis_waves.front()
+		var enemi
+		for i in range(next_wave.nb_enemis_de_base):
+			enemi = enemi_scene.instance()
+			enemi.set_path(get_random_path())
+			enemi.connect("enemi_died_signal", self, "on_enemi_died")
+			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
+			self.spawner.append(enemi)
+		for i in range(next_wave.nb_enemis_boss):
+			enemi = enemi_scene.instance()
+			enemi.set_path(get_random_path())
+			enemi.connect("enemi_died_signal", self, "on_enemi_died")
+			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
+			self.spawner.append(enemi)
+		$TimerSpawnEnemi.set_wait_time(next_wave.cadence_spawn)
+		$TimerSpawnEnemi.start()
+		
+func pop_enemis_on_map_from_spawner():
+	var enemi = self.spawner.front()
+	call_deferred("add_child", enemi)
+	spawner.pop_front()
+	if !spawner.empty():
+		$TimerSpawnEnemi.start()
 
 func on_enemi_died(var enemi):
 	var enemies = get_tree().get_nodes_in_group("enemies")
