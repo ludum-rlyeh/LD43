@@ -3,7 +3,7 @@ extends Node2D
 # Attaque range in px ?
 onready var bullet_tscn = preload('res://scenes/Bull.tscn')
 
-var attaque_range = 19
+var attaque_range = 30
 var max_targets = 1
 var power = 10
 var attaque_speed = 0.2
@@ -11,8 +11,6 @@ var cd = 0
 
 var ennemy_on_range = []
 var targets = []
-
-var show_range = false
 
 onready var collision_range = self.get_node("Area2D/CollisionShape2D")
 
@@ -22,15 +20,10 @@ func _ready():
 	collision_range.scale = Vector2(attaque_range, attaque_range)
 	pass
 
-func draw_range():
-		# Don't ask me why I multiply by Vector(7, 7), it simply works
-	draw_empty_circle(Vector2(0,0), Vector2(7, 7) * Vector2(attaque_range, attaque_range), Color(255, 255, 255), 1)
-	draw_circle(Vector2(0,0), 10 * attaque_range, Color(1, 1, 1, 0.2))
-	
 func _draw():
-	print("yayayayé")
-	if self.show_range:
-		draw_range()
+	# Don't ask me why I multiply by Vector(7, 7), it simply works
+	draw_empty_circle(Vector2(0,0), Vector2(7, 7) * Vector2(attaque_range, attaque_range), Color(255, 255, 255), 1)
+	draw_circle(Vector2(0,0), Vector2(7, 7) * Vector2(attaque_range, attaque_range), Color(255, 255, 255))
 
 func draw_empty_circle(circle_center,  circle_radius,  color, resolution):
 	var draw_counter = 1
@@ -58,7 +51,6 @@ func _process(delta):
 
 func set_phantom():
 	$Sprite.modulate.a = 0.7
-	show_range = true
 
 func apply_damages():
 	for target in targets:
@@ -105,15 +97,3 @@ func safe_remove(collection, item):
 	var idx = collection.find(item)
 	if idx != -1:
 		collection.remove(idx)
-
-func _on_MouseDetector_mouse_entered():
-	print('I SEEE YOU')
-	self.show_range = true
-	self.call_deferred("update")
-	pass # replace with function body
-
-
-func _on_MouseDetector_mouse_exited():
-	self.show_range = false
-	self.call_deferred("update")
-	pass # replace with function body

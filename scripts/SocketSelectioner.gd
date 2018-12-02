@@ -20,8 +20,9 @@ func _unhandled_input(event):
 		var position_mouse = global.current_camera.zoom * event.position
 		move(global.position_to_index(position_mouse + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
 	elif event is InputEventMouseButton && event.is_pressed():
-		click_on(global.position_to_index(global.current_camera.zoom * event.position + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
-		
+		if event.button_index == BUTTON_LEFT and event.pressed:
+			click_on(global.position_to_index(global.current_camera.zoom * event.position + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
+
 func move(var position_index):
 	self.position = global.index_to_position(position_index, global.CELL_SIZE)
 	

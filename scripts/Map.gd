@@ -16,6 +16,7 @@ var buildings_scenes = [preload("res://scenes/Turret.tscn")]
 var tower_menu_scene = preload("res://scenes/TowerMenu.tscn")
 var tower_menu
 
+var phantom
 var matrix = []
 
 func _ready():
@@ -23,7 +24,11 @@ func _ready():
 	
 	tower_menu = tower_menu_scene.instance()
 	add_child(tower_menu)
+	
 	tower_menu.connect("asking_batiment_creation", self, "add_building_to_map")
+	tower_menu.connect("print_phantom", self, "print_phantom")
+	tower_menu.connect("hide_phantom", self, "hide_phantom")
+	
 	tower_menu.hide()
 	
 
@@ -47,6 +52,7 @@ func _ready():
 #	TEST selectionner
 #	var tower = load("res://scenes/Turret.tscn").instance()
 #	$SocketSelectioner.enable(tower)
+
 
 func get_path(var index) :
 	if (index <= paths.size()) :
@@ -74,10 +80,32 @@ func add_building_to_map(var type):
 	print(type)
 	var building = self.buildings_scenes[type].instance()
 	var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
+	if self.phantom != null:
+		hide_phantom()
+
 	add_object_to_map(building, index)
 
+func print_phantom(type):
+	var building = self.buildings_scenes[type].instance()
+	var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
+	self.phantom = building
+	
+	building.set_phantom()
+	add_child(building)
+	building.set_position(global.index_to_position(index, global.CELL_SIZE))
+
+func hide_phantom():
+	self.call_deferred("remove_child", self.phantom)
+	self.phantom.call_deferred("queue_free")
+	self.phantom = null
+	
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type
+
+func _input(event):
+	if event is InputEventMouseButton && event.is_pressed():
+		if event.button_index == BUTTON_RIGHT and event.pressed:
+			tower_menu.hide()
 
 #ajouter le type pour le type d'ennemi
 func spawn_enemis(var nb_enemis, var type):
