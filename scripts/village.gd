@@ -17,6 +17,8 @@ func _ready():
 	var timer = $Timer
 	timer.wait_time = self.time_init
 	timer.connect("timeout", self, "production_caillasse")
+	
+	self.get_node("SacrificeMenu").hide()
 
 
 func add_paysan(var nb):
@@ -61,3 +63,12 @@ func remove_farm(var index):
 		var farm = self.farms[index]
 		decrease_max_paysans(farm)
 		self.farms.remove(index)
+
+
+func _on_Village_gui_input(ev):
+	if ev is InputEventMouseButton and ev.is_pressed() :
+		var menu = self.get_node("SacrificeMenu")
+		if not menu.is_visible_in_tree() :
+			menu.show()
+		else :
+			menu.hide()
