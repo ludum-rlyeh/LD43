@@ -1,5 +1,7 @@
 extends Node2D
 
+var SPEED = 10
+
 func _ready():
 	var hud = self.get_node("CanvasLayer/HUD")
 	var socket = self.get_node("Map/SocketSelectioner")
@@ -14,17 +16,19 @@ func _ready():
 	
 	global.current_camera = $Camera2D
 
-#func _process(delta):
-#	var position = $Camera2D.get_position()
-#	if Input.is_action_pressed("ui_right"):
-#		position = Vector2(position.x + SPEED, position.y)
-#	elif Input.is_action_pressed("ui_left"):
-#		position = Vector2(position.x - SPEED, position.y)
-#	elif Input.is_action_pressed("ui_up"):
-#		position = Vector2(position.x, position.y - SPEED)
-#	elif Input.is_action_pressed("ui_down"):
-#		position = Vector2(position.x, position.y + SPEED)
-#	$Camera2D.set_position(position)
+func _process(delta):
+	var position = $Camera2D.get_position()
+	if Input.is_action_pressed("ui_right"):
+		position = Vector2(position.x + SPEED, position.y)
+	elif Input.is_action_pressed("ui_left"):
+		position = Vector2(position.x - SPEED, position.y)
+	elif Input.is_action_pressed("ui_up"):
+		position = Vector2(position.x, position.y - SPEED)
+	elif Input.is_action_pressed("ui_down"):
+		position = Vector2(position.x, position.y + SPEED)
+	elif Input is InputEventMouseButton:
+		print("mouse")
+	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
 	var nb_enemis = 1
