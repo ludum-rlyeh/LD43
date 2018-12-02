@@ -55,6 +55,10 @@ func die():
 	self.get_parent().call_deferred("remove_child", self)
 	self.call_deferred("queue_free")
 
+func on_lightning() :
+	# TODO : an animation
+	self.die()
+
 func stuned() :
 	self.speed = 0
 
