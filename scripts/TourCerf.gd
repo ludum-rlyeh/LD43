@@ -5,6 +5,11 @@ var cannonball_bullet_scene = preload("res://scenes/ball_bullet.tscn")
 func _process(delta):
 	._process(delta)
 
+func _ready() :
+	._ready()
+	self.power = 0.5
+	self.attaque_speed = 2.0
+
 func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
 	
@@ -15,7 +20,7 @@ func shoot(var enemi_position):
 	
 func apply_damages():
 	for target in targets:
-		target.take_damages(self.power)
+		target.slow_down(self.power, self.attaque_speed)
 		shoot(target.position - self.global_position)
 	
 func remove_bullet(var bullet):

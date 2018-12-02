@@ -4,17 +4,17 @@
 [ext_resource path="res://assets/sprites/tour_hibou.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/flare_0.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 1000.0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.0943, 18.1278 )
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Node2D
 
@@ -28,7 +28,7 @@ func _process(delta):
 	radius = radius.rotated(speed)
 	self.position = get_node(\"../Position2D\").position + radius"
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
 trail_divisor = 1
@@ -94,7 +94,7 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MouseDetector" type="Area2D" parent="." index="2"]
@@ -113,7 +113,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector" index="0"]
 
 visible = false
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="." index="3"]
 
@@ -123,7 +123,7 @@ position = Vector2( 0, -17.5158 )
 
 position = Vector2( 0, -19.1551 )
 scale = Vector2( 0.7, 0.7 )
-script = SubResource( 5 )
+script = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="orb" type="Particles2D" parent="MagicBullet" index="0"]
@@ -142,7 +142,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1

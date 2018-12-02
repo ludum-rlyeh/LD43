@@ -49,7 +49,8 @@ func take_damages(power):
 	self.life -= power
 	if(self.life <= 0):
 		die()
-		
+
+	
 func die():
 	emit_signal("enemi_died_signal", self)
 	var area = self.get_node("Collision")
@@ -63,13 +64,9 @@ func on_lightning() :
 	# TODO : an animation
 	self.die()
 
-func on_blizzard() :
-	self.slow_down(0.25)
-
-func on_end_blizzard() :
-	self.unslow(0.25)
-
-func slow_down(var delta) :
+func slow_down(var delta, var time) :
+	var timer = get_tree().create_timer(time,false)
+	timer.connect("timeout", self, "unslow", [delta])
 	self.speed *= delta
 
 func unslow(var delta) :
