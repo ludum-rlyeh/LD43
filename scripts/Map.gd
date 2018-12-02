@@ -190,4 +190,20 @@ func end_blizzard() :
 	get_tree().call_group("Enemis", "on_end_blizzard")
 
 func apply_meteors() :
-	print("METEOOOOORS !!!!!!")
+	for i in range(1,21) :
+		var timer = get_tree().create_timer(rand_range(i,i+1),false)
+		timer.connect("timeout", self, "call_meteor")
+
+func call_meteor() :
+	# TODO : Animation ?
+	var map_rect = self.get_node("TileMap").get_used_rect()
+	var pos = Vector2(rand_range(0,map_rect.size.x),rand_range(0,map_rect.size.y))
+	pos *= global.CELL_SIZE
+	print("Meteor in pos : ", pos)
+	damage_in_zone(pos, 1000, 200)
+
+func damage_in_zone(var center, var radius, var power) :
+	var enemies = get_tree().get_nodes_in_group("Enemis")
+	for e in enemies :
+		if center.distance_to(e.position) < radius :
+			e.take_damages(power)
