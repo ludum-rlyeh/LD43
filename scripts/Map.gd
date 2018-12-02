@@ -171,8 +171,8 @@ func end_thorns() :
 	get_tree().call_group("Enemis", "unstuned")
 
 func apply_lightning() :
-	for i in range(0,10) :
-		var timer = get_tree().create_timer(i+1,false)
+	for i in range(1,11) :
+		var timer = get_tree().create_timer(rand_range(i,i+1),false)
 		timer.connect("timeout", self, "call_lightning")
 
 func call_lightning() :
@@ -181,7 +181,13 @@ func call_lightning() :
 		enemies[rand_range(0, enemies.size())].on_lightning()
 
 func apply_blizzard() :
-	print("TODO")
+	var timer = get_tree().create_timer(10, false)
+	timer.connect("timeout", self, "end_blizzard")
+	get_tree().call_group("Enemis", "on_blizzard")
+
+func end_blizzard() :
+	# TODO : Animation ?
+	get_tree().call_group("Enemis", "on_end_blizzard")
 
 func apply_meteors() :
-	print("TODO")
+	print("METEOOOOORS !!!!!!")
