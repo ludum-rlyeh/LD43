@@ -9,6 +9,12 @@ func _ready():
 	# Initialization here
 	pass
 
+func string_to_gbl_enum(type):
+	if(type == "Farm"):
+		return global.TOWER_TYPE.FARM
+	if(type == "Turret"):
+		return global.TOWER_TYPE.TURRET
+
 func _on_Turret_pressed():
 	emit_signal("asking_batiment_creation", global.TOWER_TYPE.TURRET)
 	self.hide()
@@ -25,8 +31,10 @@ func _on_Farm_pressed():
 	emit_signal("asking_batiment_creation", global.TOWER_TYPE.FARM)
 	self.hide()
 
-func _on_Turret_mouse_entered():
-	emit_signal("print_phantom", global.TOWER_TYPE.TURRET)
+func _on_Button_mouse_entered(type):
+	emit_signal("print_phantom", string_to_gbl_enum(type))
 
-func _on_Turret_mouse_exited():
+func _on_Button_mouse_exited(type):
+	print("kiikou " + type) 
 	emit_signal("hide_phantom")
+	pass # replace with function body

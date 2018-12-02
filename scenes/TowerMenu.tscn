@@ -117,15 +117,21 @@ group = null
 texture_normal = ExtResource( 5 )
 _sections_unfolded = [ "Textures" ]
 
-[connection signal="mouse_entered" from="Turret" to="." method="_on_Turret_mouse_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_Button_mouse_entered" binds= [ "Turret" ]]
 
-[connection signal="mouse_exited" from="Turret" to="." method="_on_Turret_mouse_exited"]
+[connection signal="mouse_entered" from="Turret" to="." method="_on_Button_mouse_entered" binds= [ "Turret" ]]
+
+[connection signal="mouse_exited" from="Turret" to="." method="_on_Button_mouse_exited" binds= [ "Turret" ]]
 
 [connection signal="pressed" from="Turret" to="." method="_on_Turret_pressed"]
 
 [connection signal="pressed" from="Wizard" to="." method="_on_Wizard_pressed"]
 
 [connection signal="pressed" from="Canon" to="." method="_on_Canon_pressed"]
+
+[connection signal="mouse_entered" from="Farm" to="." method="_on_Button_mouse_entered" binds= [ "Farm" ]]
+
+[connection signal="mouse_exited" from="Farm" to="." method="_on_Button_mouse_exited" binds= [ "Farm" ]]
 
 [connection signal="pressed" from="Farm" to="." method="_on_Farm_pressed"]
 

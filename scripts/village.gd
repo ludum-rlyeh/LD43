@@ -39,10 +39,8 @@ func remove_paysans(var nb):
 
 func production_caillasse():
 	$Timer.wait_time = time_init
-	print("ca produit")
 	if self.nb_paysans > 0:
 		self.caillasse += int(log(self.nb_paysans)*self.base_production)
-	print("eeemmit")
 	emit_signal("change_nb_caillasse_signal", self.caillasse)
 	
 func decrease_caillasse(var nb):

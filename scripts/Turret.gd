@@ -5,7 +5,7 @@ onready var bullet_tscn = preload('res://scenes/Bull.tscn')
 
 var attaque_range = 19
 var max_targets = 1
-var power = 10
+var power = 5
 var attaque_speed = 0.2
 var cd = 0
 var type = global.TOWER_TYPE.TURRET
@@ -19,7 +19,9 @@ onready var collision_range = self.get_node("Area2D/CollisionShape2D")
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	collision_range.scale = Vector2(attaque_range, attaque_range)
+	if collision_range != null:
+		collision_range.scale = Vector2(attaque_range, attaque_range)
+
 	pass
 
 func draw_range():
