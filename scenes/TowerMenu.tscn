@@ -125,6 +125,10 @@ _sections_unfolded = [ "Textures" ]
 
 [connection signal="pressed" from="Turret" to="." method="_on_Turret_pressed"]
 
+[connection signal="mouse_entered" from="Wizard" to="." method="_on_Button_mouse_entered" binds= [ "Wizard" ]]
+
+[connection signal="mouse_exited" from="Wizard" to="." method="_on_Button_mouse_exited" binds= [ "Wizard" ]]
+
 [connection signal="pressed" from="Wizard" to="." method="_on_Wizard_pressed"]
 
 [connection signal="pressed" from="Canon" to="." method="_on_Canon_pressed"]
