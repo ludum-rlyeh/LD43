@@ -33,6 +33,9 @@ autostart = true
 
 [node name="Map" parent="." index="2" instance=ExtResource( 3 )]
 
+margin_left = -8.0
+margin_right = 32.0
+
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
 
 anchor_mode = 0

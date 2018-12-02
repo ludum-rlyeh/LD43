@@ -12,7 +12,8 @@ var paths = [
 export (PackedScene) var enemi_scene
 
 var buildings_scenes = { 
-	global.TURRET : preload("res://scenes/DeerTurret.tscn"), 
+	global.TURRET : preload("res://scenes/DeerTurret.tscn"),
+	global.WIZARD : preload("res://scenes/OwlTurret.tscn"),
 	global.FARM: preload("res://scenes/Farm.tscn")
 }
 
