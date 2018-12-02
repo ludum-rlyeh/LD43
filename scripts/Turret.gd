@@ -1,7 +1,7 @@
 extends Node2D
 
 # Attaque range in px ?
-onready var bullet_tscn = preload('res://scenes/Bull.tscn')
+#onready var bullet_tscn = preload('res://scenes/Bull.tscn')
 
 var attaque_range = 35
 var max_targets = 1
@@ -13,12 +13,6 @@ var ennemy_on_range = []
 var targets = []
 
 onready var collision_range = self.get_node("Area2D/CollisionShape2D")
-
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	collision_range.scale = Vector2(attaque_range, attaque_range)
-	pass
 	
 func _process(delta):
 	select_target()
@@ -27,18 +21,11 @@ func _process(delta):
 		cd = self.attaque_speed
 	else:
 		cd -= delta
-	pass
 	
 func apply_damages():
 	for target in targets:
 		target.take_damages(self.power)
 		throw_bullet(target.position)
-
-func throw_bullet(target_pos):
-	var bullet = bullet_tscn.instance()
-	self.add_child(bullet)
-	bullet.throw(target_pos - self.position)
-	
 	
 func ennemi_die(cadaver):
 	if targets.has(cadaver):
