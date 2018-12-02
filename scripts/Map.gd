@@ -136,7 +136,7 @@ func _input(event):
 			tower_menu.hide()
 
 #ajouter le type pour le type d'ennemi
-func spawn_enemis(var nb_enemis, var type):
+func spawn_enemis():
 	if self.enemis_waves.empty():
 		emit_signal("win_signal")
 	else:
@@ -158,6 +158,7 @@ func spawn_enemis(var nb_enemis, var type):
 		$TimerSpawnEnemi.start()
 		
 func pop_enemis_on_map_from_spawner():
+	print("spawner : ", spawner)
 	var enemi = self.spawner.front()
 	call_deferred("add_child", enemi)
 	spawner.pop_front()
@@ -165,8 +166,8 @@ func pop_enemis_on_map_from_spawner():
 		$TimerSpawnEnemi.start()
 
 func on_enemi_died(var enemi):
-	var enemies = get_tree().get_nodes_in_group("enemies")
-	if enemies.empty():
+	var enemies = get_tree().get_nodes_in_group("Enemis")
+	if enemies.size() <=1:
 		emit_signal("wave_enemis_finished_signal")
 
 func on_enemi_arrived(var enemi):

@@ -35,14 +35,12 @@ func _process(delta):
 	$Camera2D.set_position(position)
 
 func _on_EnemisWavesTimer_timeout():
-	var nb_enemis = 20
-#	var nb_enemis = rand_range(10, 20)
-	$Map.spawn_enemis(nb_enemis, global.ENEMI_BASE)
+	$Map.spawn_enemis()
 
 func _on_Map_wave_enemis_finished_signal():
 	$Map/Village.add_paysan($Map.enemis_waves.front().get_nb_paysans())
 	$EnemisWavesTimer.start()
-	$Map.wave_enemis.pop_front()
+	$Map.enemis_waves.pop_front()
 
 func _on_game_over_signal():
 	print("game over")
