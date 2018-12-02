@@ -18,6 +18,10 @@ func _ready():
 func _process(delta):
 	self.position += self.velocity_norm * self.speed * delta
 	update_velocity()
+	if self.velocity_norm.dot(Vector2(1, 0)) >= 0:
+		$Sprite.flip_h = 1
+	else :
+		$Sprite.flip_h = 0
 
 func set_path(var path):
 	self.path = path.duplicate()

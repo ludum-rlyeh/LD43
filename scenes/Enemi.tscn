@@ -1,14 +1,26 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/Enemi.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/animations/vilain1/01.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/animations/vilain1/02.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/animations/vilain1/03.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/animations/vilain1/04.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[node name="Enemi" type="Node2D" groups=[
+[node name="Enemi" type="Node2D" index="0" groups=[
 "Enemis",
 ]]
 
@@ -17,9 +29,12 @@ _sections_unfolded = [ "Transform" ]
 speed = null
 SEUIL = 3.0
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
+frames = SubResource( 1 )
+animation = "walk"
+frame = 1
+playing = true
 _sections_unfolded = [ "Offset" ]
 
 [node name="Collision" type="Area2D" parent="." index="1"]
@@ -35,6 +50,6 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="Collision" index="0"]
 
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 

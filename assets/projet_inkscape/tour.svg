@@ -21,6 +21,26 @@
   <defs
      id="defs2">
     <linearGradient
+       id="linearGradient18621"
+       inkscape:collect="always">
+      <stop
+         id="stop18613"
+         offset="0"
+         style="stop-color:#4d5051;stop-opacity:1" />
+      <stop
+         style="stop-color:#666964;stop-opacity:1"
+         offset="0.24263425"
+         id="stop18615" />
+      <stop
+         id="stop18617"
+         offset="0.46984398"
+         style="stop-color:#57595c;stop-opacity:1" />
+      <stop
+         id="stop18619"
+         offset="1"
+         style="stop-color:#000000;stop-opacity:0.99593496" />
+    </linearGradient>
+    <linearGradient
        inkscape:collect="always"
        id="linearGradient15273">
       <stop
@@ -1397,6 +1417,17 @@
          in2="BackgroundImage"
          id="feBlend14431" />
     </filter>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient18621"
+       id="radialGradient18611"
+       cx="16.120516"
+       cy="205.7457"
+       fx="16.120516"
+       fy="205.7457"
+       r="13.758808"
+       gradientTransform="matrix(1,0,0,0.93162912,0,14.122838)"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="1"
@@ -1408,9 +1439,9 @@
      showgrid="false"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="350.45462"
-     inkscape:cx="1058.8603"
-     inkscape:zoom="1.4142136"
+     inkscape:cy="412.52987"
+     inkscape:cx="890.33733"
+     inkscape:zoom="1"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -15707,7 +15738,7 @@
          sodipodi:nodetypes="ccccccccsc" />
     </g>
     <g
-       transform="matrix(0.17231522,0,0,0.32977677,101.2145,145.81396)"
+       transform="matrix(0.17231522,0,0,0.32977677,124.03932,129.4437)"
        style="display:inline"
        id="g18547"
        inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\fleche.png"
@@ -15743,6 +15774,56 @@
          id="path18462"
          inkscape:connector-curvature="0" />
     </g>
+    <path
+       style="fill:url(#radialGradient18611);stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       d="m 6.9122395,196.75598 c 0,0 3.2080725,-2.84427 4.2333335,-2.87735 1.02526,-0.0331 9.624218,0.33073 9.624218,0.33073 l 8.400521,6.94532 1.918229,4.6302 -2.480468,4.43177 -4.729427,3.80339 c 0,0 -2.315105,2.91042 -2.248959,3.10885 0.06615,0.19844 -6.548437,1.98438 -6.647656,2.11667 -0.09922,0.13229 -10.5171873,-5.62239 -10.5171873,-6.08542 0,-0.46302 -0.9260417,-4.69635 -0.4299479,-4.69635 0.4960937,0 0.7276041,0.82682 0.7276041,0.82682 l 1.6205729,-1.25677 c 0,0 -2.7781249,-6.64765 -2.5135416,-7.67291 0.2645833,-1.02526 3.0427083,-3.60495 3.0427083,-3.60495 z"
+       id="path18603"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\crater.png"
+       inkscape:export-xdpi="302"
+       inkscape:export-ydpi="302" />
+    <image
+       y="258.37082"
+       x="213.25417"
+       id="image18631"
+       xlink:href="data:image/png;base64,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
+S/v/AQFWxXDunJGDAAAAAElFTkSuQmCC
+"
+       preserveAspectRatio="none"
+       height="17.4625"
+       width="17.4625" />
   </g>
   <g
      inkscape:groupmode="layer"
