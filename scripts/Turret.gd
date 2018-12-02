@@ -8,6 +8,7 @@ var max_targets = 1
 var power = 10
 var attaque_speed = 0.2
 var cd = 0
+var type = global.TOWER_TYPE.TURRET
 
 var ennemy_on_range = []
 var targets = []
@@ -28,7 +29,6 @@ func draw_range():
 	draw_circle(Vector2(0,0), 10 * attaque_range, Color(1, 1, 1, 0.2))
 	
 func _draw():
-	print("yayayayé")
 	if self.show_range:
 		draw_range()
 
@@ -56,11 +56,17 @@ func _process(delta):
 		cd -= delta
 	pass
 
-func set_phantom():
+func set_phantom(can_buy):
+	if !can_buy:
+		$Sprite.modulate.r = 100
+	else:
+		$Sprite.modulate.r = 0
 	$Sprite.modulate.a = 0.7
 	show_range = true
+	self.update()
 
 func apply_damages():
+
 	for target in targets:
 		target.take_damages(self.power)
 		throw_bullet(target.position)
@@ -107,11 +113,9 @@ func safe_remove(collection, item):
 		collection.remove(idx)
 
 func _on_MouseDetector_mouse_entered():
-	print('I SEEE YOU')
 	self.show_range = true
 	self.call_deferred("update")
 	pass # replace with function body
-
 
 func _on_MouseDetector_mouse_exited():
 	self.show_range = false

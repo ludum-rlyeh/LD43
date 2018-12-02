@@ -11,7 +11,7 @@ var paths = [
 
 export (PackedScene) var enemi_scene
 
-var buildings_scenes = [preload("res://scenes/Turret.tscn")]
+var buildings_scenes = { global.TURRET : preload("res://scenes/Turret.tscn") }
 
 var tower_menu_scene = preload("res://scenes/TowerMenu.tscn")
 var tower_menu
@@ -25,13 +25,14 @@ func _ready():
 	tower_menu = tower_menu_scene.instance()
 	add_child(tower_menu)
 	
-	tower_menu.connect("asking_batiment_creation", self, "add_building_to_map")
-	tower_menu.connect("print_phantom", self, "print_phantom")
-	tower_menu.connect("hide_phantom", self, "hide_phantom")
+	tower_menu.connect("asking_batiment_creation", self, "on_asking_batiment_creation")
+	tower_menu.connect("print_phantom", self, "on_print_phantom")
+	tower_menu.connect("hide_phantom", self, "on_hide_phantom")
 	
 	tower_menu.hide()
 	
 	var  village = self.get_node("Village")
+	village.connect("change_nb_caillasse_signal", self, "on_change_nb_caillasse")
 	village.connect("sacrifice_signal", self, "apply_sacrifice")
 	
 	var i = 0
@@ -52,7 +53,6 @@ func _ready():
 #	TEST selectionner
 #	var tower = load("res://scenes/Turret.tscn").instance()
 #	$SocketSelectioner.enable(tower)
-
 
 func get_path(var index) :
 	if (index <= paths.size()) :
@@ -76,22 +76,39 @@ func add_object_to_map(var object, var index):
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
-func add_building_to_map(var type):
-	var building = self.buildings_scenes[type].instance()
-	var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
+func on_asking_batiment_creation(var type):
+	var price = global.TOWER_PRICES[type]
+	if($Village.caillasse >= price):
+		$Village.decrease_caillasse(price)
+
+		var building = self.buildings_scenes[type].instance()
+		var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
+		add_object_to_map(building, index)
+
 	if self.phantom != null:
 		hide_phantom()
 
-	add_object_to_map(building, index)
-
-func print_phantom(type):
+func on_print_phantom(type):
 	var building = self.buildings_scenes[type].instance()
 	var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
 	self.phantom = building
+	var price = global.TOWER_PRICES[type]
 	
-	building.set_phantom()
+	var can_buy = $Village.caillasse >= price
+	building.set_phantom(can_buy)
+	
 	add_child(building)
 	building.set_position(global.index_to_position(index, global.CELL_SIZE))
+
+func on_change_nb_caillasse(caillasse):
+
+	if self.phantom != null:
+		var price = global.TOWER_PRICES[phantom.type]
+		var can_buy = $Village.caillasse >= price
+		phantom.set_phantom(can_buy)
+	
+func on_hide_phantom():
+	self.hide_phantom()
 
 func hide_phantom():
 	self.call_deferred("remove_child", self.phantom)
@@ -105,7 +122,9 @@ func _input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			tower_menu.hide()
+			
 
+	
 #ajouter le type pour le type d'ennemi
 func spawn_enemis(var nb_enemis, var type):
 	for i in range(nb_enemis):
