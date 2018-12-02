@@ -9,7 +9,6 @@ var power = 10
 var attaque_speed = 0.2
 var cd = 0
 var type = global.TOWER_TYPE.TURRET
-
 var ennemy_on_range = []
 var targets = []
 
@@ -63,6 +62,8 @@ func set_phantom(can_buy):
 		$Sprite.modulate.r = 0
 	$Sprite.modulate.a = 0.7
 	show_range = true
+	max_targets = 0
+	
 	self.update()
 
 func apply_damages():
