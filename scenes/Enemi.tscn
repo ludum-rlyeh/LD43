@@ -20,7 +20,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[node name="Enemi" type="Node2D" index="0" groups=[
+[node name="Enemi" type="Node2D" groups=[
 "Enemis",
 ]]
 
@@ -34,6 +34,7 @@ SEUIL = 3.0
 
 frames = SubResource( 1 )
 animation = "walk"
+frame = 2
 playing = true
 _sections_unfolded = [ "Offset" ]
 

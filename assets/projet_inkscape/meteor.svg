@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg21054"
+   enable-background="new"
+   sodipodi:docname="meteor.svg"
+   inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+   inkscape:export-xdpi="81"
+   inkscape:export-ydpi="81"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <defs
+     id="defs21048">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Extract Channel"
+       id="filter58109">
+      <feColorMatrix
+         in="SourceGraphic"
+         values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 "
+         result="colormatrix"
+         id="feColorMatrix58105" />
+      <feBlend
+         in2="BackgroundImage"
+         mode="multiply"
+         result="blend"
+         id="feBlend58107" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lighting"
+       id="filter58239">
+      <feComponentTransfer
+         in="blur"
+         result="component"
+         id="feComponentTransfer58237">
+        <feFuncR
+           type="gamma"
+           amplitude="1.09375"
+           exponent="1"
+           offset="0"
+           id="feFuncR58231" />
+        <feFuncG
+           type="gamma"
+           amplitude="1.09375"
+           exponent="1"
+           offset="0"
+           id="feFuncG58233" />
+        <feFuncB
+           type="gamma"
+           amplitude="1.09375"
+           exponent="1"
+           offset="0"
+           id="feFuncB58235" />
+      </feComponentTransfer>
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lighting"
+       id="filter58305">
+      <feComponentTransfer
+         in="blur"
+         result="component"
+         id="feComponentTransfer58303">
+        <feFuncR
+           type="gamma"
+           amplitude="1.30208"
+           exponent="1"
+           offset="0"
+           id="feFuncR58297" />
+        <feFuncG
+           type="gamma"
+           amplitude="1.30208"
+           exponent="1"
+           offset="0"
+           id="feFuncG58299" />
+        <feFuncB
+           type="gamma"
+           amplitude="1.30208"
+           exponent="1"
+           offset="0"
+           id="feFuncB58301" />
+      </feComponentTransfer>
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lighting"
+       id="filter1312">
+      <feComponentTransfer
+         in="blur"
+         result="component"
+         id="feComponentTransfer1310">
+        <feFuncR
+           type="gamma"
+           amplitude="3.02083"
+           exponent="2.97"
+           offset="0.52"
+           id="feFuncR1304" />
+        <feFuncG
+           type="gamma"
+           amplitude="3.02083"
+           exponent="2.97"
+           offset="0.52"
+           id="feFuncG1306" />
+        <feFuncB
+           type="gamma"
+           amplitude="3.02083"
+           exponent="2.97"
+           offset="0.52"
+           id="feFuncB1308" />
+      </feComponentTransfer>
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Lighting"
+       id="filter1465">
+      <feComponentTransfer
+         in="blur"
+         result="component"
+         id="feComponentTransfer1463">
+        <feFuncR
+           type="gamma"
+           amplitude="0"
+           exponent="20"
+           offset="-0.666667"
+           id="feFuncR1457" />
+        <feFuncG
+           type="gamma"
+           amplitude="0"
+           exponent="20"
+           offset="-0.666667"
+           id="feFuncG1459" />
+        <feFuncB
+           type="gamma"
+           amplitude="0"
+           exponent="20"
+           offset="-0.666667"
+           id="feFuncB1461" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="5.6"
+     inkscape:cx="222.21976"
+     inkscape:cy="919.72696"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="3200"
+     inkscape:window-height="1675"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata21051">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1152"
+       transform="translate(-21.481789,-1.3697563)"
+       style="filter:url(#filter1312)">
+      <path
+         inkscape:export-ydpi="81.136185"
+         inkscape:export-xdpi="81.136185"
+         inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+         sodipodi:nodetypes="cccccccsccccccc"
+         inkscape:connector-curvature="0"
+         id="path58061"
+         d="m 41.628175,35.116408 c 1.560877,-2.413737 3.77472,-3.175691 6.02652,-3.841628 5.200357,-0.479783 10.405071,-0.949608 16.230784,0 6.748371,2.683453 6.192759,2.306823 7.63889,3.913853 2.596406,0.970775 2.968994,2.923781 3.957958,4.604541 2.033502,1.445787 2.685636,3.806772 3.852479,5.826746 -0.202125,4.85689 -1.180655,8.599264 -2.531929,11.806572 -1.908192,4.845824 -2.498119,3.80688 -4.798933,5.89418 -1.179972,1.070472 -1.384063,1.692532 -2.644178,2.695799 -5.643589,1.930287 -11.292543,3.572701 -16.999103,2.123633 -3.967107,-0.702226 -6.604645,-2.783218 -9.123815,-4.986959 -5.046505,-2.672249 -7.284072,-4.434034 -7.803262,-7.993453 -1.391246,-0.746793 -4.183075,-6.643538 -2.569074,-8.136619 -0.57699,-3.664796 1.082118,-5.17273 2.617094,-6.800399 0.89859,-3.498434 3.492502,-4.349323 6.146569,-5.106266 z"
+         style="fill:#373737;fill-opacity:1;stroke:none;stroke-width:0.26807678px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter1465)" />
+      <path
+         style="fill:#373737;fill-opacity:1;stroke:none;stroke-width:0.2343452px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 41.767021,35.900191 c 1.364475,-2.110021 3.299755,-2.7761 5.268215,-3.358243 4.546006,-0.419413 9.095821,-0.830121 14.188496,0 5.899237,2.345799 5.413536,2.01656 6.677703,3.42138 2.269706,0.848625 2.595412,2.555888 3.459936,4.025161 1.777631,1.263866 2.347708,3.327773 3.367729,5.093578 -0.176692,4.245757 -1.032095,7.517235 -2.213341,10.320974 -1.668088,4.236083 -2.183786,3.327868 -4.195093,5.152527 -1.031498,0.935776 -1.209909,1.479564 -2.311466,2.356591 -4.933467,1.687403 -9.871624,3.123155 -14.860139,1.856421 -3.467933,-0.613866 -5.773595,-2.433011 -7.975783,-4.35946 -4.411513,-2.336005 -6.367531,-3.876108 -6.821393,-6.987652 -1.216188,-0.652826 -3.656726,-5.807595 -2.245812,-7.112804 -0.504389,-3.203662 0.945957,-4.521856 2.28779,-5.944718 0.785522,-3.058233 3.053047,-3.802056 5.373158,-4.463755 z"
+         id="path1335"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccsccccccc"
+         inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+         inkscape:export-xdpi="81.136185"
+         inkscape:export-ydpi="81.136185" />
+      <path
+         style="fill:#373737;fill-opacity:1;stroke:none;stroke-width:0.17852765px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter58239)"
+         d="m 42.534219,37.528488 c 1.039478,-1.607445 2.513802,-2.114874 4.013405,-2.558359 3.463215,-0.319515 6.929331,-0.632399 10.809007,0 4.494126,1.787064 4.124112,1.536245 5.087173,2.606458 1.729096,0.646495 1.977223,1.947113 2.635831,3.066427 1.354225,0.962832 1.788519,2.535147 2.565586,3.880364 -0.134607,3.23448 -0.786266,5.726741 -1.686156,7.862671 -1.270774,3.227111 -1.663641,2.535219 -3.195884,3.925271 -0.785811,0.712889 -0.921727,1.127154 -1.760909,1.795287 -3.758389,1.285489 -7.520351,2.379266 -11.320675,1.414249 -2.641923,-0.467653 -4.398411,-1.853504 -6.07607,-3.321101 -3.360756,-1.779604 -4.85088,-2.952877 -5.196639,-5.323298 -0.92651,-0.497332 -2.785748,-4.424312 -1.710893,-5.41864 -0.38425,-2.440597 0.720644,-3.444816 1.742873,-4.528774 0.598422,-2.329807 2.325856,-2.896463 4.093351,-3.400555 z"
+         id="path58149"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccsccccccc"
+         inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+         inkscape:export-xdpi="81.136185"
+         inkscape:export-ydpi="81.136185" />
+      <path
+         style="fill:#373737;fill-opacity:1;stroke:none;stroke-width:0.10233651px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter58305)"
+         d="m 42.189234,39.484021 c 0.595854,-0.921428 1.440974,-1.212299 2.300584,-1.466516 1.985201,-0.183154 3.972066,-0.362506 6.195993,0 2.576145,1.02439 2.364044,0.880614 2.916095,1.494087 0.99116,0.370587 1.133393,1.116134 1.510924,1.757753 0.776275,0.551919 1.025223,1.453209 1.470658,2.224321 -0.07716,1.854085 -0.450708,3.282711 -0.966547,4.50708 -0.72844,1.84986 -0.953641,1.453251 -1.831961,2.250063 -0.450446,0.408646 -0.528357,0.646113 -1.009397,1.029103 -2.154402,0.736875 -4.310853,1.363855 -6.489294,0.810683 -1.514416,-0.26807 -2.521279,-1.062475 -3.482955,-1.903738 -1.926469,-1.020113 -2.780645,-1.692663 -2.978843,-3.051447 -0.531099,-0.285083 -1.59686,-2.536126 -0.980726,-3.1061 -0.220263,-1.399011 0.413091,-1.974655 0.999058,-2.596006 0.34303,-1.335504 1.333239,-1.660325 2.346411,-1.949283 z"
+         id="path58265"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccsccccccc"
+         inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+         inkscape:export-xdpi="81.136185"
+         inkscape:export-ydpi="81.136185" />
+    </g>
+    <path
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 40.190654,37.64833 c 0.64772,5.189718 3.627047,7.438868 8.452399,3.808593"
+       id="path58337"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1316"
+       d="m 38.262282,65.749473 c -5.189718,-0.64772 -7.438868,-3.627047 -3.808593,-8.452399"
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 21.307319,52.59006 c 2.341203,-4.676696 1.110913,-8.201103 -4.91784,-7.858962"
+       id="path1318"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1320"
+       d="m 45.859285,55.952149 c 5.223071,0.268796 7.958077,-2.271834 5.226527,-7.657144"
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1322"
+       d="m 25.693402,43.024632 c 5.068739,-1.288643 6.929564,-4.524749 2.726913,-8.860721"
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  </g>
+</svg>
