@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/sprites/cannon_ball.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/crater.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -20,9 +21,69 @@ func _process(delta):
 	self.position += target_pos.normalized() * self.speed * delta
 	self.scale = Vector2(value, value)
 	if(Vector2(0,0).distance_to(target_pos) < Vector2(0,0).distance_to(self.position)):
-		get_parent().remove_bullet(self)"
+		
+		$Particles2D.emitting = true
+		$Sprite.hide()
+		$Timer.start()
+		$Crater.show()
+		set_process(false)
 
-[node name="cannonball" type="Node2D"]
+func _on_Timer_timeout():
+	get_parent().remove_bullet(self)
+"
+
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.580977, 0.982005, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 10.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.47
+angular_velocity = 6.68511e-031
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 10.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 10.0
+scale_random = 0.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Animation", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
+
+[node name="cannonball" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -32,5 +93,44 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="1"]
+
+emitting = false
+amount = 100
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 1.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform" ]
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Crater" type="Sprite" parent="." index="3"]
+
+visible = false
+self_modulate = Color( 1, 1, 1, 0.613843 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
