@@ -182,13 +182,9 @@ func call_lightning() :
 		enemies[rand_range(0, enemies.size())].on_lightning()
 
 func apply_blizzard() :
-	var timer = get_tree().create_timer(10, false)
-	timer.connect("timeout", self, "end_blizzard")
-	get_tree().call_group("Enemis", "on_blizzard")
-
-func end_blizzard() :
-	# TODO : Animation ?
-	get_tree().call_group("Enemis", "on_end_blizzard")
+	var enemies = get_tree().get_nodes_in_group("Enemis")
+	for e in enemies :
+		e.slow_down(0.25, 10)
 
 func apply_meteors() :
 	for i in range(1,21) :
