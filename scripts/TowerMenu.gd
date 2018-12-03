@@ -16,6 +16,8 @@ func string_to_gbl_enum(type):
 		return global.TOWER_TYPE.TURRET
 	if(type == "Wizard"):
 		return global.TOWER_TYPE.WIZARD
+	if(type == "Canon"):
+		return global.TOWER_TYPE.CANON
 
 func _on_Turret_pressed():
 	emit_signal("asking_batiment_creation", global.TOWER_TYPE.TURRET)
@@ -39,3 +41,4 @@ func _on_Button_mouse_entered(type):
 func _on_Button_mouse_exited(type):
 	emit_signal("hide_phantom")
 	pass # replace with function body
+

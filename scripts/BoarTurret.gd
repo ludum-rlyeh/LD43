@@ -9,6 +9,7 @@ func _process(delta):
 
 func _ready() :
 	._ready()
+	self.type = global.TOWER_TYPE.CANON
 	self.power = 125
 	self.attaque_speed = 2.0
 
