@@ -63,7 +63,7 @@ animation = "plante"
 
 [node name="Sprite" parent="." index="1" instance=ExtResource( 5 )]
 
-frame = 0
+frame = 3
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="." index="2"]

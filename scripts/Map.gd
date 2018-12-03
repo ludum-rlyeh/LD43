@@ -33,9 +33,10 @@ var matrix = []
 
 var spawner = []
 
+var size_map = Vector2(0,0)
+
 
 func _process(delta):
-	print("delta")
 	var position = global.current_camera.get_position()
 	
 	if Input.is_action_pressed("ui_right"):
@@ -51,7 +52,31 @@ func _process(delta):
 	elif Input.is_action_pressed("zoom_camera_arriere"):
 		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
 	global.current_camera.set_position(position)
+	recenter_camera()
+	
 
+func recenter_camera():
+	var trans_camera = global.current_camera.get_canvas_transform()
+	var min_pos = -trans_camera.get_origin() / trans_camera.get_scale()
+	
+	var view_size = get_viewport_rect().size / trans_camera.get_scale()
+	var max_pos = min_pos + view_size
+	
+	var diff_vec = max_pos - (self.size_map - Vector2(32,32))
+	
+	if diff_vec.x > 0.0:
+		global.current_camera.set_position(global.current_camera.position - Vector2(diff_vec.x, 0))
+
+	if diff_vec.y > 0.0:
+		global.current_camera.set_position(global.current_camera.position - Vector2(0, diff_vec.y))
+	
+	diff_vec = min_pos - Vector2(-32,-32)
+	
+	if diff_vec.x < 0.0:
+		global.current_camera.set_position(global.current_camera.position - Vector2(diff_vec.x, 0))
+
+	if diff_vec.y < 0.0:
+		global.current_camera.set_position(global.current_camera.position - Vector2(0, diff_vec.y))
 
 func _ready():
 	randomize()
@@ -87,6 +112,10 @@ func _ready():
 				matrix[j][k] = global.PATH_TILE
 			elif $TileMap.get_cell(j, k) == 10 || $TileMap.get_cell(j, k) == 11:
 				matrix[j][k] = global.SOCKET_TILE
+			else:
+				matrix[j][k] = global.OTHER_TILE
+				
+	self.size_map = Vector2(matrix.size() * global.CELL_SIZE, matrix[0].size() * global.CELL_SIZE)
 #	TEST selectionner
 #	var tower = load("res://scenes/Turret.tscn").instance()
 #	$SocketSelectioner.enable(tower)

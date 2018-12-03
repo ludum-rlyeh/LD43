@@ -7,6 +7,7 @@ var game_over = load("res://scenes/GameOver.tscn").instance()
 var main_menu = load("res://scenes/MainMenu.tscn").instance()
 
 func _ready():
+	$CanvasLayer/HUD.hide()
 	game_over.set_name("GameOver")
 	main_menu.set_name("MainMenu")
 	
@@ -17,11 +18,13 @@ func _ready():
 	show_main_menu()
 	
 func show_main_menu():
+	$CanvasLayer/HUD.hide()
 	if $Menus.get_children():
 		$Menus.call_deferred("remove_child", $Menus.get_children()[0])
 	$Menus.call_deferred("add_child", main_menu)
 	
 func init_game():
+	$CanvasLayer/HUD.show()
 	var nb_children = $Menus.get_child_count()
 	for i in range(nb_children):
 		$Menus.call_deferred("remove_child", $Menus.get_children()[nb_children - i - 1])
@@ -32,7 +35,7 @@ func init_game():
 	camera.make_current()
 	camera.set_name("Camera")
 	global.current_camera = camera
-	camera.set_zoom(Vector2(2.2, 2.2))
+	camera.set_zoom(Vector2(2.1, 2.1))
 	camera.set_anchor_mode(Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT)
 	map.add_child(camera)
 	
@@ -89,6 +92,7 @@ func on_end_blizzard():
 	self.play_theme["BlizzardStreamPlayer"] = false
 
 func _on_Map_game_over_signal():
+	$CanvasLayer/HUD.hide()
 #	$Camera2D.dis
 	remove_child($Map)
 	$Menus.add_child(game_over)
