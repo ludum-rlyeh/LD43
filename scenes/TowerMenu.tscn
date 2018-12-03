@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/TowerMenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/plusdetour.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/tourgivre.png" type="Texture" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/blason_cerf.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/blason_hibou.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/blason_sanglier.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/plusdeferme.png" type="Texture" id=5]
 
 [node name="TowerMenu" type="Control"]

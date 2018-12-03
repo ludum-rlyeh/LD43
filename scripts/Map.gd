@@ -4,6 +4,10 @@ signal wave_enemis_finished_signal
 signal game_over_signal
 signal win_signal
 
+var speed_camera = 10
+var zoom_scroll = Vector2(0.05, 0.05)
+var clamp_zoom = [Vector2(1,1), Vector2(2.2,2.2)]
+
 
 var paths = [
 	[Vector2(3,0), Vector2(3,4), Vector2(6,4), Vector2(6,7), Vector2(4,7), Vector2(4,9)],
@@ -12,8 +16,7 @@ var paths = [
 var enemis_waves = []
 
 var meteor_scene = preload("res://scenes/meteor.tscn")
-
-export (PackedScene) var enemi_scene
+var enemi_scene = preload("res://scenes/Enemi.tscn")
 
 var buildings_scenes = { 
 	global.TURRET : preload("res://scenes/DeerTurret.tscn"),
@@ -31,8 +34,29 @@ var matrix = []
 var spawner = []
 
 
+func _process(delta):
+	print("delta")
+	var position = global.current_camera.get_position()
+	
+	if Input.is_action_pressed("ui_right"):
+		position = Vector2(position.x + speed_camera, position.y)
+	elif Input.is_action_pressed("ui_left"):
+		position = Vector2(position.x - speed_camera, position.y)
+	elif Input.is_action_pressed("ui_up"):
+		position = Vector2(position.x, position.y - speed_camera)
+	elif Input.is_action_pressed("ui_down"):
+		position = Vector2(position.x, position.y + speed_camera)
+	elif Input.is_action_pressed("zoom_camera_avant"):
+		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
+	elif Input.is_action_pressed("zoom_camera_arriere"):
+		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
+	global.current_camera.set_position(position)
+
+
 func _ready():
 	randomize()
+	
+	set_process(true)
 	
 	tower_menu = tower_menu_scene.instance()
 	add_child(tower_menu)
@@ -46,6 +70,7 @@ func _ready():
 	var  village = self.get_node("Village")
 	village.connect("change_nb_caillasse_signal", self, "on_change_nb_caillasse")
 	village.connect("sacrifice_signal", self, "apply_sacrifice")
+	village.connect("game_over_signal", self, "game_over_signal")
 	
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
@@ -160,7 +185,6 @@ func spawn_enemis():
 		$TimerSpawnEnemi.start()
 		
 func pop_enemis_on_map_from_spawner():
-	print("spawner : ", spawner)
 	var enemi = self.spawner.front()
 	call_deferred("add_child", enemi)
 	spawner.pop_front()
@@ -169,7 +193,9 @@ func pop_enemis_on_map_from_spawner():
 
 func on_enemi_died(var enemi):
 	var enemies = get_tree().get_nodes_in_group("Enemis")
-	if enemies.size() <=1:
+	print(enemies)
+	print(enemies.size())
+	if enemies.size() <= 1:
 		emit_signal("wave_enemis_finished_signal")
 
 func on_enemi_arrived(var enemi):
@@ -216,6 +242,8 @@ func apply_blizzard() :
 	var blizzard_time = 30 # second
 	$Blizzard.init(0.01, blizzard_time)
 	$Blizzard.start()
+	change_filter(Color(0.6,0.6,0.6,1))
+	play_filter(blizzard_time+1)
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	for e in enemies :
 		e.slow_down(0.25, blizzard_time)
@@ -242,7 +270,6 @@ func call_meteor() :
 	var time = 2
 	timer.connect("timeout", self, "damage_in_zone")
 	pos *= global.CELL_SIZE
-	print("Meteor in pos : ", pos)
 	meteor.init(Vector2(1000, 0), pos, time, 3)
 	meteor.start()
 	damage_in_zone(pos, 1000, 200)
@@ -258,4 +285,4 @@ func change_filter(var color):
 	$AnimationPlayer.get_animation("storm").track_set_key_value(0,2, color)
 	
 func play_filter(var time):
-	$AnimationPlayer.play("storm", time/10.0)
+	$AnimationPlayer.play("storm", 1.0, 1.0 / (time/10.0))

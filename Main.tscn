@@ -1,18 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/Level1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/musics/main_theme.ogg" type="AudioStream" id=4]
-[ext_resource path="res://assets/musics/blizzard_theme.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/musics/main_theme.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/musics/blizzard_theme.ogg" type="AudioStream" id=4]
 
-[node name="Main" type="Node2D" index="0"]
+[node name="Main" type="Node2D"]
 
 script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
-editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -31,40 +29,18 @@ margin_bottom = 45.0
 process_mode = 1
 wait_time = 5.0
 one_shot = true
-autostart = true
+autostart = false
 
-[node name="Map" parent="." index="2" instance=ExtResource( 3 )]
+[node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 
-margin_left = -8.0
-margin_right = 32.0
-enemi_scene = null
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
 
-[node name="Camera2D" type="Camera2D" parent="." index="3"]
-
-anchor_mode = 0
-rotating = false
-current = true
-zoom = Vector2( 2, 2 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+[node name="BlizzardStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
 volume_db = 0.0
@@ -73,14 +49,13 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="BlizzardStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="Menus" type="CanvasLayer" parent="." index="4"]
 
-stream = ExtResource( 5 )
-volume_db = 0.0
-pitch_scale = 1.0
-autoplay = true
-mix_target = 0
-bus = "Master"
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [connection signal="timeout" from="EnemisWavesTimer" to="." method="_on_EnemisWavesTimer_timeout"]
 

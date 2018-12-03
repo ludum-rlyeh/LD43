@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
@@ -22,6 +23,18 @@
    inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <defs
      id="defs21048">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1760-7">
+      <stop
+         style="stop-color:#ffff9c;stop-opacity:1;"
+         offset="0"
+         id="stop1756" />
+      <stop
+         style="stop-color:#ffff9c;stop-opacity:0;"
+         offset="1"
+         id="stop1758" />
+    </linearGradient>
     <filter
        style="color-interpolation-filters:sRGB;"
        inkscape:label="Extract Channel"
@@ -149,6 +162,15 @@
            id="feFuncB1461" />
       </feComponentTransfer>
     </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1760-7"
+       id="linearGradient1762"
+       x1="95.615723"
+       y1="-100.2732"
+       x2="98.048134"
+       y2="-624.94391"
+       gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -157,9 +179,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.13085071"
-     inkscape:cx="332.88817"
-     inkscape:cy="1717.3055"
+     inkscape:zoom="0.26170141"
+     inkscape:cx="494.0778"
+     inkscape:cy="2173.936"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -282,13 +304,13 @@
        inkscape:export-xdpi="31.059999"
        inkscape:export-ydpi="31.059999" />
     <path
-       style="fill:#ffff9c;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       style="fill:url(#linearGradient1762);fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 99.727659,53.846809 85.965957,23.285107 111.70718,-16.992109 64.880728,-100.00327 c 3.509191,-0.0266 69.207772,-170.19795 72.277982,-170.22457 1.25798,-0.0109 -90.585576,-171.28466 -84.606823,-171.3544 2.017202,-0.0235 95.054703,-203.49046 104.732023,-203.5823 6.06212,-0.0575 39.46698,0.59508 45.38389,0.53887 8.78377,-0.0834 -95.45992,202.51882 -93.6415,202.49756 5.39379,-0.0631 66.10103,171.46155 67.19714,171.4514 3.54864,-0.0329 -84.348653,170.43638 -80.607715,170.40351 l 43.248855,83.04609 -33.06032,40.333493 8.39999,30.740426 L 100.8,72.702128 108.12766,87.268083 95.080851,100.40425 105.53617,123.19149 83.463827,167.69362 99.459572,123.6383 86.859575,100.85106 98.387232,86.195743 89.629786,74.489362 Z"
        id="path1477"
        inkscape:connector-curvature="0"
        inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\lighning.png"
-       inkscape:export-xdpi="81"
-       inkscape:export-ydpi="81"
+       inkscape:export-xdpi="31.247625"
+       inkscape:export-ydpi="31.247625"
        sodipodi:nodetypes="ccccsccccccccccccccccccc" />
     <path
        style="fill:#14bd75;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
