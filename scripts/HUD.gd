@@ -26,16 +26,13 @@ func update_timer_label(var time) :
 	self.get_node("Timer").text = time_label
 
 func update_peon_nb(var nb) :
-	var peon_nb = String(nb / 1000) + String((nb % 1000) / 100) + String((nb % 100) / 10) + String(nb % 10)
-	self.get_node("VBoxContainer/peons/peon_nb").text = peon_nb
+	self.get_node("peon_nb").text = String(nb)
 	
 func update_peon_nb_max(var nb) :
-	var peon_nb = String(nb)
-	self.get_node("VBoxContainer/peons/peon_nb_max").text = peon_nb
+	self.get_node("peon_nb_max").text = String(nb)
 
 func update_rock_nb(var nb) :
-	var rock_nb = String(nb / 1000) + String((nb % 1000) / 100) + String((nb % 100) / 10) + String(nb % 10)
-	self.get_node("VBoxContainer/rocks/rock_nb").text = rock_nb
+	self.get_node("rock_nb").text = String(nb)
 
 func _on_base_turret_gui_input(ev):
 	if (ev is InputEventMouseButton and ev.is_pressed()) :
