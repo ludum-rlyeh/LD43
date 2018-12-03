@@ -271,9 +271,9 @@ func apply_lightning() :
 		timer.connect("timeout", self, "call_lightning")
 
 func call_lightning() :
-	$ColorRect.show()
 	var enemies = get_tree().get_nodes_in_group("Enemis")
-	if not enemies.empty() :
+	if !enemies.empty() :
+		$ColorRect.show()
 		enemies[rand_range(0, enemies.size())].on_lightning()
 
 func apply_blizzard() :
