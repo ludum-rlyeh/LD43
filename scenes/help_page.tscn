@@ -11,16 +11,16 @@
 [ext_resource path="res://assets/sprites/blason_hibou.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/blason_sanglier.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/ferme.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=12]
 [ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=14]
 [ext_resource path="res://scenes/enemi_animation.tscn" type="PackedScene" id=15]
-[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=16]
 [ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=18]
 [ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/meteor.tscn" type="PackedScene" id=20]
-[ext_resource path="res://assets/sprites/rune_08.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/rune_06.png" type="Texture" id=21]
 [ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=22]
 [ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=23]
 [ext_resource path="res://assets/sprites/rune_02.png" type="Texture" id=24]
@@ -358,15 +358,15 @@ func unstuned() :
 [sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), null ],
-"loop": false,
-"name": "plante2",
-"speed": 5.0
-}, {
-"frames": [ null, ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"frames": [ null, ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "plante",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
@@ -378,15 +378,15 @@ extents = Vector2( 32.081, 31.6298 )
 [sub_resource type="SpriteFrames" id=12]
 
 animations = [ {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), null ],
-"loop": false,
-"name": "plante2",
-"speed": 5.0
-}, {
-"frames": [ null, ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"frames": [ null, ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "plante",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
 } ]
 
 [sub_resource type="GDScript" id=13]
@@ -628,6 +628,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Control" type="Control" parent="CanvasLayer" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -902,6 +903,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." index="1"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -944,6 +946,7 @@ color = Color( 0, 0, 0, 0.705882 )
 "Enemis",
 ]]
 
+editor/display_folded = true
 position = Vector2( 861.75, 402.367 )
 scale = Vector2( 0.8, 0.8 )
 script = SubResource( 9 )
@@ -960,7 +963,6 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi" index="1" instance=ExtResource( 15 )]
 
-frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi" index="2"]
@@ -1018,6 +1020,7 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi2" index="1" instance=ExtResource( 15 )]
 
+frame = 3
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi2" index="2"]
@@ -1070,6 +1073,7 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi3" index="1" instance=ExtResource( 15 )]
 
+frame = 3
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi3" index="2"]
