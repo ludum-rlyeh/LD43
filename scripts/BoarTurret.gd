@@ -10,8 +10,9 @@ func _process(delta):
 func _ready() :
 	._ready()
 	self.type = global.TOWER_TYPE.CANON
-	self.power = 125
-	self.attaque_speed = 2.0
+	self.power = 25
+	self.attaque_range = 250
+	self.attaque_speed = 5.0
 
 func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
