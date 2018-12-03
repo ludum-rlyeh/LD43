@@ -4,6 +4,12 @@ signal clicked_on_cell_signal
 
 func _ready():
 	enable()
+	set_process(true)
+	
+func _process(delta):
+	var position_mouse = get_global_mouse_position()
+	move(global.position_to_index(position_mouse + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
+	
 
 func enable():
 	set_visible(true)
@@ -16,12 +22,10 @@ func disable():
 	set_visible(false)
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		var position_mouse = global.current_camera.zoom * event.position
-		move(global.position_to_index(position_mouse + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
-	elif event is InputEventMouseButton && event.is_pressed():
+	if event is InputEventMouseButton && event.is_pressed():
+		var position_mouse = global.current_camera.zoom * event.global_position
 		if event.button_index == BUTTON_LEFT and event.pressed:
-			click_on(global.position_to_index(global.current_camera.zoom * event.position + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
+			click_on(global.position_to_index(position_mouse + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
 
 func move(var position_index):
 	self.position = global.index_to_position(position_index, global.CELL_SIZE)
