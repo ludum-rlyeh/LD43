@@ -213,12 +213,17 @@ func call_lightning() :
 		enemies[rand_range(0, enemies.size())].on_lightning()
 
 func apply_blizzard() :
-	var time = 10
-	$Blizzard.init(0.01, time)
+	var blizzard_time = 30 # second
+	$Blizzard.init(0.01, blizzard_time)
 	$Blizzard.start()
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	for e in enemies :
-		e.slow_down(0.25, time)
+		e.slow_down(0.25, blizzard_time)
+	
+	# MUSIC
+	var timer = get_tree().create_timer(blizzard_time, false)
+	timer.connect("timeout", self.get_parent(), "on_end_blizzard")
+	self.get_parent().on_blizzard()
 
 func apply_meteors() :
 	var time = 20
