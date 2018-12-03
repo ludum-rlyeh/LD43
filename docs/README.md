@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages (Doc foldeDoc folderr)
+## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/ludum-rlyeh/LD43/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
