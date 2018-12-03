@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/sprites/blason_sanglier.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/plusdeferme.png" type="Texture" id=5]
 
-[node name="TowerMenu" type="Control"]
+[node name="TowerMenu" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -130,6 +130,10 @@ _sections_unfolded = [ "Textures" ]
 [connection signal="mouse_exited" from="Wizard" to="." method="_on_Button_mouse_exited" binds= [ "Wizard" ]]
 
 [connection signal="pressed" from="Wizard" to="." method="_on_Wizard_pressed"]
+
+[connection signal="mouse_entered" from="Canon" to="." method="_on_Button_mouse_entered" binds= [ "Canon" ]]
+
+[connection signal="mouse_exited" from="Canon" to="." method="_on_Button_mouse_exited" binds= [ "Canon" ]]
 
 [connection signal="pressed" from="Canon" to="." method="_on_Canon_pressed"]
 
