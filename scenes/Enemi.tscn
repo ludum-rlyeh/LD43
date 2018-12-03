@@ -95,4 +95,3 @@ animation = "plante"
 position = Vector2( 36.8513, -326.204 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-

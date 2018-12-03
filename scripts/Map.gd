@@ -246,15 +246,24 @@ func apply_sacrifice(var type):
 		apply_meteors()
 
 func apply_thorns() :
-	var timer = get_tree().create_timer(10, false)
+	var thorns_duration = 10 # seconds
+	var timer = get_tree().create_timer(thorns_duration, false)
 	timer.connect("timeout", self, "end_thorns")
+	#Music
+	self.get_parent().on_blizzard()
+	timer.connect("timeout", self.get_parent(), "on_end_blizzard")
 	get_tree().call_group("Enemis", "stuned")
 
 func end_thorns() :
 	get_tree().call_group("Enemis", "unstuned")
 
 func apply_lightning() :
-	var lightning_duration = 10
+	var lightning_duration = 10 # second
+	# MUSIC (To change)
+	var timer_music = get_tree().create_timer(lightning_duration, false)
+	timer_music.connect("timeout", self.get_parent(), "on_end_blizzard")
+	self.get_parent().on_blizzard()
+	# Ambient animation
 	change_filter(Color(0.5,0.5,0.7,1.0))
 	play_filter(lightning_duration+1)
 	for i in range(1,lightning_duration+1) :
@@ -269,23 +278,30 @@ func call_lightning() :
 
 func apply_blizzard() :
 	var blizzard_time = 30 # second
+	# MUSIC
+	var timer = get_tree().create_timer(blizzard_time, false)
+	timer.connect("timeout", self.get_parent(), "on_end_blizzard")
+	self.get_parent().on_blizzard()
+	# Animation
 	$Blizzard.init(0.01, blizzard_time)
 	$Blizzard.start()
+	# Effect
 	change_filter(Color(0.6,0.6,0.6,1))
 	play_filter(blizzard_time+1)
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	for e in enemies :
 		e.slow_down(0.25, blizzard_time)
-	
-	# MUSIC
-	var timer = get_tree().create_timer(blizzard_time, false)
-	timer.connect("timeout", self.get_parent(), "on_end_blizzard")
-	self.get_parent().on_blizzard()
 
 func apply_meteors() :
-	var time = 20
+	var time = 20 # seconds
+	# MUSIC
+	var timer_music = get_tree().create_timer(time, false)
+	timer_music.connect("timeout", self.get_parent(), "on_end_blizzard")
+	self.get_parent().on_blizzard()
+	# Ambient
 	change_filter(Color(0.7,0.5,0.5,1))
 	play_filter(time+1)
+	# Effect
 	for i in range(1,time+1) :
 		var timer = get_tree().create_timer(rand_range(i,i+1),false)
 		timer.connect("timeout", self, "call_meteor")
