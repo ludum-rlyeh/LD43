@@ -11,21 +11,21 @@
 [ext_resource path="res://assets/sprites/blason_hibou.png" type="Texture" id=9]
 [ext_resource path="res://assets/sprites/blason_sanglier.png" type="Texture" id=10]
 [ext_resource path="res://assets/sprites/ferme.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/rune_02.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/rune_06.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=18]
-[ext_resource path="res://scenes/enemi_animation.tscn" type="PackedScene" id=19]
-[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=20]
-[ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=21]
-[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=22]
-[ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/meteor.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=14]
+[ext_resource path="res://scenes/enemi_animation.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/meteor.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sprites/rune_08.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/rune_02.png" type="Texture" id=24]
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Control
 signal finish_signal
@@ -45,7 +45,7 @@ func _on_finish_pressed():
 	emit_signal(\"finish_signal\")
 "
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=2]
 
 size = 40
 use_mipmaps = true
@@ -188,7 +188,7 @@ func _on_MouseDetector_mouse_exited():
 	pass # replace with function body
 "
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=6]
 
 render_priority = 0
 trail_divisor = 1
@@ -228,7 +228,7 @@ anim_offset_random = 0.0
 anim_loop = true
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=7]
 
 script/source = "extends Node2D
 
@@ -242,7 +242,7 @@ func _process(delta):
 	radius = radius.rotated(speed)
 	self.position = get_node(\"../Position2D\").position + radius"
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=8]
 
 size = 20
 use_mipmaps = true
@@ -250,7 +250,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="GDScript" id=13]
+[sub_resource type="GDScript" id=9]
 
 script/source = "extends Node2D
 
@@ -355,41 +355,41 @@ func unstuned() :
 	$PlantAnimation.play(\"plante2\")
 	$PlantBGAnimation.play(\"plante2\")"
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
-"frames": [ null, ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": false,
-"name": "plante",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), null ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), null ],
 "loop": false,
 "name": "plante2",
 "speed": 5.0
+}, {
+"frames": [ null, ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=12]
 
 animations = [ {
-"frames": [ null, ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
-"loop": false,
-"name": "plante",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 21 ), ExtResource( 20 ), null ],
+"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), null ],
 "loop": false,
 "name": "plante2",
 "speed": 5.0
+}, {
+"frames": [ null, ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
 } ]
 
-[sub_resource type="GDScript" id=12]
+[sub_resource type="GDScript" id=13]
 
 script/source = "extends Node2D
 
@@ -493,7 +493,7 @@ func unstuned() :
 	$PlantAnimation.play(\"plante2\")
 	$PlantBGAnimation.play(\"plante2\")"
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=14]
 
 script/source = "extends Node2D
 
@@ -586,7 +586,7 @@ func unstuned() :
 	$PlantBGAnimation.play(\"plante2\")"
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=15]
 
 size = 40
 use_mipmaps = true
@@ -594,7 +594,7 @@ use_filter = true
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=16]
 
 size = 40
 use_mipmaps = false
@@ -602,7 +602,7 @@ use_filter = false
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -616,7 +616,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = SubResource( 6 )
+script = SubResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 
@@ -628,6 +628,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Control" type="Control" parent="CanvasLayer" index="0"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -674,7 +675,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 2 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -733,7 +734,6 @@ _sections_unfolded = [ "Transform" ]
 [node name="Position2D" type="Position2D" parent="CanvasLayer/Control/BoarTurret" index="2"]
 
 position = Vector2( 0, -17.5158 )
-scale = Vector2( 1, 1 )
 
 [node name="OwlTurret" type="Node2D" parent="CanvasLayer/Control" index="4"]
 
@@ -765,7 +765,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 2 )
+process_material = SubResource( 6 )
 texture = ExtResource( 7 )
 normal_map = null
 h_frames = 1
@@ -780,7 +780,7 @@ position = Vector2( 0, -17.5158 )
 
 position = Vector2( 0, -19.1551 )
 scale = Vector2( 0.7, 0.7 )
-script = SubResource( 1 )
+script = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="blason_cerf" type="Sprite" parent="CanvasLayer/Control" index="5"]
@@ -825,7 +825,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 8 )
 text = "Normal attack"
 percent_visible = 1.0
 lines_skipped = 0
@@ -848,7 +848,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 8 )
 text = "Frozen attack"
 percent_visible = 1.0
 lines_skipped = 0
@@ -871,7 +871,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 8 )
 text = "Attack zone"
 percent_visible = 1.0
 lines_skipped = 0
@@ -894,7 +894,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 8 )
 text = "Increase capacity"
 percent_visible = 1.0
 lines_skipped = 0
@@ -941,33 +941,13 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0, 0, 0, 0.705882 )
 
-[node name="rune_04" type="Sprite" parent="CanvasLayer2/Control" index="1"]
-
-position = Vector2( 498.717, 749.153 )
-texture = ExtResource( 12 )
-
-[node name="rune_00" type="Sprite" parent="CanvasLayer2/Control" index="2"]
-
-position = Vector2( 307.528, 710.011 )
-texture = ExtResource( 13 )
-
-[node name="rune_02" type="Sprite" parent="CanvasLayer2/Control" index="3"]
-
-position = Vector2( 584.298, 656.273 )
-texture = ExtResource( 14 )
-
-[node name="rune_06" type="Sprite" parent="CanvasLayer2/Control" index="4"]
-
-position = Vector2( 682.491, 769.055 )
-texture = ExtResource( 15 )
-
-[node name="Enemi" type="Node2D" parent="CanvasLayer2/Control" index="5" groups=[
+[node name="Enemi" type="Node2D" parent="CanvasLayer2/Control" index="1" groups=[
 "Enemis",
 ]]
 
 position = Vector2( 861.75, 402.367 )
 scale = Vector2( 0.8, 0.8 )
-script = SubResource( 13 )
+script = SubResource( 9 )
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
 speed = 60.0
 SEUIL = null
@@ -976,12 +956,12 @@ SEUIL = null
 
 position = Vector2( 16.3171, 20.4273 )
 scale = Vector2( 0.379157, 0.379157 )
-frames = SubResource( 8 )
+frames = SubResource( 10 )
 animation = "plante"
 
-[node name="Sprite" parent="CanvasLayer2/Control/Enemi" index="1" instance=ExtResource( 19 )]
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi" index="1" instance=ExtResource( 15 )]
 
-frame = 1
+frame = 0
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi" index="2"]
@@ -998,34 +978,34 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi/Collision" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi" index="3"]
 
 position = Vector2( 13.6432, 14.6455 )
 rotation = -0.171945
 scale = Vector2( 0.382495, 0.382495 )
-frames = SubResource( 10 )
+frames = SubResource( 12 )
 animation = "plante"
 
-[node name="Lightning" parent="CanvasLayer2/Control/Enemi" index="4" instance=ExtResource( 23 )]
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi" index="4" instance=ExtResource( 19 )]
 
 position = Vector2( 36.8513, -326.204 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Meteor" parent="CanvasLayer2/Control" index="6" instance=ExtResource( 24 )]
+[node name="Meteor" parent="CanvasLayer2/Control" index="2" instance=ExtResource( 20 )]
 
 position = Vector2( 151.543, 396.711 )
 scale = Vector2( 0.7, 0.7 )
 
-[node name="Enemi2" type="Node2D" parent="CanvasLayer2/Control" index="7" groups=[
+[node name="Enemi2" type="Node2D" parent="CanvasLayer2/Control" index="3" groups=[
 "Enemis",
 ]]
 
 editor/display_folded = true
 position = Vector2( 614.954, 394.222 )
 scale = Vector2( 0.8, 0.8 )
-script = SubResource( 12 )
+script = SubResource( 13 )
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
 speed = 60.0
 SEUIL = null
@@ -1034,11 +1014,12 @@ SEUIL = null
 
 position = Vector2( 16.3171, 20.4273 )
 scale = Vector2( 0.379157, 0.379157 )
-frames = SubResource( 8 )
+frames = SubResource( 10 )
 animation = "plante"
 
-[node name="Sprite" parent="CanvasLayer2/Control/Enemi2" index="1" instance=ExtResource( 19 )]
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi2" index="1" instance=ExtResource( 15 )]
 
+frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi2" index="2"]
@@ -1055,29 +1036,29 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi2/Collision" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi2" index="3"]
 
 position = Vector2( 13.6432, 14.6455 )
 rotation = -0.171945
 scale = Vector2( 0.382495, 0.382495 )
-frames = SubResource( 10 )
+frames = SubResource( 12 )
 animation = "plante"
 
-[node name="Lightning" parent="CanvasLayer2/Control/Enemi2" index="4" instance=ExtResource( 23 )]
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi2" index="4" instance=ExtResource( 19 )]
 
-position = Vector2( 36.8513, -326.204 )
+position = Vector2( 40.5268, -326.204 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="Enemi3" type="Node2D" parent="CanvasLayer2/Control" index="8" groups=[
+[node name="Enemi3" type="Node2D" parent="CanvasLayer2/Control" index="4" groups=[
 "Enemis",
 ]]
 
 editor/display_folded = true
 position = Vector2( 403.182, 392.593 )
 scale = Vector2( 0.8, 0.8 )
-script = SubResource( 11 )
+script = SubResource( 14 )
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
 speed = 60
 SEUIL = null
@@ -1086,11 +1067,12 @@ SEUIL = null
 
 position = Vector2( 16.3171, 20.4273 )
 scale = Vector2( 0.379157, 0.379157 )
-frames = SubResource( 8 )
+frames = SubResource( 10 )
 animation = "plante"
 
-[node name="Sprite" parent="CanvasLayer2/Control/Enemi3" index="1" instance=ExtResource( 19 )]
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi3" index="1" instance=ExtResource( 15 )]
 
+frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi3" index="2"]
@@ -1107,22 +1089,22 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi3/Collision" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi3" index="3"]
 
 position = Vector2( 13.6432, 14.6455 )
 rotation = -0.171945
 scale = Vector2( 0.382495, 0.382495 )
-frames = SubResource( 10 )
+frames = SubResource( 12 )
 animation = "plante"
 
-[node name="Lightning" parent="CanvasLayer2/Control/Enemi3" index="4" instance=ExtResource( 23 )]
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi3" index="4" instance=ExtResource( 19 )]
 
-position = Vector2( 36.8513, -326.204 )
+position = Vector2( 41.4457, -326.204 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
-[node name="back" type="Button" parent="CanvasLayer2/Control" index="9"]
+[node name="back" type="Button" parent="CanvasLayer2/Control" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1139,7 +1121,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 15 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1149,7 +1131,7 @@ flat = true
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="finish" type="Button" parent="CanvasLayer2/Control" index="10"]
+[node name="finish" type="Button" parent="CanvasLayer2/Control" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1166,7 +1148,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 16 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1175,6 +1157,98 @@ text = "Finish"
 flat = true
 align = 1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2/Control" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 111.0
+margin_top = 83.0
+margin_right = 178.0
+margin_bottom = 146.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer2/Control" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 381.0
+margin_top = 86.0
+margin_right = 448.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer2/Control" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 593.0
+margin_top = 86.0
+margin_right = 660.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer2/Control" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = 86.0
+margin_right = 915.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="rune_08" type="Sprite" parent="CanvasLayer2/Control" index="11"]
+
+position = Vector2( 144.958, 115.018 )
+texture = ExtResource( 21 )
+
+[node name="rune_05" type="Sprite" parent="CanvasLayer2/Control" index="12"]
+
+position = Vector2( 417.267, 118.335 )
+texture = ExtResource( 22 )
+
+[node name="rune_00" type="Sprite" parent="CanvasLayer2/Control" index="13"]
+
+position = Vector2( 882.374, 115.318 )
+texture = ExtResource( 23 )
+
+[node name="rune_02" type="Sprite" parent="CanvasLayer2/Control" index="14"]
+
+position = Vector2( 627.669, 113.772 )
+texture = ExtResource( 24 )
 
 [connection signal="pressed" from="CanvasLayer/Control/next" to="." method="_on_next_pressed"]
 
