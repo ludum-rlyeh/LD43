@@ -9,7 +9,7 @@ export (float) var SEUIL
 var velocity_norm = Vector2(0,0)
 var path = []
 var nb_paysans_to_kill = 10
-var life = 100
+var life = 200
 var max_speed
 var freeze_material = preload("res://assets/materials/freeze.material")
 

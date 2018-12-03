@@ -150,9 +150,10 @@ func on_hide_phantom():
 	self.hide_phantom()
 
 func hide_phantom():
-	self.call_deferred("remove_child", self.phantom)
-	self.phantom.call_deferred("queue_free")
-	self.phantom = null
+	if self.phantom != null:
+		self.call_deferred("remove_child", self.phantom)
+		self.phantom.call_deferred("queue_free")
+		self.phantom = null
 	
 func update_matrix(index, type):
 	matrix[index.x][index.y] = type
@@ -161,6 +162,8 @@ func _input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		if event.button_index == BUTTON_RIGHT and event.pressed:
 			tower_menu.hide()
+			self.hide_phantom()
+
 
 #ajouter le type pour le type d'ennemi
 func spawn_enemis():
