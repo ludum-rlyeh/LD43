@@ -1,57 +1,57 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/Enemi.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=4]
 [ext_resource path="res://scenes/enemi_animation.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=9]
 
 [sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
-"frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "plante",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), null ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), null ],
 "loop": false,
 "name": "plante2",
 "speed": 5.0
+}, {
+"frames": [ null, ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=3]
 
 animations = [ {
-"frames": [ null, ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "plante",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), null ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), null ],
 "loop": false,
 "name": "plante2",
 "speed": 5.0
+}, {
+"frames": [ null, ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
 } ]
 
-[node name="Enemi" type="Node2D" groups=[
+[node name="Enemi" type="Node2D" index="0" groups=[
 "Enemis",
 ]]
 
 scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Material", "Transform", "Z Index" ]
-speed = 60.0
+speed = 70.0
 SEUIL = 3.0
 
 [node name="PlantAnimation" type="AnimatedSprite" parent="." index="0"]
@@ -63,7 +63,8 @@ animation = "plante"
 
 [node name="Sprite" parent="." index="1" instance=ExtResource( 5 )]
 
-frame = 3
+position = Vector2( 1.75284, -59.0124 )
+frame = 0
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="." index="2"]
@@ -80,14 +81,14 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="Collision" index="0"]
 
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="PlantBGAnimation" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 13.6432, 14.6455 )
 rotation = -0.171945
 scale = Vector2( 0.382495, 0.382495 )
-frames = SubResource( 10 )
+frames = SubResource( 3 )
 animation = "plante"
 
 [node name="Lightning" parent="." index="4" instance=ExtResource( 9 )]

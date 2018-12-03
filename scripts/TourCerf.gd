@@ -7,8 +7,8 @@ func _process(delta):
 
 func _ready() :
 	._ready()
-	self.power = 10
-	self.attaque_speed = 2.0
+	self.power = 25
+	self.attaque_speed = 3
 	self.type = global.TOWER_TYPE.TURRET
 
 func shoot(var enemi_position):

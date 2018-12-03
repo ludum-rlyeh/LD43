@@ -9,7 +9,7 @@ export (float) var SEUIL
 var velocity_norm = Vector2(0,0)
 var path = []
 var nb_paysans_to_kill = 10
-var life = 100
+var life = 175
 var max_speed
 var freeze_material = preload("res://assets/materials/freeze.material")
 
@@ -22,8 +22,11 @@ func _process(delta):
 	update_velocity()
 	if self.velocity_norm.dot(Vector2(1, 0)) >= 0:
 		$Sprite.flip_h = 1
+		$Sprite.offset = Vector2(20, 0)
+		pass
 	else :
 		$Sprite.flip_h = 0
+		$Sprite.offset = Vector2(-20, 0)
 
 func set_path(var path):
 	self.path = path.duplicate()

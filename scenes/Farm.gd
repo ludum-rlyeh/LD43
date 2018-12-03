@@ -4,7 +4,7 @@ extends "res://scripts/Turret.gd"
 # var a = 2
 # var b = "textvar"
 
-var capacity = 10
+var capacity = 70
 
 func _ready():
 	self.max_targets = 0
