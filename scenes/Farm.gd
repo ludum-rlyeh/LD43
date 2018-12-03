@@ -8,6 +8,9 @@ var capacity = 10
 
 func _ready():
 	self.max_targets = 0
+	self.attaque_range = 0
+	self.type = global.TOWER_TYPE.FARM
+	
 	collision_range = null
 	# Called when the node is added to the scene for the first time.
 	# Initialization here

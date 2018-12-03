@@ -9,6 +9,7 @@ func _ready() :
 	._ready()
 	self.power = 0.5
 	self.attaque_speed = 2.0
+	self.type = global.TOWER_TYPE.WIZARD
 
 func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())

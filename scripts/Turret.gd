@@ -2,7 +2,7 @@ extends Node2D
 
 # Attaque range in px ?
 
-var attaque_range = 190
+var attaque_range = 210
 var max_targets = 1
 var power = 5
 var attaque_speed = 0.2
