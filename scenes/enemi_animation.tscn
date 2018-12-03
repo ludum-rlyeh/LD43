@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/sprites/animations/vilain1/01.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/animations/vilain1/02.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/animations/vilain1/03.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/animations/vilain1/04.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[node name="Sprite" type="AnimatedSprite"]
+
+position = Vector2( -12.1919, 0 )
+frames = SubResource( 2 )
+animation = "walk"
+frame = 2
+playing = true
+offset = Vector2( 20, 0 )
+_sections_unfolded = [ "Material", "Offset", "Visibility" ]
+
+

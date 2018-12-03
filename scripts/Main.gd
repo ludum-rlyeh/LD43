@@ -1,12 +1,42 @@
 extends Node2D
 
-var SPEED = 10
-var zoom_scroll = Vector2(0.05, 0.05)
-var clamp_zoom = [Vector2(1,1), Vector2(2.2,2.2)]
-
 var play_theme = {"BlizzardStreamPlayer": false}
 
+var map_scene = preload("res://scenes/Level1.tscn")
+var game_over = load("res://scenes/GameOver.tscn").instance()
+var main_menu = load("res://scenes/MainMenu.tscn").instance()
+
 func _ready():
+	game_over.set_name("GameOver")
+	main_menu.set_name("MainMenu")
+	
+	game_over.get_node("Restart").connect("pressed", self, "restart_game")
+	game_over.get_node("Back").connect("pressed", self, "show_main_menu")
+	main_menu.get_node("Start").connect("pressed", self, "init_game")
+#	main_menu.get_node("Exit").connect("Quit", OS, "exit_code")
+	show_main_menu()
+	
+func show_main_menu():
+	if $Menus.get_children():
+		$Menus.call_deferred("remove_child", $Menus.get_children()[0])
+	$Menus.call_deferred("add_child", main_menu)
+	
+func init_game():
+	var nb_children = $Menus.get_child_count()
+	for i in range(nb_children):
+		$Menus.call_deferred("remove_child", $Menus.get_children()[nb_children - i - 1])
+	var map = map_scene.instance()
+	map.set_name("Map")
+	
+	var camera = Camera2D.new()
+	camera.set_name("Camera")
+	global.current_camera = camera
+	camera.set_zoom(Vector2(2.0, 2.0))
+	map.add_child(camera)
+	
+	add_child(map)
+	$EnemisWavesTimer.start()
+	
 	self.get_node("BlizzardStreamPlayer").volume_db = -100.0
 	
 	var hud = self.get_node("CanvasLayer/HUD")
@@ -16,30 +46,14 @@ func _ready():
 	$Map/Village.connect("change_nb_paysans_signal", $CanvasLayer/HUD, "update_peon_nb")
 	$Map/Village.connect("change_nb_max_paysans_signal", $CanvasLayer/HUD, "update_peon_nb_max")
 	$Map/Village.connect("change_nb_caillasse_signal", $CanvasLayer/HUD, "update_rock_nb")
+	$Map/Village.connect("game_over_signal", self, "_on_Map_game_over_signal")
+	$Map.connect("wave_enemis_finished_signal", self, "_on_Map_wave_enemis_finished_signal")
 
 	$Map/Village.increase_max_paysans(20)
 	$Map/Village.add_paysan(1)
-	
-	global.current_camera = $Camera2D
-
 
 func _process(delta):
-	var position = $Camera2D.get_position()
-	if Input.is_action_pressed("ui_right"):
-		position = Vector2(position.x + SPEED, position.y)
-	elif Input.is_action_pressed("ui_left"):
-		position = Vector2(position.x - SPEED, position.y)
-	elif Input.is_action_pressed("ui_up"):
-		position = Vector2(position.x, position.y - SPEED)
-	elif Input.is_action_pressed("ui_down"):
-		position = Vector2(position.x, position.y + SPEED)
-	elif Input.is_action_pressed("zoom_camera_avant"):
-		$Camera2D.set_zoom(Vector2(clamp($Camera2D.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp($Camera2D.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
-	elif Input.is_action_pressed("zoom_camera_arriere"):
-		$Camera2D.set_zoom(Vector2(clamp($Camera2D.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp($Camera2D.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
-	$Camera2D.set_position(position)
-	
-	update_volume_of("BlizzardStreamPlayer", 50*delta)
+		update_volume_of("BlizzardStreamPlayer", 50*delta)
 	
 
 func update_volume_of(var stream_name, var delta) :
@@ -73,5 +87,11 @@ func on_blizzard():
 func on_end_blizzard():
 	self.play_theme["BlizzardStreamPlayer"] = false
 
-func _on_game_over_signal():
-	print("game over")
+func _on_Map_game_over_signal():
+#	$Camera2D.dis
+	remove_child($Map)
+	$Menus.add_child(game_over)
+	
+func restart_game():
+	$Menus.call_deferred("remove_child", $Menus/GameOver)
+	init_game()
