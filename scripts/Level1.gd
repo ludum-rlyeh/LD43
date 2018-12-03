@@ -39,3 +39,4 @@ func _ready():
 		enemis_waves_script.new(70, 6, 1),
 		enemis_waves_script.new(100, 10, 0.8)
 	]
+	self.nb_waves = enemis_waves.size()

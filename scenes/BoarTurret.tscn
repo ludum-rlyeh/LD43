@@ -14,7 +14,7 @@ radius = 1000.0
 custom_solver_bias = 0.0
 extents = Vector2( 10.0943, 18.1278 )
 
-[node name="BoarTurret" type="Node2D"]
+[node name="BoarTurret" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]

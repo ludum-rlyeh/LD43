@@ -14,6 +14,7 @@ var paths = [
 	[Vector2(12,0), Vector2(12,1), Vector2(10,1), Vector2(10,5), Vector2(6,5), Vector2(6,7), Vector2(4,7), Vector2(4,9)]
 ]
 var enemis_waves = []
+var nb_waves
 
 var meteor_scene = preload("res://scenes/meteor.tscn")
 var enemi_scene = preload("res://scenes/Enemi.tscn")
@@ -87,6 +88,7 @@ func _ready():
 				matrix[j][k] = global.PATH_TILE
 			elif $TileMap.get_cell(j, k) == 10 || $TileMap.get_cell(j, k) == 11:
 				matrix[j][k] = global.SOCKET_TILE
+	
 #	TEST selectionner
 #	var tower = load("res://scenes/Turret.tscn").instance()
 #	$SocketSelectioner.enable(tower)
