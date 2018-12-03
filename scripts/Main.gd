@@ -59,7 +59,8 @@ func update_volume_of(var stream_name, var delta) :
 		self.get_node(stream_name).volume_db = n_volume
 
 func _on_EnemisWavesTimer_timeout():
-	$Map.spawn_enemis()
+	#$Map.spawn_enemis()
+	pass
 
 func _on_Map_wave_enemis_finished_signal():
 	$Map/Village.add_paysan($Map.enemis_waves.front().get_nb_paysans())
