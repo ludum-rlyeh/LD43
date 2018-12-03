@@ -35,7 +35,7 @@ SEUIL = null
 self_modulate = Color( 0.78125, 0, 1, 1 )
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
+frame = 3
 playing = true
 _sections_unfolded = [ "Offset", "Visibility" ]
 

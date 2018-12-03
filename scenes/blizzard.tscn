@@ -1,0 +1,123 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+
+var speed
+var time
+var STATE = 0
+
+func _ready():
+	set_process(false)
+	
+func start():
+	set_process(true)
+
+func init(var speed, var time):
+	self.speed = speed
+	self.time = time
+	$Particles2D2.emitting = true
+
+func _process(delta):
+	if STATE == 0:
+		var a = clamp($Particles2D2.modulate.a + speed, 0.0, 1.0)
+		var modulate = $Particles2D2.modulate
+		$Particles2D2.modulate = Color(modulate.r, modulate.g, modulate.b, a)
+		
+		if $Particles2D2.modulate.a == 1.0:
+			STATE = 1
+	elif STATE == 1:
+		time -= delta
+		print(time)
+		if time <= 0.0:
+			STATE = 2
+	elif STATE == 2:
+		var a = clamp($Particles2D2.modulate.a - speed, 0.0, 1.0)
+		var modulate = $Particles2D2.modulate
+		$Particles2D2.modulate = Color(modulate.r, modulate.g, modulate.b, a)
+		"
+
+[sub_resource type="Curve" id=2]
+
+min_value = -1.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=3]
+
+flags = 4
+width = 2048
+curve = SubResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=4]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 900, 500, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+initial_velocity_random = 1.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 1.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 1.0
+tangential_accel = 0.0
+tangential_accel_random = 1.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 6.0
+scale_random = 1.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+hue_variation_curve = SubResource( 3 )
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[node name="Node2D" type="Node2D"]
+
+script = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Particles2D2" type="Particles2D" parent="." index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+emitting = false
+amount = 3000
+lifetime = 100.0
+one_shot = false
+preprocess = 4.0
+speed_scale = 20.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 4 )
+texture = null
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+

@@ -1,45 +1,92 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scripts/Enemi.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/animations/vilain1/01.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/animations/vilain1/02.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/animations/vilain1/03.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/animations/vilain1/04.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/animations/vilain1/01.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/animations/vilain1/02.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/animations/vilain1/03.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/animations/vilain1/04.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=11]
+[ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 2 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ null, ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
+} ]
 
 [node name="Enemi" type="Node2D" groups=[
 "Enemis",
 ]]
 
+position = Vector2( 223.925, 142.498 )
 scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
 speed = 60.0
 SEUIL = 3.0
 
-[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
+[node name="PlantAnimation" type="AnimatedSprite" parent="." index="0"]
 
+position = Vector2( 16.3171, 20.4273 )
+scale = Vector2( 0.379157, 0.379157 )
 frames = SubResource( 1 )
+animation = "plante"
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( -12.1919, 0 )
+frames = SubResource( 2 )
 animation = "walk"
 frame = 2
 playing = true
-_sections_unfolded = [ "Offset" ]
+offset = Vector2( 20, 0 )
+_sections_unfolded = [ "Material", "Offset", "Visibility" ]
 
-[node name="Collision" type="Area2D" parent="." index="1"]
+[node name="Collision" type="Area2D" parent="." index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -51,6 +98,19 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="Collision" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 3 )
+
+[node name="PlantBGAnimation" type="AnimatedSprite" parent="." index="3"]
+
+position = Vector2( 13.6432, 14.6455 )
+rotation = -0.171945
+scale = Vector2( 0.382495, 0.382495 )
+frames = SubResource( 4 )
+animation = "plante"
+
+[node name="Lightning" parent="." index="4" instance=ExtResource( 12 )]
+
+position = Vector2( 36.8513, -326.204 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
 
 

@@ -11,6 +11,8 @@ var paths = [
 ]
 var enemis_waves = []
 
+var meteor_scene = preload("res://scenes/meteor.tscn")
+
 export (PackedScene) var enemi_scene
 
 var buildings_scenes = { 
@@ -197,31 +199,47 @@ func end_thorns() :
 	get_tree().call_group("Enemis", "unstuned")
 
 func apply_lightning() :
-	for i in range(1,11) :
+	var lightning_duration = 10
+	change_filter(Color(0.5,0.5,0.7,1.0))
+	play_filter(lightning_duration+1)
+	for i in range(1,lightning_duration+1) :
 		var timer = get_tree().create_timer(rand_range(i,i+1),false)
 		timer.connect("timeout", self, "call_lightning")
 
 func call_lightning() :
+	$ColorRect.show()
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	if not enemies.empty() :
 		enemies[rand_range(0, enemies.size())].on_lightning()
 
 func apply_blizzard() :
+	var time = 10
+	$Blizzard.init(0.01, time)
+	$Blizzard.start()
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	for e in enemies :
-		e.slow_down(0.25, 10)
+		e.slow_down(0.25, time)
 
 func apply_meteors() :
-	for i in range(1,21) :
+	var time = 20
+	change_filter(Color(0.7,0.5,0.5,1))
+	play_filter(time+1)
+	for i in range(1,time+1) :
 		var timer = get_tree().create_timer(rand_range(i,i+1),false)
 		timer.connect("timeout", self, "call_meteor")
 
 func call_meteor() :
-	# TODO : Animation ?
+	var meteor = meteor_scene.instance()
+	add_child(meteor)
 	var map_rect = self.get_node("TileMap").get_used_rect()
 	var pos = Vector2(rand_range(0,map_rect.size.x),rand_range(0,map_rect.size.y))
+	var timer = get_tree().create_timer(2,false)
+	var time = 2
+	timer.connect("timeout", self, "damage_in_zone")
 	pos *= global.CELL_SIZE
 	print("Meteor in pos : ", pos)
+	meteor.init(Vector2(1000, 0), pos, time, 3)
+	meteor.start()
 	damage_in_zone(pos, 1000, 200)
 
 func damage_in_zone(var center, var radius, var power) :
@@ -229,3 +247,10 @@ func damage_in_zone(var center, var radius, var power) :
 	for e in enemies :
 		if center.distance_to(e.position) < radius :
 			e.take_damages(power)
+			
+func change_filter(var color):
+	$AnimationPlayer.get_animation("storm").track_set_key_value(0,1, color)
+	$AnimationPlayer.get_animation("storm").track_set_key_value(0,2, color)
+	
+func play_filter(var time):
+	$AnimationPlayer.play("storm", time/10.0)

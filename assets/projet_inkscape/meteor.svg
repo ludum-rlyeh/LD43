@@ -157,9 +157,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="222.21976"
-     inkscape:cy="919.72696"
+     inkscape:zoom="0.13085071"
+     inkscape:cx="332.88817"
+     inkscape:cy="1717.3055"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -186,7 +186,10 @@
     <g
        id="g1152"
        transform="translate(-21.481789,-1.3697563)"
-       style="filter:url(#filter1312)">
+       style="filter:url(#filter1312)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
       <path
          inkscape:export-ydpi="81.136185"
          inkscape:export-xdpi="81.136185"
@@ -229,30 +232,634 @@
        d="m 40.190654,37.64833 c 0.64772,5.189718 3.627047,7.438868 8.452399,3.808593"
        id="path58337"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path1316"
        d="m 38.262282,65.749473 c -5.189718,-0.64772 -7.438868,-3.627047 -3.808593,-8.452399"
-       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
     <path
        style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 21.307319,52.59006 c 2.341203,-4.676696 1.110913,-8.201103 -4.91784,-7.858962"
        id="path1318"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path1320"
        d="m 45.859285,55.952149 c 5.223071,0.268796 7.958077,-2.271834 5.226527,-7.657144"
-       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path1322"
        d="m 25.693402,43.024632 c 5.068739,-1.288643 6.929564,-4.524749 2.726913,-8.860721"
-       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="opacity:0.61000001;fill:none;stroke:#666666;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\meteor.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1475"
+       cx="116.48298"
+       cy="30.38936"
+       r="8.1765957"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\rond_blanc.png"
+       inkscape:export-xdpi="31.059999"
+       inkscape:export-ydpi="31.059999" />
+    <path
+       style="fill:#ffff9c;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 99.727659,53.846809 85.965957,23.285107 111.70718,-16.992109 64.880728,-100.00327 c 3.509191,-0.0266 69.207772,-170.19795 72.277982,-170.22457 1.25798,-0.0109 -90.585576,-171.28466 -84.606823,-171.3544 2.017202,-0.0235 95.054703,-203.49046 104.732023,-203.5823 6.06212,-0.0575 39.46698,0.59508 45.38389,0.53887 8.78377,-0.0834 -95.45992,202.51882 -93.6415,202.49756 5.39379,-0.0631 66.10103,171.46155 67.19714,171.4514 3.54864,-0.0329 -84.348653,170.43638 -80.607715,170.40351 l 43.248855,83.04609 -33.06032,40.333493 8.39999,30.740426 L 100.8,72.702128 108.12766,87.268083 95.080851,100.40425 105.53617,123.19149 83.463827,167.69362 99.459572,123.6383 86.859575,100.85106 98.387232,86.195743 89.629786,74.489362 Z"
+       id="path1477"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\lighning.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81"
+       sodipodi:nodetypes="ccccsccccccccccccccccccc" />
+    <path
+       style="fill:#14bd75;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 191.58682,331.04035 c 2.3496,-19.03891 40.94599,-40.44049 40.94599,-40.44049 0,0 -24.32839,24.4969 -24.51704,40.18773 -0.10936,9.09621 4.62809,22.45671 13.64866,23.63242 12.08084,1.57457 22.15757,-14.27542 25.78081,-25.90719 5.34728,-17.1665 -9.60461,-53.07815 -9.60461,-53.07815 0,0 21.86309,30.98299 23.50603,49.0341 1.30975,14.3903 -23.88008,34.59243 -11.37389,41.83062 16.52542,9.5644 40.54245,-21.47349 40.44051,-40.56686 -0.10465,-19.60054 -41.95702,-41.19875 -41.95702,-41.19875 0,0 44.43824,16.45012 49.53959,36.27007 4.26087,16.55453 -7.44009,36.94567 -21.61038,46.50656 -14.30121,9.64924 -44.40166,5.03924 -51.688,2.65391 -13.76746,-6.74066 -34.1546,-26.25901 -33.11065,-38.92397 z"
+       id="path1479"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccaaacaaacaacc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:export-ydpi="81"
+       inkscape:export-xdpi="81"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       sodipodi:nodetypes="ccaaacaaacaacc"
+       inkscape:connector-curvature="0"
+       id="path1752"
+       d="m 191.58682,331.04035 c 2.3496,-19.03891 40.94599,-40.44049 40.94599,-40.44049 0,0 -31.99699,22.52151 -31.75534,39.38347 0.15356,10.7145 10.17904,24.03111 20.88696,24.43668 12.17429,0.46111 22.15757,-14.27542 25.78081,-25.90719 5.34728,-17.1665 -9.60461,-53.07815 -9.60461,-53.07815 0,0 14.70697,32.24805 16.5805,49.57027 1.4887,13.76418 -16.94109,35.32783 -4.44836,41.29445 17.22941,8.2289 40.54245,-21.47349 40.44051,-40.56686 -0.10465,-19.60054 -41.95702,-41.19875 -41.95702,-41.19875 0,0 39.27621,18.25336 44.35815,36.77558 4.30816,15.70196 -3.3645,36.28342 -16.42894,46.00105 -13.84256,10.29641 -44.40166,5.03924 -51.688,2.65391 -13.76746,-6.74066 -34.1546,-26.25901 -33.11065,-38.92397 z"
+       style="fill:#10995f;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 194.24073,331.04035 -5.05507,-9.85737 7.07709,5.18143"
+       id="path1481"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 257.68174,317.2653 8.71999,-1.13739 -7.96173,5.05507"
+       id="path1483"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 248.96176,346.07915 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 l -5.81332,-1.76927"
+       id="path1485"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 217.62038,305.13316 7.20347,3.15941 -3.7913,-6.82433"
+       id="path1487"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 212.05982,358.84318 -3.15942,5.68695 6.19245,-2.90667"
+       id="path1489"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 289.1495,350.24958 5.56056,5.30781 -2.65391,-8.21447"
+       id="path1491"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 287.63298,308.6717 9.60462,-2.02202 -6.4452,6.31882"
+       id="path1497"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1499"
+       cx="204.22447"
+       cy="319.79285"
+       r="1.3901418"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1501"
+       cx="200.43318"
+       cy="340.26584"
+       r="1.642895"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1503"
+       cx="237.65106"
+       cy="354.35681"
+       r="1.4533302"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1505"
+       cx="254.1432"
+       cy="324.08963"
+       r="2.0220244"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1507"
+       cx="294.96283"
+       cy="326.99631"
+       r="1.895648"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1509"
+       cx="268.55011"
+       cy="367.68954"
+       r="1.5165184"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="path1511"
+       cx="241.63193"
+       cy="367.43677"
+       r="2.0220244"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       sodipodi:nodetypes="ccaaacaaacaacc"
+       inkscape:connector-curvature="0"
+       id="path1513"
+       d="m 200.25491,57.362363 c 2.3496,-19.03891 3.23535,-17.831979 3.23535,-17.831979 0,0 7.24514,13.302105 13.1936,17.579219 1.41991,1.020963 3.23706,1.512655 4.98057,1.649441 5.10125,0.400216 11.09489,0.630521 15.14677,-2.494424 4.8301,-3.725139 7.46347,-16.707935 7.46347,-16.707935 0,0 5.42725,8.037541 6.43795,12.663885 1.31137,6.00266 -5.85787,15.01822 -0.73985,18.417854 6.8382,4.542258 17.18778,-4.028771 22.30008,-10.451966 3.8335,-4.816475 3.88554,-18.05407 3.88554,-18.05407 0,0 3.54719,8.582485 3.69703,13.12539 0.18413,5.581937 0.77732,12.765007 -3.46995,16.391666 -13.11984,11.202781 -44.40166,5.03924 -51.688,2.65391 -13.76746,-6.74066 -25.48651,-4.276031 -24.44256,-16.940991 z"
+       style="fill:#14bd75;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:export-ydpi="81"
+       inkscape:export-xdpi="81"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       style="fill:#10995f;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 200.25491,57.362363 c 2.3496,-19.03891 3.23535,-17.831979 3.23535,-17.831979 0,0 1.98037,15.226078 7.117,20.170708 2.42092,2.330429 6.26905,3.105309 9.62738,2.989867 5.92272,-0.203591 12.2821,-2.342514 16.57656,-6.426339 4.42019,-4.203385 7.46347,-16.707935 7.46347,-16.707935 0,0 0.57701,9.022181 1.34433,13.46814 1.0286,5.959792 -6.01979,11.524637 4.35377,17.613599 7.07981,4.155632 17.18778,-4.028771 22.30008,-10.451966 3.8335,-4.816475 3.88554,-18.05407 3.88554,-18.05407 0,0 2.389,8.730236 1.9098,13.12539 -0.69188,6.34567 -1.56901,14.218936 -6.77634,17.910815 -12.67395,8.985555 -39.30804,3.520091 -46.59438,1.134761 -13.76746,-6.74066 -25.48651,-4.276031 -24.44256,-16.940991 z"
+       id="path1754"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccaaacasacaacc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1515"
+       d="m 200.25491,57.362363 -5.05507,-9.85737 7.07709,5.18143"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1519"
+       d="m 248.96176,50.418184 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 l -5.81332,-1.76927"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1521"
+       d="m 276.50974,66.306237 7.20347,3.15941 -3.7913,-6.82433"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1523"
+       d="m 212.05982,63.182214 -3.15942,5.68695 6.19245,-2.90667"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.4533302"
+       cy="58.695847"
+       cx="237.65106"
+       id="circle1533"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="2.0220244"
+       cy="55.773346"
+       cx="208.21129"
+       id="circle1535"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.5165184"
+       cy="72.02858"
+       cx="268.55011"
+       id="circle1539"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="2.0220244"
+       cy="71.775818"
+       cx="241.63193"
+       id="circle1541"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       sodipodi:nodetypes="ccaaacaaacaacc"
+       inkscape:connector-curvature="0"
+       id="path1561"
+       d="m 191.58682,181.8493 c 2.3496,-19.03891 16.63961,-19.8873 16.63961,-19.8873 0,0 -8.12737,13.22062 -6.73406,20.17071 2.00919,10.02229 9.95576,22.76392 20.17206,23.09625 12.17657,0.39609 20.8147,-14.78228 25.78081,-25.90719 2.8941,-6.48326 1.20816,-21.26539 1.20816,-21.26539 0,0 4.63502,16.68684 5.00815,25.26389 0.49242,11.31891 -13.26569,27.73474 -3.68878,33.78807 12.52633,7.91758 30.8064,-10.2817 37.84902,-23.32005 4.29154,-7.94515 -0.76127,-27.0796 -0.76127,-27.0796 0,0 8.24773,12.63195 7.71831,19.64879 -0.92048,12.19976 -7.95421,25.38179 -18.39336,31.76188 -14.72046,8.9967 -44.40166,5.03924 -51.688,2.65391 -13.76746,-6.74066 -34.1546,-26.25901 -33.11065,-38.92397 z"
+       style="fill:#14bd75;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:export-ydpi="81"
+       inkscape:export-xdpi="81"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       style="fill:#10995f;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 191.58682,181.8493 c 2.3496,-19.03891 16.63961,-19.8873 16.63961,-19.8873 0,0 -11.80048,13.08665 -10.8413,20.86578 1.32704,10.76254 10.7252,23.96939 21.5622,24.36002 13.27732,0.47859 22.99951,-15.77125 28.49791,-27.86603 2.9383,-6.46335 1.20816,-21.26539 1.20816,-21.26539 0,0 2.68437,17.26788 1.97511,25.89577 -0.97488,11.85909 -17.91674,27.41011 -8.49108,34.67271 13.73008,10.57922 37.03634,-9.81502 45.68436,-24.83657 4.50541,-7.82586 -0.76127,-27.0796 -0.76127,-27.0796 0,0 6.31866,12.96905 5.19078,19.64879 -2.20995,13.08818 -10.62692,26.61172 -22.24784,33.02565 -13.22805,7.30094 -38.01965,3.77547 -45.30599,1.39014 -13.76746,-6.74066 -34.1546,-26.25901 -33.11065,-38.92397 z"
+       id="path1750"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccaaacaaacaacc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1563"
+       d="m 194.24073,181.8493 -5.05507,-9.85737 7.07709,5.18143"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1565"
+       d="m 250.71153,180.58489 8.71999,-1.13739 -7.96173,5.05507"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1567"
+       d="m 248.96176,196.8881 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 L 247.698,200.6794"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1569"
+       d="m 209.36581,200.01305 4.59835,-6.38178 -7.46714,2.27757"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1571"
+       d="m 212.05982,209.65213 -3.15942,5.68695 6.19245,-2.90667"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1573"
+       d="m 289.1495,201.05853 5.56056,5.30781 -2.65391,-8.21447"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1575"
+       d="m 292.27979,182.71469 9.60462,-2.02202 -6.4452,6.31882"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.3901418"
+       cy="168.63583"
+       cx="202.07979"
+       id="circle1577"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.642895"
+       cy="191.0748"
+       cx="200.43318"
+       id="circle1579"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.4533302"
+       cy="205.16577"
+       cx="237.65106"
+       id="circle1581"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="2.0220244"
+       cy="188.92838"
+       cx="247.44107"
+       id="circle1583"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.895648"
+       cy="209.1712"
+       cx="280.12878"
+       id="circle1585"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="1.5165184"
+       cy="218.4985"
+       cx="268.55011"
+       id="circle1587"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <circle
+       r="2.0220244"
+       cy="218.24573"
+       cx="241.63193"
+       id="circle1589"
+       style="opacity:1;vector-effect:none;fill:#0e8250;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8652;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 354.93724,325.62586 c -1.36826,-17.89371 1.13399,-20.4927 28.18594,-37.15213 0,0 -22.7988,18.17744 -20.54792,34.74572 1.1486,8.45459 17.36064,32.08035 25.502,34.63333 52.09846,-1.71033 26.02311,-47.62462 -1.17015,-73.319 29.034,12.9003 68.88146,52.45005 14.80331,79.53995 -1.07234,0.35745 -14.44931,11.47819 -21.98298,1.78724 -7.33888,-9.44038 -23.89139,-28.48076 -24.7902,-40.23511 z"
+       id="path1623"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="scscccss"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       sodipodi:nodetypes="scscccss"
+       inkscape:connector-curvature="0"
+       id="path1625"
+       d="m 354.93724,325.62586 c -1.36826,-17.89371 1.13399,-20.4927 28.18594,-37.15213 0,0 -22.7988,18.17744 -20.54792,34.74572 1.1486,8.45459 17.36064,32.08035 25.502,34.63333 52.09846,-1.71033 26.02311,-47.62462 -1.17015,-73.319 29.034,12.9003 68.88146,52.45005 14.80331,79.53995 -1.07234,0.35745 -14.44931,11.47819 -21.98298,1.78724 -7.33888,-9.44038 -23.89139,-28.48076 -24.7902,-40.23511 z"
+       style="fill:#0e8652;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1627"
+       d="m 418.45851,308.6717 9.60462,-2.02202 -6.4452,6.31882"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1629"
+       d="m 357.23647,331.04035 -5.05507,-9.85737 7.07709,5.18143"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1631"
+       d="m 375.81791,347.827 8.71999,-1.13739 -7.96173,5.05507"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1633"
+       d="m 421.78729,347.68766 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 l -5.81332,-1.76927"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       sodipodi:nodetypes="scscccss"
+       inkscape:connector-curvature="0"
+       id="path1712"
+       d="m 361.72873,201.00928 c -1.36826,-17.89371 -3.1464,-15.07975 8.48409,-34.06303 0,0 -5.95652,13.7926 -3.70564,30.36088 1.1486,8.45459 13.42872,13.09098 21.57008,15.64396 52.09846,-1.71033 35.04864,-37.97356 15.89794,-45.25943 29.034,12.9003 37.96231,29.84154 -2.26478,51.48038 -1.07234,0.35745 -14.44931,11.47819 -21.98298,1.78724 -7.33888,-9.44038 -17.0999,-8.19565 -17.99871,-19.95 z"
+       style="fill:#0e8652;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 423.82021,181.82107 9.60462,-2.02202 -6.4452,6.31882"
+       id="path1716"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 361.70456,185.02164 -5.05507,-9.85737 7.07709,5.18143"
+       id="path1718"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 365.89876,197.74233 8.71999,-1.13739 -7.96173,5.05507"
+       id="path1720"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 405.4341,214.13491 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 l -5.81332,-1.76927"
+       id="path1722"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="fill:#0e8652;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 370.00639,63.636007 c -0.34347,-1.798814 -0.80843,-3.674268 -0.80458,-10.272648 0,0 1.68926,3.872042 2.10768,5.464703 2.168,8.25222 8.62641,0.453327 16.76777,3.006307 12.47942,8.526169 38.01849,-6.000298 18.86779,-13.286168 22.84155,7.08698 4.03021,15.624181 -5.23463,19.507118 -1.07234,0.35745 -9.72443,1.155944 -21.98298,1.78724 -8.09714,0.416989 -9.37757,-4.407739 -9.72105,-6.206552 z"
+       id="path1724"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zcscccsz"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\011.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1726"
+       d="m 414.21559,53.325748 9.60462,-2.02202 -6.4452,6.31882"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\011.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1730"
+       d="m 371.14339,58.315438 8.71999,-1.13739 -7.96173,5.05507"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\011.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1732"
+       d="m 405.4341,63.018189 c 0.63188,0 4.54956,5.56057 4.54956,5.56057 l -5.81332,-1.76927"
+       style="fill:#0e8250;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\011.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect1734"
+       width="109.37872"
+       height="99.370201"
+       x="189.08936"
+       y="274.35458"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       y="274.35458"
+       x="189.08936"
+       height="99.370201"
+       width="109.37872"
+       id="rect1736"
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect1738"
+       width="119.49586"
+       height="101.47971"
+       x="185.64835"
+       y="271.82108"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\03.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       y="122.88275"
+       x="186.21704"
+       height="101.47971"
+       width="119.49586"
+       id="rect1740"
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\02.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect1742"
+       width="119.49586"
+       height="101.47971"
+       x="186.21704"
+       y="-23.408445"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\01.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       y="-31.629723"
+       x="329.91064"
+       height="101.47971"
+       width="119.49586"
+       id="rect1744"
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\011.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect1746"
+       width="119.49586"
+       height="101.47971"
+       x="329.91064"
+       y="122.88275"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\012.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <rect
+       y="268.34149"
+       x="329.91064"
+       height="101.47971"
+       width="119.49586"
+       id="rect1748"
+       style="opacity:1;vector-effect:none;fill:#0e8652;fill-opacity:0;fill-rule:nonzero;stroke:none;stroke-width:0.96051919;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\animations\plante\013.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
   </g>
 </svg>

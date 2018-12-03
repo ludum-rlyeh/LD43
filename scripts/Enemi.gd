@@ -11,6 +11,11 @@ var path = []
 var nb_paysans_to_kill = 10
 var life = 100
 var max_speed
+var freeze_material = preload("res://assets/materials/freeze.material")
+
+func _ready(): 
+	self.max_speed = self.speed
+	
 
 func _process(delta):
 	self.position += self.velocity_norm * self.speed * delta
@@ -46,7 +51,6 @@ func take_damages(power):
 	self.life -= power
 	if(self.life <= 0):
 		die()
-
 	
 func die():
 	emit_signal("enemi_died_signal", self)
@@ -58,19 +62,38 @@ func die():
 	self.call_deferred("queue_free")
 
 func on_lightning() :
-	# TODO : an animation
-	self.die()
+	var time = 0.3
+	$Lightning.init(time)
+	$Lightning.start()
+	var timer = get_tree().create_timer(time, false)
+	timer.connect("timeout", self, "end_lightning")
+
+func end_lightning() :
+	set_modulate(Color(0,0,0,1))
+	$Sprite.stop()
+	set_process(false)
+	var timer = get_tree().create_timer(0.5, false)
+	timer.connect("timeout", self, "die")
+	get_parent().get_node("ColorRect").hide()
 
 func slow_down(var delta, var time) :
 	var timer = get_tree().create_timer(time,false)
 	timer.connect("timeout", self, "unslow", [delta])
 	self.speed *= delta
+	if !$Sprite.get_material():
+		$Sprite.set_material(freeze_material)
 
 func unslow(var delta) :
 	self.speed /= delta
+	if self.speed >= self.max_speed - 1.0:
+		$Sprite.set_material(null)
 
 func stuned() :
 	self.speed = 0
+	$PlantAnimation.play("plante")
+	$PlantBGAnimation.play("plante")
 
 func unstuned() :
 	self.speed = self.max_speed
+	$PlantAnimation.play("plante2")
+	$PlantBGAnimation.play("plante2")
