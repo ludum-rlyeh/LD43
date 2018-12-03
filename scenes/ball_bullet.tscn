@@ -14,11 +14,10 @@ func gaussian_function(var x):
 	return exp(-pow(x, 2.0))
 
 func _process(delta):
-	var value = gaussian_function((target_pos - self.position).length() / target_pos.length() * 2 -1)
-	self.position += target_pos.normalized() * self.speed * delta
+	var value = gaussian_function(((target_pos - self.position).length() / target_pos.length()) * 2 -1)
 	self.scale = Vector2(value, value)
+	self.position += target_pos.normalized() * self.speed * delta
 	if(Vector2(0,0).distance_to(target_pos) < Vector2(0,0).distance_to(self.position)):
-		
 		$Particles2D.emitting = true
 		$Sprite.hide()
 		$Timer.start()
@@ -87,7 +86,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 

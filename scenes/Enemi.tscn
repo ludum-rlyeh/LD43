@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
 "frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
@@ -25,12 +25,12 @@ animations = [ {
 } ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=9]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32.081, 31.6298 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=10]
 
 animations = [ {
 "frames": [ null, ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
@@ -58,7 +58,7 @@ SEUIL = 3.0
 
 position = Vector2( 16.3171, 20.4273 )
 scale = Vector2( 0.379157, 0.379157 )
-frames = SubResource( 1 )
+frames = SubResource( 8 )
 animation = "plante"
 
 [node name="Sprite" parent="." index="1" instance=ExtResource( 5 )]
@@ -80,18 +80,19 @@ audio_bus_name = "Master"
 
 [node name="Shape" type="CollisionShape2D" parent="Collision" index="0"]
 
-shape = SubResource( 3 )
+shape = SubResource( 9 )
 
 [node name="PlantBGAnimation" type="AnimatedSprite" parent="." index="3"]
 
 position = Vector2( 13.6432, 14.6455 )
 rotation = -0.171945
 scale = Vector2( 0.382495, 0.382495 )
-frames = SubResource( 4 )
+frames = SubResource( 10 )
 animation = "plante"
 
 [node name="Lightning" parent="." index="4" instance=ExtResource( 9 )]
 
 position = Vector2( 36.8513, -326.204 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
 
