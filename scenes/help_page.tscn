@@ -628,7 +628,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="Control" type="Control" parent="CanvasLayer" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -961,7 +960,7 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi" index="1" instance=ExtResource( 15 )]
 
-frame = 0
+frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi" index="2"]
@@ -1019,7 +1018,6 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi2" index="1" instance=ExtResource( 15 )]
 
-frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi2" index="2"]
@@ -1072,7 +1070,6 @@ animation = "plante"
 
 [node name="Sprite" parent="CanvasLayer2/Control/Enemi3" index="1" instance=ExtResource( 15 )]
 
-frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi3" index="2"]

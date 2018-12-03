@@ -6,7 +6,7 @@ signal win_signal
 
 var speed_camera = 10
 var zoom_scroll = Vector2(0.05, 0.05)
-var clamp_zoom = [Vector2(1,1), Vector2(2.2,2.2)]
+var clamp_zoom = [Vector2(1,1), Vector2(2.1,2.1)]
 
 
 var paths = [
