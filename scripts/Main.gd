@@ -29,9 +29,11 @@ func init_game():
 	map.set_name("Map")
 	
 	var camera = Camera2D.new()
+	camera.make_current()
 	camera.set_name("Camera")
 	global.current_camera = camera
-	camera.set_zoom(Vector2(2.0, 2.0))
+	camera.set_zoom(Vector2(2.2, 2.2))
+	camera.set_anchor_mode(Camera2D.ANCHOR_MODE_FIXED_TOP_LEFT)
 	map.add_child(camera)
 	
 	add_child(map)
