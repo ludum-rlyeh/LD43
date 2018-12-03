@@ -18,6 +18,7 @@ var nb_waves
 
 var meteor_scene = preload("res://scenes/meteor.tscn")
 var enemi_scene = preload("res://scenes/Enemi.tscn")
+var enemi_boss_scene = preload("res://scenes/EnemiBoss.tscn")
 
 var buildings_scenes = { 
 	global.TURRET : preload("res://scenes/DeerTurret.tscn"),
@@ -209,7 +210,7 @@ func spawn_enemis():
 			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
 			self.spawner.append(enemi)
 		for i in range(next_wave.nb_enemis_boss):
-			enemi = enemi_scene.instance()
+			enemi = enemi_boss_scene.instance()
 			enemi.set_path(get_random_path())
 			enemi.connect("enemi_died_signal", self, "on_enemi_died")
 			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
