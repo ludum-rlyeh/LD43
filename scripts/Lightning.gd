@@ -10,6 +10,9 @@ func _ready():
 func init(var time):
 	self.init_time = time
 	self.time = 0
+	h = 1000
+	$Sprite.region_rect.size.y = 0
+	$Sprite.show()
 	
 func start():
 	set_process(true)
@@ -22,4 +25,3 @@ func _process(delta):
 	if self.time >= init_time :
 		$Sprite.hide()
 		set_process(false)
-	

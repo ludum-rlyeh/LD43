@@ -1,0 +1,1260 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://assets/fonts/celticmd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/tour_cerf.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/arbalete.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/tour_sanglier.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/canon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/tour_hibou.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/flare_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/blason_cerf.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/blason_hibou.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/blason_sanglier.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/ferme.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/animations/plante/011.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/animations/plante/012.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/animations/plante/013.png" type="Texture" id=14]
+[ext_resource path="res://scenes/enemi_animation.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/animations/plante/02.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/animations/plante/03.png" type="Texture" id=18]
+[ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/meteor.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/sprites/rune_06.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/rune_02.png" type="Texture" id=24]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+signal finish_signal
+
+func _on_next_pressed():
+	$CanvasLayer2/Control.show()
+	$CanvasLayer/Control.hide()
+
+func _on_back_pressed():
+	$CanvasLayer2/Control.hide()
+	$CanvasLayer/Control.show()
+
+
+func _on_finish_pressed():
+	$CanvasLayer2/Control.hide()
+	$CanvasLayer/Control.hide()
+	emit_signal(\"finish_signal\")
+"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends \"res://scripts/Turret.gd\"
+
+var arrow_scene = preload(\"res://scenes/arrow.tscn\")
+
+func _process(delta):
+	cd -= delta
+	if cd < 0:
+		shoot(Vector2(50,400))
+		cd = attaque_speed
+
+func _ready() :
+	._ready()
+	self.power = 10
+	self.attaque_speed = 2.0
+	self.type = global.TOWER_TYPE.TURRET
+	set_process(true)
+
+func shoot(var enemi_position):
+	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
+	$Arbalete.set_rotation(angle)
+	var arrow = arrow_scene.instance()
+	arrow.set_rotation(angle)
+	arrow.set_position($Position2D.position)
+	arrow.target_pos = enemi_position
+	add_child(arrow)
+	
+func apply_damages():
+	for target in targets:
+		target.take_damages(self.power)
+		shoot(target.position - self.global_position)
+	
+func remove_bullet(var bullet):
+	call_deferred(\"remove_child\", bullet)
+	bullet.call_deferred(\"queue_free\")
+
+func _on_MouseDetector_mouse_entered():
+	._on_MouseDetector_mouse_entered()
+	pass # replace with function body
+
+func _on_MouseDetector_mouse_exited():
+	._on_MouseDetector_mouse_exited()
+	pass # replace with function body
+"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends \"res://scripts/Turret.gd\"
+
+var cannonball_bullet_scene = preload(\"res://scenes/ball_bullet.tscn\")
+
+var radius = 100
+
+func _process(delta):
+	cd -= delta
+	if cd < 0:
+		shoot(Vector2(40,50))
+		cd = attaque_speed
+		
+func _ready() :
+	._ready()
+	self.type = global.TOWER_TYPE.CANON
+	self.power = 25
+	self.attaque_range = 250
+	self.attaque_speed = 5.0
+	radius = 30
+	
+	
+
+func shoot(var enemi_position):
+	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
+	var cannonball_bullet = cannonball_bullet_scene.instance()
+	cannonball_bullet.set_position($Position2D.position)
+	cannonball_bullet.target_pos = enemi_position
+	$Canon.set_rotation(angle)
+	add_child(cannonball_bullet)
+	cannonball_bullet.get_node(\"Crater\").scale = Vector2(0.1, 0.1)
+	cannonball_bullet.get_node(\"Particles2D\").scale = Vector2(0.1, 0.1)
+	cannonball_bullet.speed = 100
+
+func apply_damages():
+	for target in targets:
+		shoot(target.position - self.global_position)
+	
+func remove_bullet(var bullet):
+	call_deferred(\"remove_child\", bullet)
+	bullet.call_deferred(\"queue_free\")
+"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends \"res://scripts/Turret.gd\"
+
+var magic_ball_scene = preload(\"res://scenes/magic_bullet.tscn\")
+
+func _process(delta):
+	cd -= delta
+	if cd < 0:
+		shoot(Vector2(40,100))
+		cd = attaque_speed
+
+func _ready() :
+	._ready()
+	self.power = 0.5
+	self.attaque_speed = 2.0
+	self.type = global.TOWER_TYPE.WIZARD
+
+func shoot(var enemi_position):
+	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
+	
+	var magic_ball = magic_ball_scene.instance()
+	print(magic_ball)
+	magic_ball.set_position($Position2D.position)
+	magic_ball.target_pos = enemi_position
+	add_child(magic_ball)
+	
+func apply_damages():
+	for target in targets:
+		target.slow_down(self.power, self.attaque_speed)
+		shoot(target.position - self.global_position)
+	
+func remove_bullet(var bullet):
+	call_deferred(\"remove_child\", bullet)
+	bullet.call_deferred(\"queue_free\")
+
+func _on_MouseDetector_mouse_entered():
+	._on_MouseDetector_mouse_entered()
+	pass # replace with function body
+
+func _on_MouseDetector_mouse_exited():
+	._on_MouseDetector_mouse_exited()
+	pass # replace with function body
+"
+
+[sub_resource type="ParticlesMaterial" id=6]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 20.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.2
+orbit_velocity_random = 0.2
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 10.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 20.0
+damping_random = 0.2
+angle = 360.0
+angle_random = 1.0
+scale = 0.2
+scale_random = 0.0
+color = Color( 0.369903, 0.530291, 0.910156, 0.787098 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = true
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends Node2D
+
+var speed = 0.1
+var radius = Vector2(0,10)
+
+func _ready():
+	position = get_node(\"../Position2D\").position + radius
+
+func _process(delta):
+	radius = radius.rotated(speed)
+	self.position = get_node(\"../Position2D\").position + radius"
+
+[sub_resource type="DynamicFont" id=8]
+
+size = 20
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="GDScript" id=9]
+
+script/source = "extends Node2D
+
+signal finish_path_signal
+signal enemi_died_signal
+
+export (float) var speed
+export (float) var SEUIL
+
+var velocity_norm = Vector2(0,0)
+var path = []
+var nb_paysans_to_kill = 10
+var life = 100
+var max_speed
+var freeze_material = preload(\"res://assets/materials/freeze.material\")
+
+var time =0.5
+
+func _ready(): 
+	self.max_speed = self.speed
+	
+func _process(delta):
+	if time < 0:
+		stuned()
+		time = 4
+		$Sprite.stop()
+	elif time < 2:
+		unstuned()
+		$Sprite.play()
+	time -= delta
+	
+func set_path(var path):
+	self.path = path.duplicate()
+	self.position = self.path.front()  * global.CELL_SIZE
+
+func set_speed(var value):
+	self.speed = value
+	self.max_speed = self.speed
+
+func update_velocity():
+	if !self.path.empty():
+		var point = self.path.front() * global.CELL_SIZE
+		var distance = (get_position() - point).length()
+		if distance < SEUIL:
+			self.path.pop_front()
+			update_velocity()
+		self.velocity_norm = (point - get_position()).normalized()
+		if self.path.empty():
+			emit_signal(\"finish_path_signal\", self)
+	else:
+		self.velocity_norm = Vector2(0,0)
+
+func take_damages(power):
+	# print(\"Aouch :\" + str(self) + \" life:\" + str(self.life))
+	self.life -= power
+	if(self.life <= 0):
+		die()
+	
+func die():
+	emit_signal(\"enemi_died_signal\", self)
+	var area = self.get_node(\"Collision\")
+	var turrets = area.get_overlapping_areas()
+	for turret in turrets:
+		turret.get_parent().ennemi_die(self)
+	self.get_parent().call_deferred(\"remove_child\", self)
+	self.call_deferred(\"queue_free\")
+
+func on_lightning() :
+	var time = 0.3
+	$Lightning.init(time)
+	$Lightning.start()
+	var timer = get_tree().create_timer(time, false)
+	timer.connect(\"timeout\", self, \"end_lightning\")
+
+func end_lightning() :
+	set_modulate(Color(0,0,0,1))
+	$Sprite.stop()
+	set_process(false)
+	var timer = get_tree().create_timer(0.5, false)
+	timer.connect(\"timeout\", self, \"die\")
+	get_parent().get_node(\"ColorRect\").hide()
+
+func slow_down(var delta, var time) :
+	var timer = get_tree().create_timer(time,false)
+	timer.connect(\"timeout\", self, \"unslow\", [delta])
+	self.speed *= delta
+	if !$Sprite.get_material():
+		$Sprite.set_material(freeze_material)
+
+func unslow(var delta) :
+	self.speed /= delta
+	if self.speed >= self.max_speed - 1.0:
+		$Sprite.set_material(null)
+
+func stuned() :
+	self.speed = 0
+	$PlantAnimation.play(\"plante\")
+	$PlantBGAnimation.play(\"plante\")
+
+func unstuned() :
+	self.speed = self.max_speed
+	$PlantAnimation.play(\"plante2\")
+	$PlantBGAnimation.play(\"plante2\")"
+
+[sub_resource type="SpriteFrames" id=10]
+
+animations = [ {
+"frames": [ null, ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 13 ), ExtResource( 12 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 32.081, 31.6298 )
+
+[sub_resource type="SpriteFrames" id=12]
+
+animations = [ {
+"frames": [ null, ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": false,
+"name": "plante",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 17 ), ExtResource( 16 ), null ],
+"loop": false,
+"name": "plante2",
+"speed": 5.0
+} ]
+
+[sub_resource type="GDScript" id=13]
+
+script/source = "extends Node2D
+
+signal finish_path_signal
+signal enemi_died_signal
+
+export (float) var speed
+export (float) var SEUIL
+
+var velocity_norm = Vector2(0,0)
+var path = []
+var nb_paysans_to_kill = 10
+var life = 100
+var max_speed
+var freeze_material = preload(\"res://assets/materials/freeze.material\")
+
+var time =0.5
+
+func _ready(): 
+	self.max_speed = self.speed
+	
+func _process(delta):
+	if time < 0:
+		slow_down(0.25, 30)
+		time = 1
+	elif time < 0.25:
+		unslow(0.25)
+	time -= delta
+
+func set_path(var path):
+	self.path = path.duplicate()
+	self.position = self.path.front()  * global.CELL_SIZE
+
+func set_speed(var value):
+	self.speed = value
+	self.max_speed = self.speed
+
+func update_velocity():
+	if !self.path.empty():
+		var point = self.path.front() * global.CELL_SIZE
+		var distance = (get_position() - point).length()
+		if distance < SEUIL:
+			self.path.pop_front()
+			update_velocity()
+		self.velocity_norm = (point - get_position()).normalized()
+		if self.path.empty():
+			emit_signal(\"finish_path_signal\", self)
+	else:
+		self.velocity_norm = Vector2(0,0)
+
+func take_damages(power):
+	# print(\"Aouch :\" + str(self) + \" life:\" + str(self.life))
+	self.life -= power
+	if(self.life <= 0):
+		die()
+	
+func die():
+	emit_signal(\"enemi_died_signal\", self)
+	var area = self.get_node(\"Collision\")
+	var turrets = area.get_overlapping_areas()
+	for turret in turrets:
+		turret.get_parent().ennemi_die(self)
+	self.get_parent().call_deferred(\"remove_child\", self)
+	self.call_deferred(\"queue_free\")
+
+func on_lightning() :
+	var time = 0.3
+	$Lightning.init(time)
+	$Lightning.start()
+	var timer = get_tree().create_timer(time, false)
+	timer.connect(\"timeout\", self, \"end_lightning\")
+
+func end_lightning() :
+	set_modulate(Color(0,0,0,1))
+	$Sprite.stop()
+	set_process(false)
+	var timer = get_tree().create_timer(0.5, false)
+	timer.connect(\"timeout\", self, \"die\")
+	get_parent().get_node(\"ColorRect\").hide()
+
+func slow_down(var delta, var time) :
+	var timer = get_tree().create_timer(time,false)
+	timer.connect(\"timeout\", self, \"unslow\", [delta])
+	self.speed *= delta
+	if !$Sprite.get_material():
+		$Sprite.set_material(freeze_material)
+
+func unslow(var delta) :
+	self.speed /= delta
+	if self.speed >= self.max_speed - 1.0:
+		$Sprite.set_material(null)
+		speed = max_speed
+
+func stuned() :
+	self.speed = 0
+	$PlantAnimation.play(\"plante\")
+	$PlantBGAnimation.play(\"plante\")
+
+func unstuned() :
+	self.speed = self.max_speed
+	$PlantAnimation.play(\"plante2\")
+	$PlantBGAnimation.play(\"plante2\")"
+
+[sub_resource type="GDScript" id=14]
+
+script/source = "extends Node2D
+
+signal finish_path_signal
+signal enemi_died_signal
+
+export (float) var speed = 60
+export (float) var SEUIL
+
+var velocity_norm = Vector2(0,0)
+var path = []
+var nb_paysans_to_kill = 10
+var life = 100
+var max_speed
+var freeze_material = preload(\"res://assets/materials/freeze.material\")
+
+var time = 0.5
+func _ready(): 
+	self.max_speed = self.speed
+	
+func _process(delta):
+	if time < 0:
+		on_lightning()
+		time = 1
+	time -= delta
+
+func set_path(var path):
+	self.path = path.duplicate()
+	self.position = self.path.front()  * global.CELL_SIZE
+
+func set_speed(var value):
+	self.speed = value
+	self.max_speed = self.speed
+
+func update_velocity():
+	if !self.path.empty():
+		var point = self.path.front() * global.CELL_SIZE
+		var distance = (get_position() - point).length()
+		if distance < SEUIL:
+			self.path.pop_front()
+			update_velocity()
+		self.velocity_norm = (point - get_position()).normalized()
+		if self.path.empty():
+			emit_signal(\"finish_path_signal\", self)
+	else:
+		self.velocity_norm = Vector2(0,0)
+
+func take_damages(power):
+	# print(\"Aouch :\" + str(self) + \" life:\" + str(self.life))
+	self.life -= power
+	if(self.life <= 0):
+		die()
+	
+func die():
+	set_modulate(Color(1,1,1,1))
+
+func on_lightning() :
+	var time = 0.3
+	$Lightning.init(time)
+	$Lightning.start()
+	var timer = get_tree().create_timer(time, false)
+	timer.connect(\"timeout\", self, \"end_lightning\")
+
+func end_lightning() :
+	set_modulate(Color(0,0,0,1))
+	$Sprite.stop()
+	var timer = get_tree().create_timer(0.5, false)
+	timer.connect(\"timeout\", self, \"die\")
+
+func slow_down(var delta, var time) :
+	var timer = get_tree().create_timer(time,false)
+	timer.connect(\"timeout\", self, \"unslow\", [delta])
+	self.speed *= delta
+	if !$Sprite.get_material():
+		$Sprite.set_material(freeze_material)
+
+func unslow(var delta) :
+	self.speed /= delta
+	if self.speed >= self.max_speed - 1.0:
+		$Sprite.set_material(null)
+
+func stuned() :
+	self.speed = 0
+	$PlantAnimation.play(\"plante\")
+	$PlantBGAnimation.play(\"plante\")
+
+func unstuned() :
+	self.speed = self.max_speed
+	$PlantAnimation.play(\"plante2\")
+	$PlantBGAnimation.play(\"plante2\")"
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="DynamicFont" id=15]
+
+size = 40
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=16]
+
+size = 40
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Control" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 983.0
+margin_bottom = 536.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.705882 )
+
+[node name="next" type="Button" parent="CanvasLayer/Control" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 792.0
+margin_top = 461.0
+margin_right = 950.0
+margin_bottom = 510.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Next"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
+
+[node name="DeerTurret" type="Node2D" parent="CanvasLayer/Control" index="2"]
+
+position = Vector2( 105.797, 258.387 )
+scale = Vector2( 4, 4 )
+script = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Control/DeerTurret" index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Arbalete" type="Sprite" parent="CanvasLayer/Control/DeerTurret" index="1"]
+
+position = Vector2( -0.065012, -16.2607 )
+rotation = -0.00443538
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="CanvasLayer/Control/DeerTurret" index="2"]
+
+position = Vector2( -0.551323, -15.4943 )
+
+[node name="BoarTurret" type="Node2D" parent="CanvasLayer/Control" index="3"]
+
+position = Vector2( 634.663, 265.966 )
+scale = Vector2( 4, 4 )
+script = SubResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Control/BoarTurret" index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Canon" type="Sprite" parent="CanvasLayer/Control/BoarTurret" index="1"]
+
+position = Vector2( -0.0650177, -16.2607 )
+rotation = -0.00443538
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="CanvasLayer/Control/BoarTurret" index="2"]
+
+position = Vector2( 0, -17.5158 )
+
+[node name="OwlTurret" type="Node2D" parent="CanvasLayer/Control" index="4"]
+
+position = Vector2( 357.595, 249.505 )
+scale = Vector2( 4, 4 )
+script = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Control/OwlTurret" index="0"]
+
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="orb" type="Particles2D" parent="CanvasLayer/Control/OwlTurret" index="1"]
+
+position = Vector2( 0, -19.1551 )
+scale = Vector2( 0.28, 0.28 )
+emitting = true
+amount = 48
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 0.5
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 6 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="CanvasLayer/Control/OwlTurret" index="2"]
+
+position = Vector2( 0, -17.5158 )
+
+[node name="MagicBullet" type="Node2D" parent="CanvasLayer/Control/OwlTurret" index="3"]
+
+position = Vector2( 0, -19.1551 )
+scale = Vector2( 0.7, 0.7 )
+script = SubResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="blason_cerf" type="Sprite" parent="CanvasLayer/Control" index="5"]
+
+position = Vector2( 100.695, 65.3583 )
+texture = ExtResource( 8 )
+
+[node name="blason_hibou" type="Sprite" parent="CanvasLayer/Control" index="6"]
+
+position = Vector2( 351.395, 67.371 )
+texture = ExtResource( 9 )
+
+[node name="blason_sanglier" type="Sprite" parent="CanvasLayer/Control" index="7"]
+
+position = Vector2( 636.862, 59.7547 )
+texture = ExtResource( 10 )
+
+[node name="ferme" type="Sprite" parent="CanvasLayer/Control" index="8"]
+
+position = Vector2( 895.575, 80.5802 )
+texture = ExtResource( 11 )
+
+[node name="ferme2" type="Sprite" parent="CanvasLayer/Control" index="9"]
+
+position = Vector2( 887.959, 282.702 )
+scale = Vector2( 3.48554, 3.48554 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = 404.0
+margin_right = 211.0
+margin_bottom = 426.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Normal attack"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 258.0
+margin_top = 406.0
+margin_right = 456.0
+margin_bottom = 428.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Frozen attack"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 562.0
+margin_top = 412.0
+margin_right = 760.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Attack zone"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label4" type="Label" parent="CanvasLayer/Control" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 768.0
+margin_top = 414.0
+margin_right = 1007.0
+margin_bottom = 436.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 8 )
+text = "Increase capacity"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." index="1"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" type="Control" parent="CanvasLayer2" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 983.0
+margin_bottom = 536.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.705882 )
+
+[node name="Enemi" type="Node2D" parent="CanvasLayer2/Control" index="1" groups=[
+"Enemis",
+]]
+
+editor/display_folded = true
+position = Vector2( 861.75, 402.367 )
+scale = Vector2( 0.8, 0.8 )
+script = SubResource( 9 )
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+speed = 60.0
+SEUIL = null
+
+[node name="PlantAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi" index="0"]
+
+position = Vector2( 16.3171, 20.4273 )
+scale = Vector2( 0.379157, 0.379157 )
+frames = SubResource( 10 )
+animation = "plante"
+
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi" index="1" instance=ExtResource( 15 )]
+
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
+
+[node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi" index="2"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi/Collision" index="0"]
+
+shape = SubResource( 11 )
+
+[node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi" index="3"]
+
+position = Vector2( 13.6432, 14.6455 )
+rotation = -0.171945
+scale = Vector2( 0.382495, 0.382495 )
+frames = SubResource( 12 )
+animation = "plante"
+
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi" index="4" instance=ExtResource( 19 )]
+
+position = Vector2( 36.8513, -326.204 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Meteor" parent="CanvasLayer2/Control" index="2" instance=ExtResource( 20 )]
+
+position = Vector2( 151.543, 396.711 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="Enemi2" type="Node2D" parent="CanvasLayer2/Control" index="3" groups=[
+"Enemis",
+]]
+
+editor/display_folded = true
+position = Vector2( 614.954, 394.222 )
+scale = Vector2( 0.8, 0.8 )
+script = SubResource( 13 )
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+speed = 60.0
+SEUIL = null
+
+[node name="PlantAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi2" index="0"]
+
+position = Vector2( 16.3171, 20.4273 )
+scale = Vector2( 0.379157, 0.379157 )
+frames = SubResource( 10 )
+animation = "plante"
+
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi2" index="1" instance=ExtResource( 15 )]
+
+frame = 3
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
+
+[node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi2" index="2"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi2/Collision" index="0"]
+
+shape = SubResource( 11 )
+
+[node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi2" index="3"]
+
+position = Vector2( 13.6432, 14.6455 )
+rotation = -0.171945
+scale = Vector2( 0.382495, 0.382495 )
+frames = SubResource( 12 )
+animation = "plante"
+
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi2" index="4" instance=ExtResource( 19 )]
+
+position = Vector2( 40.5268, -326.204 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="Enemi3" type="Node2D" parent="CanvasLayer2/Control" index="4" groups=[
+"Enemis",
+]]
+
+editor/display_folded = true
+position = Vector2( 403.182, 392.593 )
+scale = Vector2( 0.8, 0.8 )
+script = SubResource( 14 )
+_sections_unfolded = [ "Material", "Transform", "Z Index" ]
+speed = 60
+SEUIL = null
+
+[node name="PlantAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi3" index="0"]
+
+position = Vector2( 16.3171, 20.4273 )
+scale = Vector2( 0.379157, 0.379157 )
+frames = SubResource( 10 )
+animation = "plante"
+
+[node name="Sprite" parent="CanvasLayer2/Control/Enemi3" index="1" instance=ExtResource( 15 )]
+
+frame = 3
+_sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
+
+[node name="Collision" type="Area2D" parent="CanvasLayer2/Control/Enemi3" index="2"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="Shape" type="CollisionShape2D" parent="CanvasLayer2/Control/Enemi3/Collision" index="0"]
+
+shape = SubResource( 11 )
+
+[node name="PlantBGAnimation" type="AnimatedSprite" parent="CanvasLayer2/Control/Enemi3" index="3"]
+
+position = Vector2( 13.6432, 14.6455 )
+rotation = -0.171945
+scale = Vector2( 0.382495, 0.382495 )
+frames = SubResource( 12 )
+animation = "plante"
+
+[node name="Lightning" parent="CanvasLayer2/Control/Enemi3" index="4" instance=ExtResource( 19 )]
+
+position = Vector2( 41.4457, -326.204 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="back" type="Button" parent="CanvasLayer2/Control" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 40.0
+margin_top = 494.0
+margin_right = 180.0
+margin_bottom = 543.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 15 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="finish" type="Button" parent="CanvasLayer2/Control" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 814.0
+margin_top = 501.0
+margin_right = 989.0
+margin_bottom = 550.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 16 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Finish"
+flat = true
+align = 1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2/Control" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 111.0
+margin_top = 83.0
+margin_right = 178.0
+margin_bottom = 146.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer2/Control" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 381.0
+margin_top = 86.0
+margin_right = 448.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer2/Control" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 593.0
+margin_top = 86.0
+margin_right = 660.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer2/Control" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = 86.0
+margin_right = 915.0
+margin_bottom = 149.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 1, 1, 1, 1 )
+
+[node name="rune_08" type="Sprite" parent="CanvasLayer2/Control" index="11"]
+
+position = Vector2( 144.958, 115.018 )
+texture = ExtResource( 21 )
+
+[node name="rune_05" type="Sprite" parent="CanvasLayer2/Control" index="12"]
+
+position = Vector2( 417.267, 118.335 )
+texture = ExtResource( 22 )
+
+[node name="rune_00" type="Sprite" parent="CanvasLayer2/Control" index="13"]
+
+position = Vector2( 882.374, 115.318 )
+texture = ExtResource( 23 )
+
+[node name="rune_02" type="Sprite" parent="CanvasLayer2/Control" index="14"]
+
+position = Vector2( 627.669, 113.772 )
+texture = ExtResource( 24 )
+
+[connection signal="pressed" from="CanvasLayer/Control/next" to="." method="_on_next_pressed"]
+
+[connection signal="pressed" from="CanvasLayer2/Control/back" to="." method="_on_back_pressed"]
+
+[connection signal="pressed" from="CanvasLayer2/Control/finish" to="." method="_on_finish_pressed"]
+
+

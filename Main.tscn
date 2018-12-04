@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/musics/main_theme.ogg" type="AudioStream" id=3]
 [ext_resource path="res://assets/musics/blizzard_theme.ogg" type="AudioStream" id=4]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -19,10 +19,12 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="HUD" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
 
-margin_left = 13.0
-margin_top = 5.0
-margin_right = 53.0
-margin_bottom = 45.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -170.0
+margin_top = 0.0
+margin_right = 330.0
+margin_bottom = 136.0
 
 [node name="EnemisWavesTimer" type="Timer" parent="." index="1"]
 

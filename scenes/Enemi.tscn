@@ -10,7 +10,7 @@
 [ext_resource path="res://assets/sprites/animations/plante/01.png" type="Texture" id=8]
 [ext_resource path="res://scenes/Lightning.tscn" type="PackedScene" id=9]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=8]
 
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), null ],
@@ -58,7 +58,7 @@ SEUIL = 3.0
 
 position = Vector2( 16.3171, 20.4273 )
 scale = Vector2( 0.379157, 0.379157 )
-frames = SubResource( 1 )
+frames = SubResource( 8 )
 animation = "plante"
 
 [node name="Sprite" parent="." index="1" instance=ExtResource( 5 )]

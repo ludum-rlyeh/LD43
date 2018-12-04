@@ -6,7 +6,7 @@ signal win_signal
 
 var speed_camera = 10
 var zoom_scroll = Vector2(0.05, 0.05)
-var clamp_zoom = [Vector2(1,1), Vector2(2.2,2.2)]
+var clamp_zoom = [Vector2(1,1), Vector2(2.1,2.1)]
 
 
 var paths = [
@@ -14,9 +14,11 @@ var paths = [
 	[Vector2(12,0), Vector2(12,1), Vector2(10,1), Vector2(10,5), Vector2(6,5), Vector2(6,7), Vector2(4,7), Vector2(4,9)]
 ]
 var enemis_waves = []
+var nb_waves
 
 var meteor_scene = preload("res://scenes/meteor.tscn")
 var enemi_scene = preload("res://scenes/Enemi.tscn")
+var enemi_boss_scene = preload("res://scenes/EnemiBoss.tscn")
 
 var buildings_scenes = { 
 	global.TURRET : preload("res://scenes/DeerTurret.tscn"),
@@ -208,7 +210,7 @@ func spawn_enemis():
 			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
 			self.spawner.append(enemi)
 		for i in range(next_wave.nb_enemis_boss):
-			enemi = enemi_scene.instance()
+			enemi = enemi_boss_scene.instance()
 			enemi.set_path(get_random_path())
 			enemi.connect("enemi_died_signal", self, "on_enemi_died")
 			enemi.connect("finish_path_signal", self, "on_enemi_arrived")
