@@ -11,7 +11,7 @@ if you want the gods to help you, **sacrifices must be made**.
 
 **Armorican Defenders** is a game made during the **Ludum Dare 43** (Jam session) using Godot Engine
 
-**Rate us on the ludum dare webpage of the project TODO**
+**Rate us on the ludum dare webpage of the project [https://ldjam.com/events/ludum-dare/43/armorican-defenders]**
 
 ## Play the game
 
