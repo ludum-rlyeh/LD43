@@ -13,6 +13,9 @@ var target_pos
 func gaussian_function(var x):
 	return exp(-pow(x, 2.0))
 
+func _ready():
+	self.scale = Vector2(0 , 0)
+
 func _process(delta):
 	var value = gaussian_function(((target_pos - self.position).length() / target_pos.length()) * 2 -1)
 	self.scale = Vector2(value, value)
@@ -79,7 +82,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Animation", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="cannonball" type="Node2D"]
+[node name="cannonball" type="Node2D" index="0"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]

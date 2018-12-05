@@ -44,7 +44,7 @@ animations = [ {
 "speed": 4.0
 } ]
 
-[node name="Enemi" type="Node2D" index="0" groups=[
+[node name="Enemi" type="Node2D" groups=[
 "Enemis",
 ]]
 
@@ -64,7 +64,7 @@ animation = "plante"
 [node name="Sprite" parent="." index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 1.75284, -59.0124 )
-frame = 0
+frame = 1
 _sections_unfolded = [ "Material", "Offset", "Transform", "Visibility" ]
 
 [node name="Collision" type="Area2D" parent="." index="2"]
