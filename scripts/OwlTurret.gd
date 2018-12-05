@@ -15,6 +15,7 @@ func shoot(var enemi_position):
 	var angle = Vector2(0, -1).angle_to(enemi_position.normalized())
 	
 	var magic_ball = magic_ball_scene.instance()
+	magic_ball.scale = Vector2(0.8, 0.8)
 	magic_ball.set_position($Position2D.position)
 	magic_ball.target_pos = enemi_position
 	add_child(magic_ball)

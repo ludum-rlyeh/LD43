@@ -12,7 +12,7 @@ radius = 1000.0
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.0943, 18.1278 )
+extents = Vector2( 21.9212, 41.9959 )
 
 [sub_resource type="GDScript" id=3]
 
@@ -71,11 +71,12 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 [node name="OwlTurret" type="Node2D"]
 
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.1, 0.1 )
+position = Vector2( 25.7178, -63.2688 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -100,6 +101,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="MouseDetector" type="Area2D" parent="." index="2"]
 
+position = Vector2( 25.7178, -63.2689 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -113,29 +115,30 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector" index="0"]
 
-position = Vector2( 0, 4.4361 )
+position = Vector2( 0, 10.5765 )
 scale = Vector2( 1, 1.20997 )
 shape = SubResource( 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Position2D" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0, -17.5158 )
+position = Vector2( 24.9289, -101.927 )
 
 [node name="MagicBullet" type="Node2D" parent="." index="4"]
 
-position = Vector2( 0, -19.1551 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 25.2444, -86.2106 )
+scale = Vector2( 0.8, 0.8 )
 script = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="orb" type="Particles2D" parent="MagicBullet" index="0"]
 
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.7, 0.7 )
 emitting = true
 amount = 48
 lifetime = 3.0
 one_shot = false
-preprocess = 0.0
+preprocess = 2.0
 speed_scale = 0.5
 explosiveness = 0.0
 randomness = 0.0
@@ -150,6 +153,21 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="5"]
+
+polygon = PoolVector2Array( 50.9362, -0.377777, 2.6427, -0.592407, 40.8482, 53.7109, 85.7075, 53.9256 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 0.588235 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
 
 [connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]
 

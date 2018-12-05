@@ -140,7 +140,7 @@ func on_cell_clicked(var index):
 
 func add_object_to_map(var object, var index):
 	add_child(object)
-	object.set_position(global.index_to_position(index, global.CELL_SIZE))
+	object.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
@@ -168,7 +168,7 @@ func on_print_phantom(type):
 	building.set_phantom(can_buy)
 	
 	add_child(building)
-	building.set_position(global.index_to_position(index, global.CELL_SIZE))
+	building.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
 
 func on_change_nb_caillasse(caillasse):
 

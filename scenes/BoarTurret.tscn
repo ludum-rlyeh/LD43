@@ -12,23 +12,23 @@ radius = 1000.0
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10.0943, 18.1278 )
+extents = Vector2( 21.9212, 41.9959 )
 
 [node name="BoarTurret" type="Node2D" index="0"]
 
-position = Vector2( 0, -1.50247 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+position = Vector2( 25.9712, -53.4448 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Canon" type="Sprite" parent="." index="1"]
 
-position = Vector2( -0.0650129, -33.0024 )
+position = Vector2( 25.9061, -86.4473 )
 rotation = -0.00443538
 scale = Vector2( 0.23, 0.23 )
 texture = ExtResource( 3 )
@@ -36,6 +36,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
+position = Vector2( 25.9712, -53.4448 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -48,11 +49,13 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
+position = Vector2( 0, 0.21463 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MouseDetector" type="Area2D" parent="." index="3"]
 
+position = Vector2( 25.9712, -62.6742 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -66,11 +69,28 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseDetector" index="0"]
 
+position = Vector2( 0, 10.5765 )
+scale = Vector2( 1, 1.20997 )
 shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="." index="4"]
 
-position = Vector2( 0, -34.4722 )
+position = Vector2( 25.9712, -87.917 )
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="5"]
+
+polygon = PoolVector2Array( 50.9362, -0.377777, 2.6427, -0.592407, 40.8482, 53.7109, 85.7075, 53.9256 )
+uv = PoolVector2Array(  )
+color = Color( 0, 0, 0, 0.588235 )
+vertex_colors = PoolColorArray(  )
+offset = Vector2( 0, 0 )
+antialiased = false
+texture = null
+texture_offset = Vector2( 0, 0 )
+texture_scale = Vector2( 1, 1 )
+texture_rotation_degrees = 0.0
+invert_enable = false
+invert_border = 100.0
 
 [connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]
 
