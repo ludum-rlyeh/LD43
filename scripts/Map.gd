@@ -49,10 +49,10 @@ func _process(delta):
 		position = Vector2(position.x, position.y - speed_camera)
 	elif Input.is_action_pressed("ui_down"):
 		position = Vector2(position.x, position.y + speed_camera)
-	elif Input.is_action_pressed("zoom_camera_avant"):
-		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
-	elif Input.is_action_pressed("zoom_camera_arriere"):
-		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
+#	elif Input.is_action_pressed("zoom_camera_avant"):
+#		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
+#	elif Input.is_action_pressed("zoom_camera_arriere"):
+#		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
 	global.current_camera.set_position(position)
 	recenter_camera()
 	

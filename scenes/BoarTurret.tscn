@@ -16,20 +16,21 @@ extents = Vector2( 10.0943, 18.1278 )
 
 [node name="BoarTurret" type="Node2D" index="0"]
 
+position = Vector2( 0, -1.50247 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Canon" type="Sprite" parent="." index="1"]
 
-position = Vector2( -0.0650129, -16.2607 )
+position = Vector2( -0.0650129, -33.0024 )
 rotation = -0.00443538
-scale = Vector2( 0.13, 0.13 )
+scale = Vector2( 0.23, 0.23 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
@@ -69,7 +70,7 @@ shape = SubResource( 2 )
 
 [node name="Position2D" type="Position2D" parent="." index="4"]
 
-position = Vector2( 0, -17.5158 )
+position = Vector2( 0, -34.4722 )
 
 [connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]
 
