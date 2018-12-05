@@ -27,8 +27,8 @@ func apply_damages():
 		shoot(target.position - self.global_position)
 	
 func remove_bullet(var bullet):
-	get_parent().damage_in_zone(bullet.global_position, self.radius, self.power)
-	call_deferred("remove_child", bullet)
+	get_node("../..").damage_in_zone(bullet.global_position, self.radius, self.power)
+	get_parent().call_deferred("remove_child", bullet)
 	bullet.call_deferred("queue_free")
 
 func _on_MouseDetector_mouse_entered():

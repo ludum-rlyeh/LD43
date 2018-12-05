@@ -61,14 +61,14 @@ func init_game():
 	var socket = self.get_node("Map/SocketSelectioner")
 	hud.connect("turret_selected_signal", socket, "enable")
 	
-	$Map/Village.connect("change_nb_paysans_signal", $CanvasLayer/HUD, "update_peon_nb")
-	$Map/Village.connect("change_nb_max_paysans_signal", $CanvasLayer/HUD, "update_peon_nb_max")
-	$Map/Village.connect("change_nb_caillasse_signal", $CanvasLayer/HUD, "update_rock_nb")
-	$Map/Village.connect("game_over_signal", self, "_on_Map_game_over_signal")
+	$Map/HUD/Village.connect("change_nb_paysans_signal", $CanvasLayer/HUD, "update_peon_nb")
+	$Map/HUD/Village.connect("change_nb_max_paysans_signal", $CanvasLayer/HUD, "update_peon_nb_max")
+	$Map/HUD/Village.connect("change_nb_caillasse_signal", $CanvasLayer/HUD, "update_rock_nb")
+	$Map/HUD/Village.connect("game_over_signal", self, "_on_Map_game_over_signal")
 	$Map.connect("wave_enemis_finished_signal", self, "_on_Map_wave_enemis_finished_signal")
 
-	$Map/Village.increase_max_paysans(20)
-	$Map/Village.add_paysan(1)
+	$Map/HUD/Village.increase_max_paysans(20)
+	$Map/HUD/Village.add_paysan(1)
 
 func _process(delta):
 		update_volume_of("BlizzardStreamPlayer", 50*delta)

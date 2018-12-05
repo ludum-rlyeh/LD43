@@ -23,7 +23,7 @@ func disable():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton && event.is_pressed():
-		var position_mouse = global.current_camera.zoom * event.global_position
+		var position_mouse = get_global_mouse_position()
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			click_on(global.position_to_index(position_mouse + Vector2(global.CELL_SIZE/2, global.CELL_SIZE/2), global.CELL_SIZE))
 

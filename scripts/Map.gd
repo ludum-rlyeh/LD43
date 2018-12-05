@@ -37,6 +37,7 @@ var spawner = []
 
 var size_map = Vector2(0,0)
 
+onready var village = $HUD/Village
 
 func _process(delta):
 	var position = global.current_camera.get_position()
@@ -85,19 +86,18 @@ func _ready():
 	
 	set_process(true)
 	
-	tower_menu = tower_menu_scene.instance()
-	add_child(tower_menu)
+	self.tower_menu = self.tower_menu_scene.instance()
+	$HUD.add_child(self.tower_menu)
 	
-	tower_menu.connect("asking_batiment_creation", self, "on_asking_batiment_creation")
-	tower_menu.connect("print_phantom", self, "on_print_phantom")
-	tower_menu.connect("hide_phantom", self, "on_hide_phantom")
+	self.tower_menu.connect("asking_batiment_creation", self, "on_asking_batiment_creation")
+	self.tower_menu.connect("print_phantom", self, "on_print_phantom")
+	self.tower_menu.connect("hide_phantom", self, "on_hide_phantom")
 	
-	tower_menu.hide()
+	self.tower_menu.hide()
 	
-	var  village = self.get_node("Village")
-	village.connect("change_nb_caillasse_signal", self, "on_change_nb_caillasse")
-	village.connect("sacrifice_signal", self, "apply_sacrifice")
-	village.connect("game_over_signal", self, "game_over_signal")
+	self.village.connect("change_nb_caillasse_signal", self, "on_change_nb_caillasse")
+	self.village.connect("sacrifice_signal", self, "apply_sacrifice")
+	self.village.connect("game_over_signal", self, "game_over_signal")
 	
 	var i = 0
 	while($TileMap.get_cell(i, 0) != -1):
@@ -139,21 +139,21 @@ func on_cell_clicked(var index):
 	#afficher menu construction à l'emplacement
 
 func add_object_to_map(var object, var index):
-	add_child(object)
+	$YSort.add_child(object)
 	object.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
 func on_asking_batiment_creation(var type):
 	var price = global.TOWER_PRICES[type]
-	if($Village.caillasse >= price):
-		$Village.decrease_caillasse(price)
+	if(self.village.caillasse >= price):
+		self.village.decrease_caillasse(price)
 
 		var building = self.buildings_scenes[type].instance()
 		var index = global.position_to_index(self.tower_menu.rect_position, global.CELL_SIZE)
 		add_object_to_map(building, index)
 		if type == global.TOWER_TYPE.FARM:
-			$Village.add_farm(building.capacity)
+			self.village.add_farm(building.capacity)
 		
 	if self.phantom != null:
 		hide_phantom()
@@ -164,17 +164,16 @@ func on_print_phantom(type):
 	self.phantom = building
 	var price = global.TOWER_PRICES[type]
 	
-	var can_buy = $Village.caillasse >= price
+	var can_buy = self.village.caillasse >= price
 	building.set_phantom(can_buy)
 	
 	add_child(building)
 	building.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
 
 func on_change_nb_caillasse(caillasse):
-
 	if self.phantom != null:
 		var price = global.TOWER_PRICES[phantom.type]
-		var can_buy = $Village.caillasse >= price
+		var can_buy = self.village.caillasse >= price
 		phantom.set_phantom(can_buy)
 	
 func on_hide_phantom():
@@ -192,7 +191,7 @@ func update_matrix(index, type):
 func _input(event):
 	if event is InputEventMouseButton && event.is_pressed():
 		if event.button_index == BUTTON_RIGHT and event.pressed:
-			tower_menu.hide()
+			self.tower_menu.hide()
 			self.hide_phantom()
 
 
@@ -220,22 +219,20 @@ func spawn_enemis():
 		
 func pop_enemis_on_map_from_spawner():
 	var enemi = self.spawner.front()
-	call_deferred("add_child", enemi)
+	$YSort.call_deferred("add_child", enemi)
 	spawner.pop_front()
 	if !spawner.empty():
 		$TimerSpawnEnemi.start()
 
 func on_enemi_died(var enemi):
 	var enemies = get_tree().get_nodes_in_group("Enemis")
-	print(enemies)
-	print(enemies.size())
 	if enemies.size() <= 1:
 		emit_signal("wave_enemis_finished_signal")
 
 func on_enemi_arrived(var enemi):
 	enemi.die()
 	#A changer
-	$Village.remove_paysans(enemi.nb_paysans_to_kill)
+	self.village.remove_paysans(enemi.nb_paysans_to_kill)
 
 func _on_game_over_signal():
 	emit_signal("game_over_signal")
