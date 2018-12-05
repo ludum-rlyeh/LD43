@@ -1,0 +1,425 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/celticmd.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/sprites/villageois.png" type="Texture" id=2]
+[ext_resource path="res://assets/credits.tres" type="Animation" id=3]
+[ext_resource path="res://assets/Sink.tres" type="Animation" id=4]
+[ext_resource path="res://assets/sprites/blood.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/wicca-2006219_640.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+func _ready():
+	pass"
+
+[sub_resource type="DynamicFont" id=3]
+
+size = 20
+use_mipmaps = true
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Control" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
+
+editor/display_folded = true
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="Control" type="Control" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -2.0
+margin_right = 983.0
+margin_bottom = 534.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.705882 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_top = 376.0
+margin_right = 565.0
+margin_bottom = 398.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "*Game Developers*"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Chtimy" type="Sprite" parent="CanvasLayer/Control/Label" index="0"]
+
+editor/display_folded = true
+position = Vector2( 30.5646, 66.5148 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label/Chtimy" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -61.0
+margin_top = 51.0
+margin_right = 44.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Chtimy"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Avzgui" type="Sprite" parent="CanvasLayer/Control/Label" index="1"]
+
+position = Vector2( 130.132, 69.7889 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label/Avzgui" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 51.0
+margin_right = 53.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Avzgui"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Dadou" type="Sprite" parent="CanvasLayer/Control/Label" index="2"]
+
+editor/display_folded = true
+position = Vector2( 236.577, 64.8778 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label/Dadou" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -39.0
+margin_top = 51.0
+margin_right = 66.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Dadou"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 134.0
+margin_top = 27.0
+margin_right = 622.0
+margin_bottom = 49.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "*Game Art Design and Animation*"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Chtimy2" type="Sprite" parent="CanvasLayer/Control/Label2" index="0"]
+
+position = Vector2( 174.706, 59 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label2/Chtimy2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -61.0
+margin_top = 51.0
+margin_right = 44.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Chtimy"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Meneiw" type="Sprite" parent="CanvasLayer/Control/Label2" index="1"]
+
+position = Vector2( 333.459, 58.1815 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label2/Meneiw" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -61.0
+margin_top = 51.0
+margin_right = 53.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Meinew"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 286.0
+margin_top = 204.0
+margin_right = 578.0
+margin_bottom = 226.0
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "*Music and Voices*"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Avzgui2" type="Sprite" parent="CanvasLayer/Control/Label3" index="0"]
+
+editor/display_folded = true
+position = Vector2( 144.977, 54.393 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Label5" type="Label" parent="CanvasLayer/Control/Label3/Avzgui2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = 51.0
+margin_right = 53.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Avzgui"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="AnimationTreePlayer" type="AnimationTreePlayer" parent="." index="1"]
+
+editor/display_folded = true
+playback_process_mode = 1
+master_player = NodePath("")
+base_path = NodePath("../blood")
+active = true
+data = {
+"active": true,
+"connections": [ "anim 2", "mix", 0, "anim", "mix", 1, "mix", "out", 0 ],
+"master": NodePath(""),
+"nodes": [ {
+"id": "mix",
+"mix": 1.0,
+"position": Vector2( 582, 61 ),
+"type": "mix"
+}, {
+"animation": ExtResource( 3 ),
+"filter": [  ],
+"id": "anim",
+"position": Vector2( 135, 33 ),
+"type": "animation"
+}, {
+"id": "out",
+"position": Vector2( 896, 93 ),
+"type": "output"
+}, {
+"animation": ExtResource( 4 ),
+"filter": [  ],
+"id": "anim 2",
+"position": Vector2( 128, 162 ),
+"type": "animation"
+} ]
+}
+
+[node name="blood" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+modulate = Color( 1, 0.03125, 0.03125, 1 )
+self_modulate = Color( 0.90625, 0.623047, 0.623047, 1 )
+position = Vector2( 0, -37.3368 )
+scale = Vector2( 0.809534, 1.0977 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Light2D" type="Light2D" parent="blood" index="0"]
+
+position = Vector2( 759.244, 797.355 )
+scale = Vector2( 1.247, 1.14506 )
+enabled = true
+editor_only = false
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="wicca-2006219_640" type="Sprite" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.2 )
+position = Vector2( 163.907, 356.394 )
+rotation = 6.28319
+scale = Vector2( 0.343844, 0.386847 )
+texture = ExtResource( 6 )
+offset = Vector2( 11, -95.5 )
+
+[node name="wicca-2006219_641" type="Sprite" parent="." index="4"]
+
+modulate = Color( 1, 1, 1, 0.2 )
+position = Vector2( 859.741, 308.277 )
+rotation = -3.14159
+scale = Vector2( 0.343844, 0.386847 )
+texture = ExtResource( 6 )
+offset = Vector2( 11, -95.5 )
+
+

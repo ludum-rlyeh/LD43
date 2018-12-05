@@ -6,20 +6,29 @@ var map_scene = preload("res://scenes/Level1.tscn")
 var game_over = load("res://scenes/GameOver.tscn").instance()
 var main_menu = load("res://scenes/MainMenu.tscn").instance()
 var help_menu = load("res://scenes/help_page.tscn").instance()
+var credits   = load("res://scenes/credits.tscn").instance()
 
 func _ready():
 	$CanvasLayer/HUD.hide()
 	game_over.set_name("GameOver")
 	main_menu.set_name("MainMenu")
 	help_menu.set_name("HelpMenu")
+	credits.set_name("credits")
 	
 	game_over.get_node("Restart").connect("pressed", self, "restart_game")
 	game_over.get_node("Back").connect("pressed", self, "show_main_menu")
 	main_menu.get_node("Start").connect("pressed", self, "init_game")
 	main_menu.get_node("Help").connect("pressed", self, "show_help_menu")
+	main_menu.get_node("Credits").connect("pressed", self, "show_credits")
 	help_menu.connect("finish_signal", self, "hide_help_menu")
 #	main_menu.get_node("Exit").connect("Quit", OS, "exit_code")
 	show_main_menu()
+	
+func show_credits():
+	$CanvasLayer/HUD.hide()
+	if $Menus.get_children():
+		$Menus.call_deferred("remove_child", $Menus.get_children()[0])
+	$Menus.call_deferred("add_child", credits)
 	
 func show_help_menu():
 	$CanvasLayer/HUD.hide()
