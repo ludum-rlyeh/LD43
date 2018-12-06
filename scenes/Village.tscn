@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/village.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/rune_00.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/rune_blizzard.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/celticmd.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/sprites/rune_04.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/rune_02.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/rune_06.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/rune_lightning.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/rune_thorn.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/rune_meteor.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -23,7 +23,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Village" type="Control"]
+[node name="Village" type="Control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -68,7 +68,6 @@ size_flags_vertical = 1
 
 [node name="Thorn" type="TextureButton" parent="SacrificeMenu" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -90,7 +89,8 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 2 )
 expand = true
-_sections_unfolded = [ "Textures" ]
+stretch_mode = 5
+_sections_unfolded = [ "Margin", "Textures" ]
 
 [node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Thorn" index="0"]
 
@@ -98,10 +98,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 35.0
-margin_top = 107.0
-margin_right = 75.0
-margin_bottom = 147.0
+margin_left = 36.0
+margin_top = 124.0
+margin_right = 76.0
+margin_bottom = 164.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -141,15 +141,14 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Lightning" type="TextureButton" parent="SacrificeMenu" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 214.0
 margin_top = -114.0
-margin_right = 311.0
-margin_bottom = -15.0
+margin_right = 328.0
+margin_bottom = 3.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -163,6 +162,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 4 )
 expand = true
+stretch_mode = 5
 _sections_unfolded = [ "Textures" ]
 
 [node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Lightning" index="0"]
@@ -172,9 +172,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 35.0
-margin_top = 107.0
+margin_top = 123.0
 margin_right = 75.0
-margin_bottom = 147.0
+margin_bottom = 163.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -214,15 +214,14 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Blizzard" type="TextureButton" parent="SacrificeMenu" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = -46.0
 margin_top = 162.0
-margin_right = 51.0
-margin_bottom = 261.0
+margin_right = 64.0
+margin_bottom = 274.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -236,6 +235,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
 expand = true
+stretch_mode = 5
 _sections_unfolded = [ "Textures" ]
 
 [node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Blizzard" index="0"]
@@ -244,10 +244,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 24.0
-margin_top = 107.0
-margin_right = 64.0
-margin_bottom = 147.0
+margin_left = 28.0
+margin_top = 125.0
+margin_right = 68.0
+margin_bottom = 165.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -288,15 +288,14 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Meteor" type="TextureButton" parent="SacrificeMenu" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 211.0
+margin_left = 200.0
 margin_top = 162.0
-margin_right = 308.0
-margin_bottom = 261.0
+margin_right = 318.0
+margin_bottom = 275.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -310,6 +309,7 @@ shortcut = null
 group = null
 texture_normal = ExtResource( 6 )
 expand = true
+stretch_mode = 5
 _sections_unfolded = [ "Textures" ]
 
 [node name="nb_sacrifice" type="Label" parent="SacrificeMenu/Meteor" index="0"]
@@ -318,10 +318,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 35.0
-margin_top = 107.0
-margin_right = 75.0
-margin_bottom = 147.0
+margin_left = 47.0
+margin_top = 128.0
+margin_right = 87.0
+margin_bottom = 168.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -341,10 +341,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -11.0
-margin_top = -25.0
-margin_right = 115.0
-margin_bottom = 2.0
+margin_left = 3.0
+margin_top = -27.0
+margin_right = 129.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

@@ -24,3 +24,4 @@ func position_to_index(var position, var offset):
 	
 func index_to_position(var index, var offset):
 	return index * offset
+	

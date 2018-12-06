@@ -57,7 +57,7 @@ func _on_Sound_pressed():
 
 "
 
-[node name="HUD" type="TextureRect" index="0"]
+[node name="HUD" type="TextureRect"]
 
 anchor_left = 0.5
 anchor_top = 0.0
