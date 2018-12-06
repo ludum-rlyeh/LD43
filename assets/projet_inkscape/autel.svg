@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="autel.svg">
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1010">
+      <stop
+         style="stop-color:#5d975d;stop-opacity:0"
+         offset="0"
+         id="stop1006" />
+      <stop
+         id="stop1018"
+         offset="0.28124189"
+         style="stop-color:#5d975d;stop-opacity:1" />
+      <stop
+         id="stop1014"
+         offset="0.52209753"
+         style="stop-color:#5d975d;stop-opacity:1" />
+      <stop
+         style="stop-color:#5d975d;stop-opacity:1"
+         offset="0.73596066"
+         id="stop1016" />
+      <stop
+         style="stop-color:#5d975d;stop-opacity:0;"
+         offset="1"
+         id="stop1008" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1010"
+       id="linearGradient1012"
+       x1="874.38541"
+       y1="-570.54057"
+       x2="1003.1068"
+       y2="-570.54057"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="488.81686"
+     inkscape:cy="502.0155"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="3200"
+     inkscape:window-height="1675"
+     inkscape:window-x="-13"
+     inkscape:window-y="-13"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1040"
+       d="m -30.7821,200.80451 c -7.171614,0.001 -3.02692,10.10266 3.541826,16.28277 3.709348,3.4899 15.572605,12.41678 20.7059362,15.05766 -6.9037302,1.74123 -9.0394582,8.76054 10.0030452,5.27451 4.0982023,-0.75024 41.4607196,-16.49254 54.6887396,-24.58445 5.37928,-3.29063 1.43152,-5.34949 -5.98427,-6.59192 -3.36354,-4.09045 -10.24897,-9.20764 -14.63323,-12.1824 -10.33913,-7.01516 -18.38487,-11.51477 -21.20247,-11.63565 -7.6526705,-0.32833 -3.481481,9.99709 3.19153,16.27531 2.11062,1.98575 15.14211,10.74915 17.68289,12.60477 -8.948336,0.58852 -12.461658,3.09695 -18.240682,5.80081 -4.648126,2.17474 -11.0658776,8.20559 -12.9832876,8.27317 -3.08299,-4.19595 -10.56084,-9.77173 -15.2172597,-12.93115 -10.3391347,-7.01517 -18.3851787,-11.51478 -21.2027807,-11.63565 -0.119574,-0.005 -0.236152,-0.008 -0.349987,-0.008 z"
+       style="opacity:1;vector-effect:none;fill:#535353;fill-opacity:0.43089432;fill-rule:nonzero;stroke:none;stroke-width:0.11877383;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsccccscaccccc"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#535353;fill-opacity:0.43089432;fill-rule:nonzero;stroke:none;stroke-width:0.555363;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="M 771.10156 673.85156 C 736.79349 673.85624 756.62092 722.18121 788.04492 751.74609 C 812.56699 774.81735 842.58601 798.7435 880.88867 810.43945 C 878.03431 810.1715 875.66178 810.11711 873.80859 810.28711 C 833.65671 813.97049 869.05913 853.00135 912.05273 874.02539 C 958.11202 896.5485 1016.2298 919.02464 1084.7305 910.38086 C 1118.4221 906.12947 1110.2829 893.98594 1087.4434 880.7207 C 1126.3537 872.46974 1055.2171 817.95522 1019.2637 793.56055 C 969.80262 760.00091 931.31107 738.47475 917.83203 737.89648 C 907.3179 737.44537 901.47764 741.20371 899.23828 747.49414 C 890.25458 740.69845 881.50547 734.50283 874.20703 729.55078 C 824.74598 695.99118 786.25443 674.46694 772.77539 673.88867 C 772.20337 673.86413 771.64614 673.85149 771.10156 673.85156 z M 913.3418 816.93555 C 918.83704 817.47865 924.47625 817.76953 930.27344 817.76953 C 932.00314 817.76953 933.60671 817.71573 935.125 817.625 C 937.93335 820.23961 940.79109 822.85818 943.74609 825.4668 C 932.53878 822.0985 922.36412 819.24506 913.3418 816.93555 z "
+       transform="scale(0.26458333)"
+       id="path1044"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       inkscape:connector-curvature="0"
+       style="opacity:1;vector-effect:none;fill:#535353;fill-opacity:0.43089432;fill-rule:nonzero;stroke:none;stroke-width:0.11877383;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m 83.589442,154.69715 c -7.171614,0.001 -3.02692,10.10266 3.541826,16.28277 3.709348,3.4899 8.022241,7.07139 13.155572,9.71227 -6.90373,1.74123 0.71588,9.22826 17.55341,10.6199 4.15215,0.34318 39.38185,3.82368 52.60987,-4.26823 5.37928,-3.29063 1.43152,-5.34949 -5.98427,-6.59192 -3.36354,-4.09045 -10.24897,-9.20764 -14.63323,-12.1824 -10.33913,-7.01516 -18.38487,-11.51477 -21.20247,-11.63565 -7.65267,-0.32833 -3.48148,9.99709 3.19153,16.27531 2.11062,1.98575 4.41792,4.00059 6.9587,5.85621 -4.35856,-0.0302 -8.1879,0.0428 -10.72929,0.17065 -3.35617,0.16891 -5.77421,0.26809 -7.69162,0.33567 -3.08299,-4.19595 -10.56084,-9.77173 -15.21726,-12.93115 -10.339135,-7.01517 -18.385179,-11.51478 -21.202781,-11.63565 -0.119574,-0.005 -0.236152,-0.008 -0.349987,-0.008 z"
+       id="path1038"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       id="path1036"
+       d="m -13.266301,269.46032 c -11.923302,0.002 -5.032462,16.79636 5.8885294,27.07122 6.1670458,5.8022 13.3375266,11.75668 21.8720486,16.14733 -11.4779348,2.89491 1.190188,15.34261 29.183747,17.65631 6.903241,0.57055 65.475046,6.35712 87.467536,-7.09623 8.94342,-5.4709 2.38,-8.89389 -9.94926,-10.95952 -5.59213,-6.80066 -17.03962,-15.30834 -24.328758,-20.25407 -17.189519,-11.6632 -30.566101,-19.14411 -35.250562,-19.34508 -12.723098,-0.54587 -5.788202,16.62086 5.306137,27.05883 3.509044,3.30144 7.345087,6.65125 11.569319,9.73635 -7.246416,-0.0503 -13.612963,0.0711 -17.838187,0.28371 -5.579877,0.28083 -9.600025,0.44572 -12.787849,0.55808 -5.125686,-6.97605 -17.558126,-16.24618 -25.299747,-21.49893 -17.1895211,-11.6632 -30.5666188,-19.14411 -35.251077,-19.34506 -0.1988,-0.009 -0.392618,-0.013 -0.581877,-0.0129 z"
+       style="opacity:1;vector-effect:none;fill:#535353;fill-opacity:0.43089432;fill-rule:nonzero;stroke:none;stroke-width:0.19746967;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#535353;fill-opacity:0.43089432;fill-rule:nonzero;stroke:none;stroke-width:0.74634206;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="M 612.7168 1049.8613 C 567.65235 1049.8675 593.69647 1113.3436 634.97266 1152.1777 C 658.28118 1174.1073 685.38221 1196.6124 717.63867 1213.207 C 674.2575 1224.1484 722.13702 1271.1948 827.93945 1279.9395 C 854.03044 1282.0959 1075.4042 1303.9664 1158.5254 1253.1191 C 1192.3273 1232.4417 1167.5207 1219.5044 1120.9219 1211.6973 C 1099.7863 1185.994 1056.5202 1153.839 1028.9707 1135.1465 C 964.00244 1091.0651 913.44528 1062.7908 895.74023 1062.0312 C 847.65293 1059.9681 873.86356 1124.8502 915.79492 1164.3008 C 929.05745 1176.7787 943.55588 1189.4394 959.52148 1201.0996 C 932.13345 1200.9094 908.07091 1201.3682 892.10156 1202.1719 C 871.01226 1203.2333 855.818 1203.8565 843.76953 1204.2812 C 824.39686 1177.915 777.40811 1142.8783 748.14844 1123.0254 C 683.18017 1078.944 632.62106 1050.6697 614.91602 1049.9102 C 614.16465 1049.8779 613.43211 1049.8612 612.7168 1049.8613 z "
+       transform="scale(0.26458333)"
+       id="path1023"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <g
+       id="g1000"
+       transform="translate(-28.133197,97.001707)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <g
+         transform="matrix(0.55833708,0,0,0.55833708,146.43406,-148.18479)"
+         id="g967">
+        <path
+           style="opacity:1;vector-effect:none;fill:#515151;fill-opacity:0.43137255;fill-rule:nonzero;stroke:none;stroke-width:0.25020364;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="M -94.385624,469.36352 H 54.958504 l 58.280326,37.70766 H -54.878024 Z"
+           id="rect1048"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+        <rect
+           y="425.02209"
+           x="-117.06405"
+           height="56.126598"
+           width="193.50314"
+           id="rect961"
+           style="opacity:1;vector-effect:none;fill:#949494;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <rect
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.20689081;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect957"
+           width="193.50314"
+           height="34.210499"
+           x="-117.06405"
+           y="396.42426"
+           rx="3" />
+      </g>
+      <path
+         sodipodi:nodetypes="csccc"
+         inkscape:connector-curvature="0"
+         id="path977"
+         d="m 89.454186,92.253071 c -1.16505,0.155117 -2.8005,3.125442 -3.1734,7.306518 -0.56301,6.312701 0.6549,14.578781 -0.0983,14.705821 -1.25208,0.21119 -2.45519,-20.094795 -3.42665,-22.010844 z"
+         style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="csssccsccsssssscc"
+         inkscape:connector-curvature="0"
+         id="path975"
+         d="m 144.27892,92.404666 c -3.27031,-1.089984 -10.64887,-2.988502 -18.49766,-3.274028 -5.16095,-0.187747 -10.60566,1.12648 -14.93578,0.990358 -3.13912,-0.09868 -5.68028,-1.601534 -7.39217,-1.457593 -7.664484,0.644452 -11.075064,3.200351 -13.999124,3.589668 l -6.7076,0.02896 c -0.97147,-1.916049 6.65999,-6.079986 6.14055,-7.761309 -0.51944,-1.681323 -0.43409,1.623454 -0.8018,-0.267269 h -1e-5 c -0.36771,-1.890723 2.63616,-5.296307 8.15171,-6.949008 5.515554,-1.652701 13.698184,2.695164 23.653354,2.939965 4.5394,0.111625 13.32802,1.339703 19.02675,0.669323 6.79893,-0.799803 10.6,-3.521699 16.78738,-3.34202 11.37352,0.330282 30.95616,-4.553374 32.07235,4.276315 1.11619,8.829689 -7.06827,6.526778 -11.62045,8.309674 -4.55218,1.782896 -9.48719,1.792878 -11.67231,2.184011 z"
+         style="fill:#ff4646;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         sodipodi:nodetypes="cssssccc"
+         inkscape:connector-curvature="0"
+         id="path971"
+         d="m 164.48411,92.341713 c -2.18512,0.391134 -2.28365,28.241747 -3.73239,28.374867 -1.44874,0.13312 -1.48278,-17.38865 -2.64692,-17.51069 -1.16414,-0.12204 0.94471,16.72737 -1.81218,16.99594 -2.75689,0.26857 -1.631,-24.321622 -4.59716,-24.556012 -2.96617,-0.23439 -0.52891,7.862662 -2.52139,7.605742 -1.99245,-0.25692 2.08447,-8.52061 -4.89515,-10.846894 z"
+         style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <rect
+         rx="1"
+         y="103.76413"
+         x="102.11697"
+         height="5.2117558"
+         width="5.4790254"
+         id="rect979"
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <rect
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect981"
+         width="5.4790254"
+         height="5.2117558"
+         x="175.3488"
+         y="98.552376"
+         rx="1" />
+      <rect
+         rx="1"
+         y="110.1786"
+         x="132.45204"
+         height="5.2117558"
+         width="5.4790254"
+         id="rect989"
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    </g>
+    <g
+       id="g899"
+       transform="matrix(1.2346986,0,0,1.2346986,5.4911348,-27.181849)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <g
+         transform="matrix(0,0.49576744,-0.63329977,0,99.686375,140.54336)"
+         id="g874">
+        <rect
+           rx="45.855999"
+           y="190.67378"
+           x="-32.543941"
+           height="30.994047"
+           width="127.37797"
+           id="rect870"
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <path
+           sodipodi:nodetypes="sssssss"
+           inkscape:connector-curvature="0"
+           id="path872"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      </g>
+      <g
+         id="g864"
+         transform="matrix(0,0.49576744,-0.63329977,0,136.24305,123.12859)">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect860"
+           width="127.37797"
+           height="30.994047"
+           x="-32.543941"
+           y="190.67378"
+           rx="45.855999" />
+        <path
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           id="path862"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssssss" />
+      </g>
+      <g
+         transform="rotate(-22.697807,56.479436,136.93518)"
+         id="g888">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.16782443;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect866"
+           width="80.668434"
+           height="19.628523"
+           x="-43.49234"
+           y="86.060333"
+           rx="29.040594" />
+        <path
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11090959;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m -1.9333508,86.12164 15.2340838,0.149604 c 10.786509,0.105932 22.706959,4.596667 22.706959,7.927742 0,3.331068 -9.233188,6.012764 -20.702217,6.012764 H -0.79633266 c -11.46902934,0 -20.70221834,-2.681696 -20.70221834,-6.012764 0,-3.331075 8.778693,-8.183278 19.5652002,-8.077346 z"
+           id="path868"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssssss" />
+      </g>
+    </g>
+    <g
+       id="g858"
+       transform="matrix(0.63329977,0,0,0.63329977,65.954644,37.907778)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <g
+         transform="matrix(0,0.78283218,-1,0,305.73686,122.25518)"
+         id="g838">
+        <rect
+           rx="45.855999"
+           y="190.67378"
+           x="-32.543941"
+           height="30.994047"
+           width="127.37797"
+           id="rect834"
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <path
+           sodipodi:nodetypes="sssssss"
+           inkscape:connector-curvature="0"
+           id="path836"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      </g>
+      <rect
+         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect840"
+         width="127.37797"
+         height="30.994047"
+         x="0.062942564"
+         y="78.420578"
+         rx="45.855999" />
+      <path
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         d="m 65.685876,78.517385 24.055091,0.23623 c 17.032233,0.16727 35.854993,7.25828 35.854993,12.51815 0,5.25986 -14.57949,9.494345 -32.689442,9.494345 H 67.481263 c -18.109953,0 -32.689446,-4.234485 -32.689446,-9.494345 0,-5.25987 13.86183,-12.92165 30.894059,-12.75438 z"
+         id="path842"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssssss" />
+      <g
+         id="g848"
+         transform="matrix(0,0.78283218,-1,0,230.36685,119.71612)">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect844"
+           width="127.37797"
+           height="30.994047"
+           x="-32.543941"
+           y="190.67378"
+           rx="45.855999" />
+        <path
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           id="path846"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssssss" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0,0.78283218,-1,0,269.3882,204.57419)"
+       id="g832"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <rect
+         rx="45.855999"
+         y="190.67378"
+         x="-32.543941"
+         height="30.994047"
+         width="127.37797"
+         id="rect828"
+         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <path
+         sodipodi:nodetypes="sssssss"
+         inkscape:connector-curvature="0"
+         id="path830"
+         d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    </g>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect815"
+       width="127.37797"
+       height="30.994047"
+       x="-36.285713"
+       y="160.73959"
+       rx="45.855999"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       d="m 29.33722,160.8364 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 31.132607 c -18.109953,0 -32.6894458,-4.23448 -32.6894458,-9.49434 0,-5.25987 13.8618298,-12.92165 30.8940588,-12.75438 z"
+       id="rect817"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssssss"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <g
+       id="g826"
+       transform="matrix(0,0.78283218,-1,0,194.01819,202.03513)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect820"
+         width="127.37797"
+         height="30.994047"
+         x="-32.543941"
+         y="190.67378"
+         rx="45.855999" />
+      <path
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+         id="path822"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssssss" />
+    </g>
+    <g
+       id="g955"
+       transform="matrix(1.21035,0,0,1.21035,-54.655449,-32.544539)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <g
+         id="g905"
+         transform="matrix(0,0.49576744,-0.63329977,0,384.45049,149.63052)">
+        <rect
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           id="rect901"
+           width="127.37797"
+           height="30.994047"
+           x="-32.543941"
+           y="190.67378"
+           rx="45.855999" />
+        <path
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           id="path903"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="sssssss" />
+      </g>
+      <g
+         transform="matrix(0,0.49576744,-0.63329977,0,347.89381,132.21575)"
+         id="g911">
+        <rect
+           rx="45.855999"
+           y="190.67378"
+           x="-32.543941"
+           height="30.994047"
+           width="127.37797"
+           id="rect907"
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <path
+           sodipodi:nodetypes="sssssss"
+           inkscape:connector-curvature="0"
+           id="path909"
+           d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      </g>
+      <g
+         id="g917"
+         transform="matrix(-0.92255284,-0.38587078,-0.38587078,0.92255284,271.46612,41.486136)">
+        <rect
+           rx="29.040594"
+           y="86.060333"
+           x="-43.49234"
+           height="19.628523"
+           width="80.668434"
+           id="rect913"
+           style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.16782443;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+        <path
+           sodipodi:nodetypes="sssssss"
+           inkscape:connector-curvature="0"
+           id="path915"
+           d="m -1.9333508,86.12164 15.2340838,0.149604 c 10.786509,0.105932 22.706959,4.596667 22.706959,7.927742 0,3.331068 -9.233188,6.012764 -20.702217,6.012764 H -0.79633266 c -11.46902934,0 -20.70221834,-2.681696 -20.70221834,-6.012764 0,-3.331075 8.778693,-8.183278 19.5652002,-8.077346 z"
+           style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.11090959;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      </g>
+    </g>
+    <g
+       id="g934"
+       transform="matrix(0,0.78283218,-1,0,441.93146,209.8646)"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <rect
+         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         id="rect930"
+         width="127.37797"
+         height="30.994047"
+         x="-32.543941"
+         y="190.67378"
+         rx="45.855999" />
+      <path
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+         id="path932"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="sssssss" />
+    </g>
+    <rect
+       rx="45.855999"
+       y="166.03001"
+       x="136.25755"
+       height="30.994047"
+       width="127.37797"
+       id="rect936"
+       style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <path
+       sodipodi:nodetypes="sssssss"
+       inkscape:connector-curvature="0"
+       id="path938"
+       d="m 201.88048,166.12681 24.0551,0.23623 c 17.03222,0.16727 35.85499,7.25828 35.85499,12.51815 0,5.25986 -14.57949,9.49434 -32.68944,9.49434 h -25.42526 c -18.10995,0 -32.68944,-4.23448 -32.68944,-9.49434 0,-5.25987 13.86183,-12.92165 30.89405,-12.75438 z"
+       style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+    <g
+       transform="matrix(0,0.78283218,-1,0,366.56145,207.32554)"
+       id="g944"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\autel.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81">
+      <rect
+         rx="45.855999"
+         y="190.67378"
+         x="-32.543941"
+         height="30.994047"
+         width="127.37797"
+         id="rect940"
+         style="opacity:1;vector-effect:none;fill:#999999;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+      <path
+         sodipodi:nodetypes="sssssss"
+         inkscape:connector-curvature="0"
+         id="path942"
+         d="m 33.078993,190.77059 24.055091,0.23623 c 17.032229,0.16727 35.854996,7.25828 35.854996,12.51815 0,5.25986 -14.579493,9.49434 -32.689445,9.49434 H 34.87438 c -18.109953,0 -32.6894454,-4.23448 -32.6894454,-9.49434 0,-5.25987 13.8618294,-12.92165 30.8940584,-12.75438 z"
+         style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.17512968;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal" />
+    </g>
+    <rect
+       style="opacity:1;vector-effect:none;fill:#c6c6c6;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+       id="rect959"
+       width="0.53453904"
+       height="2.1381562"
+       x="-396.09341"
+       y="184.21225"
+       rx="3.0000045" />
+    <path
+       style="fill:url(#linearGradient1012);fill-opacity:1;stroke:none;stroke-width:0.53510576px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 874.38541,-1296.5416 V 157.81956 H 1003.1068 V -1298.9007 Z"
+       id="path1004"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="C:\Users\Jérémy Riffet\Godot\tower_defense\LD43\assets\sprites\ascrifice.png"
+       inkscape:export-xdpi="81"
+       inkscape:export-ydpi="81" />
+  </g>
+</svg>

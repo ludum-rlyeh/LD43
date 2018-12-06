@@ -81,7 +81,7 @@ position = Vector2( 25.9712, -87.917 )
 
 polygon = PoolVector2Array( 50.9362, -0.377777, 2.6427, -0.592407, 40.8482, 53.7109, 85.7075, 53.9256 )
 uv = PoolVector2Array(  )
-color = Color( 0, 0, 0, 0.588235 )
+color = Color( 0.32549, 0.32549, 0.32549, 0.431373 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false

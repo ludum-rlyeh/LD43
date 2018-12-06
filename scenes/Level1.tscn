@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Level1.gd" type="Script" id=1]
 [ext_resource path="res://assets/tilesets/tiles.tres" type="TileSet" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://assets/sprites/tree.png" type="Texture" id=4]
 [ext_resource path="res://scenes/SocketSelectioner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/blizzard.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/Village.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Autel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Village.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -46,6 +47,7 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+editor/display_folded = true
 position = Vector2( -32, -32 )
 mode = 0
 tile_set = ExtResource( 2 )
@@ -68,6 +70,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Bag" type="Node2D" parent="TileMap" index="0"]
 
+visible = false
 position = Vector2( 51, 0 )
 
 [node name="ferme" type="Sprite" parent="TileMap/Bag" index="0"]
@@ -162,6 +165,12 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 sort_enabled = true
 
+[node name="Autel" parent="YSort" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( 1023.32, 635.909 )
+scale = Vector2( 0.25, 0.25 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="ColorRect" type="ColorRect" parent="." index="4"]
 
 visible = false
@@ -187,7 +196,7 @@ _sections_unfolded = [ "Material", "Theme" ]
 z_index = 20
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Village" parent="HUD" index="0" instance=ExtResource( 7 )]
+[node name="Village" parent="HUD" index="0" instance=ExtResource( 8 )]
 
 margin_left = 903.0
 margin_top = 556.0

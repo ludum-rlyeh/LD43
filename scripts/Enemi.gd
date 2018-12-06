@@ -77,7 +77,7 @@ func end_lightning() :
 	set_process(false)
 	var timer = get_tree().create_timer(0.5, false)
 	timer.connect("timeout", self, "die")
-	get_parent().get_node("ColorRect").hide()
+	get_node("../..").get_node("ColorRect").hide()
 
 func slow_down(var delta, var time) :
 	var timer = get_tree().create_timer(time,false)

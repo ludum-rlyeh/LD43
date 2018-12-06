@@ -94,7 +94,7 @@ func _on_EnemisWavesTimer_timeout():
 	$Map.spawn_enemis()
 
 func _on_Map_wave_enemis_finished_signal():
-	$Map/Village.add_paysan($Map.enemis_waves.front().get_nb_paysans())
+	$Map.village.add_paysan($Map.enemis_waves.front().get_nb_paysans())
 	$EnemisWavesTimer.start()
 	$Map.enemis_waves.pop_front()
 

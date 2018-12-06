@@ -259,6 +259,7 @@ func apply_thorns() :
 	self.get_parent().on_blizzard()
 	timer.connect("timeout", self.get_parent(), "on_end_blizzard")
 	get_tree().call_group("Enemis", "stuned")
+	$YSort/Autel.start(thorns_duration)
 
 func end_thorns() :
 	get_tree().call_group("Enemis", "unstuned")
@@ -272,6 +273,7 @@ func apply_lightning() :
 	# Ambient animation
 	change_filter(Color(0.5,0.5,0.7,1.0))
 	play_filter(lightning_duration+1)
+	$YSort/Autel.start(lightning_duration)
 	for i in range(1,lightning_duration+1) :
 		var timer = get_tree().create_timer(rand_range(i,i+1),false)
 		timer.connect("timeout", self, "call_lightning")
@@ -294,6 +296,7 @@ func apply_blizzard() :
 	# Effect
 	change_filter(Color(0.6,0.6,0.6,1))
 	play_filter(blizzard_time+1)
+	$YSort/Autel.start(blizzard_time)
 	var enemies = get_tree().get_nodes_in_group("Enemis")
 	for e in enemies :
 		e.slow_down(0.25, blizzard_time)
@@ -307,6 +310,7 @@ func apply_meteors() :
 	# Ambient
 	change_filter(Color(0.7,0.5,0.5,1))
 	play_filter(time+1)
+	$YSort/Autel.start(time)
 	# Effect
 	for i in range(1,time+1) :
 		var timer = get_tree().create_timer(rand_range(i,i+1),false)

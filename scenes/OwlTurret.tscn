@@ -158,7 +158,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 polygon = PoolVector2Array( 50.9362, -0.377777, 2.6427, -0.592407, 40.8482, 53.7109, 85.7075, 53.9256 )
 uv = PoolVector2Array(  )
-color = Color( 0, 0, 0, 0.588235 )
+color = Color( 0.32549, 0.32549, 0.32549, 0.431373 )
 vertex_colors = PoolColorArray(  )
 offset = Vector2( 0, 0 )
 antialiased = false
@@ -168,6 +168,7 @@ texture_scale = Vector2( 1, 1 )
 texture_rotation_degrees = 0.0
 invert_enable = false
 invert_border = 100.0
+_sections_unfolded = [ "Visibility" ]
 
 [connection signal="mouse_entered" from="MouseDetector" to="." method="_on_MouseDetector_mouse_entered"]
 
