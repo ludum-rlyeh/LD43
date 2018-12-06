@@ -319,6 +319,9 @@ func call_meteor() :
 	pos *= global.CELL_SIZE
 	meteor.init(Vector2(1000, 0), pos, time, 3)
 	meteor.start()
+	meteor.connect("finished_signal", self, "meteor_crashed", [pos])
+
+func meteor_crashed(var pos):
 	damage_in_zone(pos, 1000, 200)
 
 func damage_in_zone(var center, var radius, var power) :
