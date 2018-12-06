@@ -183,7 +183,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Damping", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="Meteor" type="Node2D" index="0"]
+[node name="Meteor" type="Node2D"]
 
 position = Vector2( 1322.75, -278.579 )
 scale = Vector2( 3, 3 )

@@ -282,5 +282,5 @@
 29/occluder_offset = Vector2( 32, 32 )
 29/navigation_offset = Vector2( 32, 32 )
 29/shapes = [  ]
-_sections_unfolded = [ "0", "18", "23" ]
+_sections_unfolded = [ "18", "23" ]
 

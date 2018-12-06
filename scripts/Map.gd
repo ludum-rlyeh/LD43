@@ -110,9 +110,9 @@ func _ready():
 		matrix[j] = []
 		matrix[j].resize(i)
 		for k in range(matrix[j].size()):
-			if $TileMap.get_cell(j, k) == 9 || $TileMap.get_cell(j, k) == 8:
+			if $TileMap.get_cell(j, k) == 9 || $TileMap.get_cell(j, k) == 8 || $TileMap.get_cell(j, k) == 7 || $TileMap.get_cell(j, k) == 6:
 				matrix[j][k] = global.PATH_TILE
-			elif $TileMap.get_cell(j, k) == 10 || $TileMap.get_cell(j, k) == 11:
+			elif $TileMap.get_cell(j, k) == 10 || $TileMap.get_cell(j, k) == 13:
 				matrix[j][k] = global.SOCKET_TILE
 			else:
 				matrix[j][k] = global.OTHER_TILE
@@ -140,7 +140,7 @@ func on_cell_clicked(var index):
 
 func add_object_to_map(var object, var index):
 	$YSort.add_child(object)
-	object.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
+	object.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(26,-15))
 	update_matrix(index, 2)
 #	get_node("SocketSelectioner").disable()
 
@@ -168,7 +168,7 @@ func on_print_phantom(type):
 	building.set_phantom(can_buy)
 	
 	add_child(building)
-	building.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(32,-32))
+	building.set_position(global.index_to_position(index, global.CELL_SIZE) - Vector2(26,-15))
 
 func on_change_nb_caillasse(caillasse):
 	if self.phantom != null:
