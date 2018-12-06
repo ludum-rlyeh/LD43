@@ -14,6 +14,8 @@ var TOWER_PRICES = {
 						TOWER_TYPE.CANON : 70,
 						TOWER_TYPE.FARM: 100
 					}
+					
+var SOUND_MAX = 0
 
 var current_camera
 

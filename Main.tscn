@@ -19,12 +19,8 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="HUD" parent="CanvasLayer" index="0" instance=ExtResource( 2 )]
 
-anchor_left = 0.5
-anchor_right = 0.5
 margin_left = -170.0
-margin_top = 0.0
 margin_right = 330.0
-margin_bottom = 136.0
 
 [node name="EnemisWavesTimer" type="Timer" parent="." index="1"]
 
@@ -33,7 +29,9 @@ wait_time = 5.0
 one_shot = true
 autostart = false
 
-[node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="MainStreamPlayer" type="AudioStreamPlayer" parent="." index="2" groups=[
+"sound",
+]]
 
 stream = ExtResource( 3 )
 volume_db = 0.0
@@ -42,7 +40,9 @@ autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="BlizzardStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+[node name="BlizzardStreamPlayer" type="AudioStreamPlayer" parent="." index="3" groups=[
+"sound",
+]]
 
 stream = ExtResource( 4 )
 volume_db = 0.0

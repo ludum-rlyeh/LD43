@@ -80,8 +80,8 @@ func update_volume_of(var stream_name, var delta) :
 	if play_theme[stream_name] :
 		if n_volume < 0.0 :
 			n_volume += delta
-			if n_volume > 0.0 :
-				n_volume = 0.0
+			if n_volume > global.SOUND_MAX :
+				n_volume = global.SOUND_MAX
 	else :
 		if n_volume > -100.0 :
 			n_volume -= delta
