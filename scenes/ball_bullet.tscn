@@ -14,7 +14,7 @@ func gaussian_function(var x):
 	return exp(-pow(x, 2.0))
 
 func _ready():
-	self.scale = Vector2(0 , 0)
+	self.scale = Vector2(1 , 1)
 
 func _process(delta):
 	var value = gaussian_function(((target_pos - self.position).length() / target_pos.length()) * 2 -1)
@@ -24,7 +24,7 @@ func _process(delta):
 		$Particles2D.emitting = true
 		$Sprite.hide()
 		$Timer.start()
-		$Crater.show()
+#		$Crater.show()
 		set_process(false)
 
 func _on_Timer_timeout():
@@ -82,7 +82,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Animation", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread", "Trail" ]
 
-[node name="cannonball" type="Node2D" index="0"]
+[node name="cannonball" type="Node2D"]
 
 script = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -90,8 +90,10 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
 scale = Vector2( 0.2, 0.2 )
+z_index = 18
+z_as_relative = false
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Particles2D" type="Particles2D" parent="." index="1"]
 

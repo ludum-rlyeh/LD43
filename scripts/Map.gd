@@ -50,14 +50,18 @@ func _process(delta):
 		position = Vector2(position.x, position.y - speed_camera)
 	elif Input.is_action_pressed("ui_down"):
 		position = Vector2(position.x, position.y + speed_camera)
-#	elif Input.is_action_pressed("zoom_camera_avant"):
 #		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x + zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y + zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
 #	elif Input.is_action_pressed("zoom_camera_arriere"):
 #		global.current_camera.set_zoom(Vector2(clamp(global.current_camera.zoom.x - zoom_scroll.x, self.clamp_zoom[0].x, self.clamp_zoom[1].x), clamp(global.current_camera.zoom.y - zoom_scroll.y, self.clamp_zoom[0].y, self.clamp_zoom[1].y)))
 	global.current_camera.set_position(position)
 	recenter_camera()
 	
-
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		if Input.is_action_pressed("ui_middle_mouse"):
+			global.current_camera.set_position(global.current_camera.get_position()- event.relative)
+			recenter_camera()
+	
 func recenter_camera():
 	var trans_camera = global.current_camera.get_canvas_transform()
 	var min_pos = -trans_camera.get_origin() / trans_camera.get_scale()
